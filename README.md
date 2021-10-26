@@ -1,7 +1,7 @@
 RacingBIKE: Improved Polynomial Multiplication and Inversion in Hardware
 ===
 
-This reposetiy contains the Verilog source code for the paper [*RacingBIKE: Improved Polynomial Multiplication and Inversion in Hardware*](https://eprint.iacr.org/2021/1344.pdf).
+This repository contains the Verilog source code for the paper [*RacingBIKE: Improved Polynomial Multiplication and Inversion in Hardware*](https://eprint.iacr.org/2021/1344.pdf).
 
 Features
 ---
