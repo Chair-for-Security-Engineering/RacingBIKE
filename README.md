@@ -36,6 +36,11 @@ Verilog parameter | Description
 `BRAM_CAP`        | Defines the size (in bits) of the memory modules available on the target device
 
 
+Quick Start
+---
+To use and experiment with the hardware design, you can use the provided TCL script `bike.tcl` which creates a Vivado project. The project is ready to use such that behavioral simulations and syntheses can be executed. The preconfigured design instantiates a light-weight BIKE accelerator for $r=12323$. To change the design parameters, you can use the provided BIKE package (see above). The applied testvectors used by the behavioral simulation can be adapted in the testbench given as parameters in the module declaration. 
+
+
 Contact and Support
 ---
 Please contact Jan Richter-Brockmann (jan.richter-brockmann@rub.de) if you have any questions, comments, if you found a bug that should be corrected, or if you want to reuse the Verilog code or parts of it for your own research projects.
@@ -50,4 +55,9 @@ Please see LICENSE for further license instructions.
 
 Publications
 ---
-You can find the preprint of the paper [here](https://eprint.iacr.org/2021/1344.pdf).
+J. Richter-Brockmann, M. Chen, S. Ghosh, T. Güneysu (2022): [RacingBIKE: Improved Polynomial Multiplication and Inversion in Hardware](https://eprint.iacr.org/2021/1344.pdf). TCHES 2022 (preprint)
+
+
+Acknowledgment
+---
+We would like to thank the anonymous reviewers from the CHES'22 artifact submission committee that provided us with useful comments and suggestions to improve the usability of our source code.

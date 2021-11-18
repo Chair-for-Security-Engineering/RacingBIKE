@@ -25,19 +25,19 @@
 package BIKE_PACKAGE;
     // -- PARAMETER --------------------------------------------------------------
     // BIKE Parameter
-//    // Level-1 ///////////////////////////////////////////////////////////////////
-//    parameter R_BITS        = 12323;
-//    parameter T1            = 134;
-//    parameter W             = 142;
-//    parameter L             = 256;
-//    // Threshold function max(TH_F*input+TH_T, MAX_C)
-//    parameter TH_F          = 25'b0111001000111011100001101;
-//    parameter TH_T          = 48'b000000000000011101000011110101110000101000111101;
-//    parameter MAX_C         = 36;
-//
-//    // Decoder
-//    parameter TAU           = 3;
-//    parameter NBITER        = 5+2;
+    // Level-1 ///////////////////////////////////////////////////////////////////
+    parameter R_BITS        = 12323;
+    parameter T1            = 134;
+    parameter W             = 142;
+    parameter L             = 256;
+    // Threshold function max(TH_F*input+TH_T, MAX_C)
+    parameter TH_F          = 25'b0111001000111011100001101;
+    parameter TH_T          = 48'b000000000000011101000011110101110000101000111101;
+    parameter MAX_C         = 36;
+
+    // Decoder
+    parameter TAU           = 3;
+    parameter NBITER        = 5+2;
 //    //////////////////////////////////////////////////////////////////////////////
 
 //    // Level-3 ///////////////////////////////////////////////////////////////////
@@ -57,19 +57,19 @@ package BIKE_PACKAGE;
 //    //////////////////////////////////////////////////////////////////////////////
 
     // Level-5 ///////////////////////////////////////////////////////////////////
-    parameter R_BITS        = 40973;
-    parameter T1            = 264;
-    parameter W             = 274;
-    parameter L             = 256;
+//    parameter R_BITS        = 40973;
+//    parameter T1            = 264;
+//    parameter W             = 274;
+//    parameter L             = 256;
     
-    // Threshold function max(TH_F*input+TH_T, MAX_C)
-    parameter TH_F          = 25'b0100000111101010001100000;
-    parameter TH_T          = 48'b000000000000100101110000011100101011000000100000;
-    parameter MAX_C         = 69;
+//    // Threshold function max(TH_F*input+TH_T, MAX_C)
+//    parameter TH_F          = 25'b0100000111101010001100000;
+//    parameter TH_T          = 48'b000000000000100101110000011100101011000000100000;
+//    parameter MAX_C         = 69;
     
-    // Decoder
-    parameter TAU           = 3;
-    parameter NBITER        = 5+2;
+//    // Decoder
+//    parameter TAU           = 3;
+//    parameter NBITER        = 5+2;
     //////////////////////////////////////////////////////////////////////////////
     
     // Implementation parameters
