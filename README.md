@@ -38,7 +38,7 @@ Verilog parameter | Description
 
 Quick Start
 ---
-To use and experiment with the hardware design, you can use the provided TCL script `bike.tcl` which creates a Vivado project. The project is ready to use such that behavioral simulations and syntheses can be executed. The preconfigured design instantiates a light-weight BIKE accelerator for $r=12323$. To change the design parameters, you can use the provided BIKE package (see above). The applied testvectors used by the behavioral simulation can be adapted in the testbench given as parameters in the module declaration. 
+To use and experiment with the hardware design, you can use the provided TCL script `bike.tcl` which creates a project in Vivado 2020. The project is ready to use such that behavioral simulations and syntheses can be executed. The preconfigured design instantiates a light-weight BIKE accelerator for $r=12323$. To change the design parameters, you can use the provided BIKE package (see above). The applied testvectors used by the behavioral simulation can be adapted in the testbench given as parameters in the module declaration. 
 
 
 Contact and Support
