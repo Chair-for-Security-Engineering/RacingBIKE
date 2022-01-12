@@ -30,19 +30,19 @@ import KECCAK_PACKAGE::*;
 
 module TB_BIKE #(
         parameter file_id_output      = "test_output_file.txt",
-        parameter file_id_c0          = "../../../../testvectors/r12323/c0.txt",
-        parameter file_id_c1          = "../../../../testvectors/r12323/c1.txt",
-        parameter file_id_e0          = "../../../../testvectors/r12323/e0.txt",
-        parameter file_id_e1          = "../../../../testvectors/r12323/e1.txt",
-        parameter file_id_h0          = "../../../../testvectors/r12323/h0.txt",
-        parameter file_id_h1          = "../../../../testvectors/r12323/h1.txt",
-        parameter file_id_h0_vec      = "../../../../testvectors/r12323/h0_vec.txt",
-        parameter file_id_h1_vec      = "../../../../testvectors/r12323/h1_vec.txt",
-        parameter file_id_pk          = "../../../../testvectors/r12323/pk.txt",
-        parameter file_id_k           = "../../../../testvectors/r12323/k.txt",
-        parameter file_id_m           = "../../../../testvectors/r12323/m.txt",
-        parameter file_id_sigma       = "../../../../testvectors/r12323/sigma.txt",
-        parameter file_id_sk_seed     = "../../../../testvectors/r12323/sk_seed.txt"
+        parameter file_id_c0          = "../../../../../testvectors/r12323/c0.txt",
+        parameter file_id_c1          = "../../../../../testvectors/r12323/c1.txt",
+        parameter file_id_e0          = "../../../../../testvectors/r12323/e0.txt",
+        parameter file_id_e1          = "../../../../../testvectors/r12323/e1.txt",
+        parameter file_id_h0          = "../../../../../testvectors/r12323/h0.txt",
+        parameter file_id_h1          = "../../../../../testvectors/r12323/h1.txt",
+        parameter file_id_h0_vec      = "../../../../../testvectors/r12323/h0_vec.txt",
+        parameter file_id_h1_vec      = "../../../../../testvectors/r12323/h1_vec.txt",
+        parameter file_id_pk          = "../../../../../testvectors/r12323/pk.txt",
+        parameter file_id_k           = "../../../../../testvectors/r12323/k.txt",
+        parameter file_id_m           = "../../../../../testvectors/r12323/m.txt",
+        parameter file_id_sigma       = "../../../../../testvectors/r12323/sigma.txt",
+        parameter file_id_sk_seed     = "../../../../../testvectors/r12323/sk_seed.txt"
 );
     
     // registers and wires
@@ -701,8 +701,12 @@ module TB_BIKE #(
    request_done <= 1'b0;
    wait(~busy);  
     
-    $fclose(f_out);
+   $fclose(f_out);
+   
+   
+   $display("Simulation finished!", $time);
+   $finish;
 
-    end
+   end
     
 endmodule

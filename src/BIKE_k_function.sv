@@ -172,15 +172,15 @@ wire [31:0] C1_INIT; wire [31:0] C1_REGULAR; wire [31:0] C1_COMP;
     // L OUT ---------------------------------------------------------------------
     always @(*) begin
         case(CNT_ABSORB_OUT[2:0])
-            3'b 000 : K_OUT_PRE <= HASH_IN[255:224];
-            3'b 001 : K_OUT_PRE <= HASH_IN[223:192];
-            3'b 010 : K_OUT_PRE <= HASH_IN[191:160];
-            3'b 011 : K_OUT_PRE <= HASH_IN[159:128];
-            3'b 100 : K_OUT_PRE <= HASH_IN[127:96];
-            3'b 101 : K_OUT_PRE <= HASH_IN[95:64];
-            3'b 110 : K_OUT_PRE <= HASH_IN[63:32];
-            3'b 111 : K_OUT_PRE <= HASH_IN[31:0];
-            default : K_OUT_PRE <= {32{1'b0}};
+            3'b 000 : K_OUT_PRE = HASH_IN[255:224];
+            3'b 001 : K_OUT_PRE = HASH_IN[223:192];
+            3'b 010 : K_OUT_PRE = HASH_IN[191:160];
+            3'b 011 : K_OUT_PRE = HASH_IN[159:128];
+            3'b 100 : K_OUT_PRE = HASH_IN[127:96];
+            3'b 101 : K_OUT_PRE = HASH_IN[95:64];
+            3'b 110 : K_OUT_PRE = HASH_IN[63:32];
+            3'b 111 : K_OUT_PRE = HASH_IN[31:0];
+            default : K_OUT_PRE = {32{1'b0}};
      endcase
     end
     
@@ -292,22 +292,22 @@ wire [31:0] C1_INIT; wire [31:0] C1_REGULAR; wire [31:0] C1_COMP;
     // determine the correct data
     always @(*) begin
         case(SEL_HASH_INPUT)
-            3'b 001 : HASH_M <= M_REORDERED;
-            3'b 010 : HASH_M <= C0_REORDERED;
-            3'b 100 : HASH_M <= C1_COMP;
-            default : HASH_M <= {32{1'b0}};
+            3'b 001 : HASH_M = M_REORDERED;
+            3'b 010 : HASH_M = C0_REORDERED;
+            3'b 100 : HASH_M = C1_COMP;
+            default : HASH_M = {32{1'b0}};
         endcase
     end
 
     always @(CNT_BYTES_OUT) begin
         if(((CNT_BYTES_OUT)) <= 8) begin
-            SEL_HASH_INPUT <= 3'b001;
+            SEL_HASH_INPUT = 3'b001;
         end
         else if(CNT_BYTES_OUT < (8 + DWORDS)) begin
-            SEL_HASH_INPUT <= 3'b010;
+            SEL_HASH_INPUT = 3'b010;
         end
         else begin
-            SEL_HASH_INPUT <= 3'b100;
+            SEL_HASH_INPUT = 3'b100;
         end
     end
     //----------------------------------------------------------------------------

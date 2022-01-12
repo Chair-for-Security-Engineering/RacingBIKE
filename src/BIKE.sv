@@ -590,183 +590,183 @@ module BIKE (
     always @(*) begin
         case (dp_selection[0])
             5'b00001: begin
-                dp_wen0_samp[0]     <= sk0_sample_wren;
-                dp_wen1_samp[0]     <= sk1_sample_wren;
-                dp_ren0_samp[0]     <= sk0_sample_rden;
-                dp_ren1_samp[0]     <= sk1_sample_rden;
-                dp_sampling[0]      <= 1'b1;
-                dp_addr0_samp[0]    <= sk_sample_addr;
-                dp_addr1_samp[0]    <= sk_sample_addr;
-                dp_din0_samp[0]     <= sk_sample_dout;
-                dp_din1_samp[0]     <= sk_sample_dout;
-                dp_wen0[0]          <= 1'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= 1'b0;
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= 'b0;
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = sk0_sample_wren;
+                dp_wen1_samp[0]     = sk1_sample_wren;
+                dp_ren0_samp[0]     = sk0_sample_rden;
+                dp_ren1_samp[0]     = sk1_sample_rden;
+                dp_sampling[0]      = 1'b1;
+                dp_addr0_samp[0]    = sk_sample_addr;
+                dp_addr1_samp[0]    = sk_sample_addr;
+                dp_din0_samp[0]     = sk_sample_dout;
+                dp_din1_samp[0]     = sk_sample_dout;
+                dp_wen0[0]          = 1'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = 1'b0;
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = 'b0;
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end
 
             5'b01001: begin
-                dp_wen0_samp[0]     <= 1'b0;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= 1'b0;
-                dp_ren1_samp[0]     <= 1'b0;
-                dp_sampling[0]      <= 1'b0;
-                dp_addr0_samp[0]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[0]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[0]     <= 32'b0;
-                dp_din1_samp[0]     <= 32'b0;
-                dp_wen0[0]          <= inv_bram_wren[0];
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= inv_bram_rden[0];
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= inv_bram_addr[0];
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= inv_bram_dout[0];
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = 1'b0;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = 1'b0;
+                dp_ren1_samp[0]     = 1'b0;
+                dp_sampling[0]      = 1'b0;
+                dp_addr0_samp[0]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[0]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[0]     = 32'b0;
+                dp_din1_samp[0]     = 32'b0;
+                dp_wen0[0]          = inv_bram_wren[0];
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = inv_bram_rden[0];
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = inv_bram_addr[0];
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = inv_bram_dout[0];
+                dp_din1[0]          = 'b0;
             end
 
             5'b10001: begin
-                dp_wen0_samp[0]     <= 1'b0;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= 1'b1;
-                dp_ren1_samp[0]     <= 1'b1;
-                dp_sampling[0]      <= 1'b1;
-                dp_addr0_samp[0]    <= cnt_out_out;
-                dp_addr1_samp[0]    <= cnt_out_out;
-                dp_din0_samp[0]     <= 32'b0;
-                dp_din1_samp[0]     <= 32'b0;
-                dp_wen0[0]          <= 1'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= 1'b0;
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= 'b0;
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = 1'b0;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = 1'b1;
+                dp_ren1_samp[0]     = 1'b1;
+                dp_sampling[0]      = 1'b1;
+                dp_addr0_samp[0]    = cnt_out_out;
+                dp_addr1_samp[0]    = cnt_out_out;
+                dp_din0_samp[0]     = 32'b0;
+                dp_din1_samp[0]     = 32'b0;
+                dp_wen0[0]          = 1'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = 1'b0;
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = 'b0;
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end
                                 
             5'b01010 : begin
-                dp_wen0_samp[0]     <= e_sample_compact_wren;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= e_sample_compact_rden;
-                dp_ren1_samp[0]     <= 1'b0;
-                dp_sampling[0]      <= 1'b1;
-                dp_addr0_samp[0]    <= e_sample_compact_addr;
-                dp_addr1_samp[0]    <= 'b0;
-                dp_din0_samp[0]     <= e_sample_compact_dout;
-                dp_din1_samp[0]     <= 'b0;
-                dp_wen0[0]          <= 1'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= 1'b0;
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= 'b0;
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = e_sample_compact_wren;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = e_sample_compact_rden;
+                dp_ren1_samp[0]     = 1'b0;
+                dp_sampling[0]      = 1'b1;
+                dp_addr0_samp[0]    = e_sample_compact_addr;
+                dp_addr1_samp[0]    = 'b0;
+                dp_din0_samp[0]     = e_sample_compact_dout;
+                dp_din1_samp[0]     = 'b0;
+                dp_wen0[0]          = 1'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = 1'b0;
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = 'b0;
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end
 
             5'b10010 : begin
-                dp_wen0_samp[0]     <= 1'b0;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= mul_vec_rden;
-                dp_ren1_samp[0]     <= 1'b0;
-                dp_sampling[0]      <= 1'b1;
-                dp_addr0_samp[0]    <= mul_vec_addr;
-                dp_addr1_samp[0]    <= 'b0;
-                dp_din0_samp[0]     <= 'b0;
-                dp_din1_samp[0]     <= 'b0;
-                dp_wen0[0]          <= 'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= 1'b0;
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= 'b0;
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = 1'b0;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = mul_vec_rden;
+                dp_ren1_samp[0]     = 1'b0;
+                dp_sampling[0]      = 1'b1;
+                dp_addr0_samp[0]    = mul_vec_addr;
+                dp_addr1_samp[0]    = 'b0;
+                dp_din0_samp[0]     = 'b0;
+                dp_din1_samp[0]     = 'b0;
+                dp_wen0[0]          = 'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = 1'b0;
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = 'b0;
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end
 
             5'b00100: begin
-                dp_wen0_samp[0]     <= e_sample_wren0;
-                dp_wen1_samp[0]     <= e_sample_wren1;
-                dp_ren0_samp[0]     <= e_sample_rden0;
-                dp_ren1_samp[0]     <= e_sample_rden1;
-                dp_sampling[0]      <= e_sample_enable;
-                dp_addr0_samp[0]    <= e_sample_addr;
-                dp_addr1_samp[0]    <= e_sample_addr;
-                dp_din0_samp[0]     <= e_sample_dout;
-                dp_din1_samp[0]     <= e_sample_dout; 
-                dp_wen0[0]          <= 1'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= 1'b0;
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= 'b0;
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = e_sample_wren0;
+                dp_wen1_samp[0]     = e_sample_wren1;
+                dp_ren0_samp[0]     = e_sample_rden0;
+                dp_ren1_samp[0]     = e_sample_rden1;
+                dp_sampling[0]      = e_sample_enable;
+                dp_addr0_samp[0]    = e_sample_addr;
+                dp_addr1_samp[0]    = e_sample_addr;
+                dp_din0_samp[0]     = e_sample_dout;
+                dp_din1_samp[0]     = e_sample_dout; 
+                dp_wen0[0]          = 1'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = 1'b0;
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = 'b0;
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end                
 
             5'b11100 : begin
-                dp_wen0_samp[0]     <= 1'b0;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= 1'b0;
-                dp_ren1_samp[0]     <= 1'b0;
-                dp_sampling[0]      <= 1'b1;
-                dp_addr0_samp[0]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[0]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[0]     <= 32'b0;
-                dp_din1_samp[0]     <= 32'b0;
-                dp_wen0[0]          <= 1'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= e0_compe_rden;
-                dp_ren1[0]          <= e1_compe_rden;
-                dp_addr0[0]         <= cnt_compe_out;
-                dp_addr1[0]         <= cnt_compe_out;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = 1'b0;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = 1'b0;
+                dp_ren1_samp[0]     = 1'b0;
+                dp_sampling[0]      = 1'b1;
+                dp_addr0_samp[0]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[0]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[0]     = 32'b0;
+                dp_din1_samp[0]     = 32'b0;
+                dp_wen0[0]          = 1'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = e0_compe_rden;
+                dp_ren1[0]          = e1_compe_rden;
+                dp_addr0[0]         = cnt_compe_out;
+                dp_addr1[0]         = cnt_compe_out;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end   
               
             5'b00111 : begin
-                dp_wen0_samp[0]     <= 1'b0;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= 1'b0;
-                dp_ren1_samp[0]     <= 1'b0;
-                dp_sampling[0]      <= 1'b0;
-                dp_addr0_samp[0]    <= 'b0;
-                dp_addr1_samp[0]    <= 'b0;
-                dp_din0_samp[0]     <= 'b0;
-                dp_din1_samp[0]     <= 'b0;
-                dp_wen0[0]          <= 1'b1;
-                dp_wen1[0]          <= 1'b1;
-                dp_ren0[0]          <= 1'b1;
-                dp_ren1[0]          <= 1'b1;
-                dp_addr0[0]         <= cnt_compe_out;
-                dp_addr1[0]         <= cnt_compe_out;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = 1'b0;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = 1'b0;
+                dp_ren1_samp[0]     = 1'b0;
+                dp_sampling[0]      = 1'b0;
+                dp_addr0_samp[0]    = 'b0;
+                dp_addr1_samp[0]    = 'b0;
+                dp_din0_samp[0]     = 'b0;
+                dp_din1_samp[0]     = 'b0;
+                dp_wen0[0]          = 1'b1;
+                dp_wen1[0]          = 1'b1;
+                dp_ren0[0]          = 1'b1;
+                dp_ren1[0]          = 1'b1;
+                dp_addr0[0]         = cnt_compe_out;
+                dp_addr1[0]         = cnt_compe_out;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end              
                                                                        
             default : begin
-                dp_wen0_samp[0]     <= 1'b0;
-                dp_wen1_samp[0]     <= 1'b0;
-                dp_ren0_samp[0]     <= 1'b0;
-                dp_ren1_samp[0]     <= 1'b0;
-                dp_sampling[0]      <= 1'b0;
-                dp_addr0_samp[0]    <= 'b0;
-                dp_addr1_samp[0]    <= 'b0;
-                dp_din0_samp[0]     <= 'b0;
-                dp_din1_samp[0]     <= 'b0;
-                dp_wen0[0]          <= 1'b0;
-                dp_wen1[0]          <= 1'b0;
-                dp_ren0[0]          <= 1'b0;
-                dp_ren1[0]          <= 1'b0;
-                dp_addr0[0]         <= 'b0;
-                dp_addr1[0]         <= 'b0;
-                dp_din0[0]          <= 'b0;
-                dp_din1[0]          <= 'b0;
+                dp_wen0_samp[0]     = 1'b0;
+                dp_wen1_samp[0]     = 1'b0;
+                dp_ren0_samp[0]     = 1'b0;
+                dp_ren1_samp[0]     = 1'b0;
+                dp_sampling[0]      = 1'b0;
+                dp_addr0_samp[0]    = 'b0;
+                dp_addr1_samp[0]    = 'b0;
+                dp_din0_samp[0]     = 'b0;
+                dp_din1_samp[0]     = 'b0;
+                dp_wen0[0]          = 1'b0;
+                dp_wen1[0]          = 1'b0;
+                dp_ren0[0]          = 1'b0;
+                dp_ren1[0]          = 1'b0;
+                dp_addr0[0]         = 'b0;
+                dp_addr1[0]         = 'b0;
+                dp_din0[0]          = 'b0;
+                dp_din1[0]          = 'b0;
             end
         endcase
     end
@@ -792,203 +792,203 @@ module BIKE (
     always @(*) begin
         case (dp_selection[1])
             5'b01001 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= 1'b0;
-                dp_ren1_samp[1]     <= 1'b0;
-                dp_sampling[1]      <= 1'b0;
-                dp_addr0_samp[1]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[1]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[1]     <= 32'b0;
-                dp_din1_samp[1]     <= 32'b0;
-                dp_wen0[1]          <= inv_bram_wren[1];
-                dp_wen1[1]          <= inv_bram_wren[2];
-                dp_ren0[1]          <= inv_bram_rden[1];
-                dp_ren1[1]          <= inv_bram_rden[2];
-                dp_addr0[1]         <= inv_bram_addr[1];
-                dp_addr1[1]         <= inv_bram_addr[2];
-                dp_din0[1]          <= inv_bram_dout[1];
-                dp_din1[1]          <= inv_bram_dout[2];
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = 1'b0;
+                dp_ren1_samp[1]     = 1'b0;
+                dp_sampling[1]      = 1'b0;
+                dp_addr0_samp[1]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[1]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[1]     = 32'b0;
+                dp_din1_samp[1]     = 32'b0;
+                dp_wen0[1]          = inv_bram_wren[1];
+                dp_wen1[1]          = inv_bram_wren[2];
+                dp_ren0[1]          = inv_bram_rden[1];
+                dp_ren1[1]          = inv_bram_rden[2];
+                dp_addr0[1]         = inv_bram_addr[1];
+                dp_addr1[1]         = inv_bram_addr[2];
+                dp_din0[1]          = inv_bram_dout[1];
+                dp_din1[1]          = inv_bram_dout[2];
             end
                     
             5'b01010 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= 1'b0;
-                dp_ren1_samp[1]     <= 1'b0;
-                dp_sampling[1]      <= 1'b0;
-                dp_addr0_samp[1]    <= 'b0;
-                dp_addr1_samp[1]    <= 'b0;
-                dp_din0_samp[1]     <= 'b0;
-                dp_din1_samp[1]     <= 'b0;
-                dp_wen0[1]          <= mul_resa_wren;
-                dp_wen1[1]          <= mul_resb_wren;
-                dp_ren0[1]          <= mul_resa_rden;
-                dp_ren1[1]          <= mul_resb_rden;
-                dp_addr0[1]         <= mul_resa_addr;
-                dp_addr1[1]         <= mul_resb_addr;
-                dp_din0[1]          <= mul_resa_dout;
-                dp_din1[1]          <= mul_resb_dout;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = 1'b0;
+                dp_ren1_samp[1]     = 1'b0;
+                dp_sampling[1]      = 1'b0;
+                dp_addr0_samp[1]    = 'b0;
+                dp_addr1_samp[1]    = 'b0;
+                dp_din0_samp[1]     = 'b0;
+                dp_din1_samp[1]     = 'b0;
+                dp_wen0[1]          = mul_resa_wren;
+                dp_wen1[1]          = mul_resb_wren;
+                dp_ren0[1]          = mul_resa_rden;
+                dp_ren1[1]          = mul_resb_rden;
+                dp_addr0[1]         = mul_resa_addr;
+                dp_addr1[1]         = mul_resb_addr;
+                dp_din0[1]          = mul_resa_dout;
+                dp_din1[1]          = mul_resb_dout;
             end
 
             5'b10010 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= c0_k_rden;
-                dp_ren1_samp[1]     <= c0_k_rden;
-                dp_sampling[1]      <= 1'b1;
-                dp_addr0_samp[1]    <= c0_k_addr;
-                dp_addr1_samp[1]    <= c0_k_addr;
-                dp_din0_samp[1]     <= 'b0;
-                dp_din1_samp[1]     <= 'b0;
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= {LOGSWORDS{1'b0}};
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= {B_WIDTH{1'b0}};
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = c0_k_rden;
+                dp_ren1_samp[1]     = c0_k_rden;
+                dp_sampling[1]      = 1'b1;
+                dp_addr0_samp[1]    = c0_k_addr;
+                dp_addr1_samp[1]    = c0_k_addr;
+                dp_din0_samp[1]     = 'b0;
+                dp_din1_samp[1]     = 'b0;
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = {LOGSWORDS{1'b0}};
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = {B_WIDTH{1'b0}};
+                dp_din1[1]          = 'b0;
             end
             
             5'b00100 : begin
-                dp_wen0_samp[1]     <= 1'b1;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= 1'b1;
-                dp_ren1_samp[1]     <= 1'b0;
-                dp_sampling[1]      <= 1'b1;
-                dp_addr0_samp[1]    <= din_addr;
-                dp_addr1_samp[1]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[1]     <= {din[15:0], din[15:0]};
-                dp_din1_samp[1]     <= 32'b0;
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= 'b0;
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b1;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = 1'b1;
+                dp_ren1_samp[1]     = 1'b0;
+                dp_sampling[1]      = 1'b1;
+                dp_addr0_samp[1]    = din_addr;
+                dp_addr1_samp[1]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[1]     = {din[15:0], din[15:0]};
+                dp_din1_samp[1]     = 32'b0;
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = 'b0;
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end
 
             5'b01100 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b1;
-                dp_ren0_samp[1]     <= 1'b0;
-                dp_ren1_samp[1]     <= 1'b1;
-                dp_sampling[1]      <= 1'b1;
-                dp_addr0_samp[1]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[1]    <= din_addr;
-                dp_din0_samp[1]     <= 32'b0;
-                dp_din1_samp[1]     <= {din[15:0], din[15:0]};
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= 'b0;
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b1;
+                dp_ren0_samp[1]     = 1'b0;
+                dp_ren1_samp[1]     = 1'b1;
+                dp_sampling[1]      = 1'b1;
+                dp_addr0_samp[1]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[1]    = din_addr;
+                dp_din0_samp[1]     = 32'b0;
+                dp_din1_samp[1]     = {din[15:0], din[15:0]};
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = 'b0;
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end    
 
             5'b10100 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= mul_vec_rden;
-                dp_ren1_samp[1]     <= mul_vec_rden;
-                dp_sampling[1]      <= 1'b1;
-                dp_addr0_samp[1]    <= mul_vec_addr;
-                dp_addr1_samp[1]    <= mul_vec_addr;
-                dp_din0_samp[1]     <= 32'b0;
-                dp_din1_samp[1]     <= 32'b0;
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= 'b0;
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = mul_vec_rden;
+                dp_ren1_samp[1]     = mul_vec_rden;
+                dp_sampling[1]      = 1'b1;
+                dp_addr0_samp[1]    = mul_vec_addr;
+                dp_addr1_samp[1]    = mul_vec_addr;
+                dp_din0_samp[1]     = 32'b0;
+                dp_din1_samp[1]     = 32'b0;
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = 'b0;
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end
 
             5'b11100 : begin
-                dp_wen0_samp[1]     <= sk0_bfiter_wren;
-                dp_wen1_samp[1]     <= sk1_bfiter_wren;
-                dp_ren0_samp[1]     <= sk0_bfiter_rden;
-                dp_ren1_samp[1]     <= sk1_bfiter_rden;
-                dp_sampling[1]      <= 1'b1;
-                dp_addr0_samp[1]    <= sk_bfiter_addr;
-                dp_addr1_samp[1]    <= sk_bfiter_addr;
-                dp_din0_samp[1]     <= sk_bfiter_dout;
-                dp_din1_samp[1]     <= sk_bfiter_dout;
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= 'b0;
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = sk0_bfiter_wren;
+                dp_wen1_samp[1]     = sk1_bfiter_wren;
+                dp_ren0_samp[1]     = sk0_bfiter_rden;
+                dp_ren1_samp[1]     = sk1_bfiter_rden;
+                dp_sampling[1]      = 1'b1;
+                dp_addr0_samp[1]    = sk_bfiter_addr;
+                dp_addr1_samp[1]    = sk_bfiter_addr;
+                dp_din0_samp[1]     = sk_bfiter_dout;
+                dp_din1_samp[1]     = sk_bfiter_dout;
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = 'b0;
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end
 
             5'b11111 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= 1'b1;
-                dp_ren1_samp[1]     <= 1'b1;
-                dp_sampling[1]      <= 1'b1;
-                dp_addr0_samp[1]    <= cnt_out_out;
-                dp_addr1_samp[1]    <= cnt_out_out;
-                dp_din0_samp[1]     <= 'b0;
-                dp_din1_samp[1]     <= 'b0;
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= 'b0;
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = 1'b1;
+                dp_ren1_samp[1]     = 1'b1;
+                dp_sampling[1]      = 1'b1;
+                dp_addr0_samp[1]    = cnt_out_out;
+                dp_addr1_samp[1]    = cnt_out_out;
+                dp_din0_samp[1]     = 'b0;
+                dp_din1_samp[1]     = 'b0;
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = 'b0;
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end
 
             5'b00111 : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= 1'b0;
-                dp_ren1_samp[1]     <= 1'b0;
-                dp_sampling[1]      <= 1'b0;
-                dp_addr0_samp[1]    <= 'b0;
-                dp_addr1_samp[1]    <= 'b0;
-                dp_din0_samp[1]     <= 'b0;
-                dp_din1_samp[1]     <= 'b0;
-                dp_wen0[1]          <= 1'b1;
-                dp_wen1[1]          <= 1'b1;
-                dp_ren0[1]          <= 1'b1;
-                dp_ren1[1]          <= 1'b1;
-                dp_addr0[1]         <= cnt_compe_out;
-                dp_addr1[1]         <= cnt_compe_out;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = 1'b0;
+                dp_ren1_samp[1]     = 1'b0;
+                dp_sampling[1]      = 1'b0;
+                dp_addr0_samp[1]    = 'b0;
+                dp_addr1_samp[1]    = 'b0;
+                dp_din0_samp[1]     = 'b0;
+                dp_din1_samp[1]     = 'b0;
+                dp_wen0[1]          = 1'b1;
+                dp_wen1[1]          = 1'b1;
+                dp_ren0[1]          = 1'b1;
+                dp_ren1[1]          = 1'b1;
+                dp_addr0[1]         = cnt_compe_out;
+                dp_addr1[1]         = cnt_compe_out;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end   
                                                                                      
             default : begin
-                dp_wen0_samp[1]     <= 1'b0;
-                dp_wen1_samp[1]     <= 1'b0;
-                dp_ren0_samp[1]     <= 1'b0;
-                dp_ren1_samp[1]     <= 1'b0;
-                dp_sampling[1]      <= 1'b0;
-                dp_addr0_samp[1]    <= 'b0;
-                dp_addr1_samp[1]    <= 'b0;
-                dp_din0_samp[1]     <= 'b0;
-                dp_din1_samp[1]     <= 'b0;
-                dp_wen0[1]          <= 1'b0;
-                dp_wen1[1]          <= 1'b0;
-                dp_ren0[1]          <= 1'b0;
-                dp_ren1[1]          <= 1'b0;
-                dp_addr0[1]         <= 'b0;
-                dp_addr1[1]         <= 'b0;
-                dp_din0[1]          <= 'b0;
-                dp_din1[1]          <= 'b0;
+                dp_wen0_samp[1]     = 1'b0;
+                dp_wen1_samp[1]     = 1'b0;
+                dp_ren0_samp[1]     = 1'b0;
+                dp_ren1_samp[1]     = 1'b0;
+                dp_sampling[1]      = 1'b0;
+                dp_addr0_samp[1]    = 'b0;
+                dp_addr1_samp[1]    = 'b0;
+                dp_din0_samp[1]     = 'b0;
+                dp_din1_samp[1]     = 'b0;
+                dp_wen0[1]          = 1'b0;
+                dp_wen1[1]          = 1'b0;
+                dp_ren0[1]          = 1'b0;
+                dp_ren1[1]          = 1'b0;
+                dp_addr0[1]         = 'b0;
+                dp_addr1[1]         = 'b0;
+                dp_din0[1]          = 'b0;
+                dp_din1[1]          = 'b0;
             end
         endcase
     end   
@@ -1013,163 +1013,163 @@ module BIKE (
     always @(*) begin
         case (dp_selection[2])
             5'b01001 : begin
-                dp_wen0_samp[2]     <= 1'b0;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b0;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b0;
-                dp_addr0_samp[2]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[2]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[2]     <= 32'b0;
-                dp_din1_samp[2]     <= 32'b0;
-                dp_wen0[2]          <= inv_bram_wren[3];
-                dp_wen1[2]          <= inv_bram_wren[4];
-                dp_ren0[2]          <= inv_bram_rden[3];
-                dp_ren1[2]          <= inv_bram_rden[4];
-                dp_addr0[2]         <= inv_bram_addr[3];
-                dp_addr1[2]         <= inv_bram_addr[4];
-                dp_din0[2]          <= inv_bram_dout[3];
-                dp_din1[2]          <= inv_bram_dout[4];
+                dp_wen0_samp[2]     = 1'b0;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b0;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b0;
+                dp_addr0_samp[2]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[2]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[2]     = 32'b0;
+                dp_din1_samp[2]     = 32'b0;
+                dp_wen0[2]          = inv_bram_wren[3];
+                dp_wen1[2]          = inv_bram_wren[4];
+                dp_ren0[2]          = inv_bram_rden[3];
+                dp_ren1[2]          = inv_bram_rden[4];
+                dp_addr0[2]         = inv_bram_addr[3];
+                dp_addr1[2]         = inv_bram_addr[4];
+                dp_din0[2]          = inv_bram_dout[3];
+                dp_din1[2]          = inv_bram_dout[4];
             end
                     
             5'b00010 : begin
-                dp_wen0_samp[2]     <= 1'b1;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b1;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b1;
-                dp_addr0_samp[2]    <= din_addr;
-                dp_addr1_samp[2]    <= {DWORDS{1'b0}};
-                dp_din0_samp[2]     <= din;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b0;
-                dp_wen1[2]          <= 1'b0;
-                dp_ren0[2]          <= 1'b0;
-                dp_ren1[2]          <= 1'b0;
-                dp_addr0[2]         <= 'b0;
-                dp_addr1[2]         <= 'b0;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b1;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b1;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b1;
+                dp_addr0_samp[2]    = din_addr;
+                dp_addr1_samp[2]    = {DWORDS{1'b0}};
+                dp_din0_samp[2]     = din;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b0;
+                dp_wen1[2]          = 1'b0;
+                dp_ren0[2]          = 1'b0;
+                dp_ren1[2]          = 1'b0;
+                dp_addr0[2]         = 'b0;
+                dp_addr1[2]         = 'b0;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end
             
             5'b01010 : begin
-                dp_wen0_samp[2]     <= 1'b0;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b0;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b0;
-                dp_addr0_samp[2]    <= 'b0;
-                dp_addr1_samp[2]    <= 'b0;
-                dp_din0_samp[2]     <= 'b0;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b0;
-                dp_wen1[2]          <= 1'b0;
-                dp_ren0[2]          <= mul_mata_rden;
-                dp_ren1[2]          <= 1'b0;
-                dp_addr0[2]         <= mul_mata_addr;
-                dp_addr1[2]         <= 'b0;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b0;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b0;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b0;
+                dp_addr0_samp[2]    = 'b0;
+                dp_addr1_samp[2]    = 'b0;
+                dp_din0_samp[2]     = 'b0;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b0;
+                dp_wen1[2]          = 1'b0;
+                dp_ren0[2]          = mul_mata_rden;
+                dp_ren1[2]          = 1'b0;
+                dp_addr0[2]         = mul_mata_addr;
+                dp_addr1[2]         = 'b0;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end
 
             5'b00100 : begin
-                dp_wen0_samp[2]     <= 1'b1;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b1;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b1;
-                dp_addr0_samp[2]    <= din_addr;
-                dp_addr1_samp[2]    <= {DWORDS{1'b0}};
-                dp_din0_samp[2]     <= din;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b0;
-                dp_wen1[2]          <= 1'b0;
-                dp_ren0[2]          <= 1'b0;
-                dp_ren1[2]          <= 1'b0;
-                dp_addr0[2]         <= 'b0;
-                dp_addr1[2]         <= 'b0;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b1;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b1;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b1;
+                dp_addr0_samp[2]    = din_addr;
+                dp_addr1_samp[2]    = {DWORDS{1'b0}};
+                dp_din0_samp[2]     = din;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b0;
+                dp_wen1[2]          = 1'b0;
+                dp_ren0[2]          = 1'b0;
+                dp_ren1[2]          = 1'b0;
+                dp_addr0[2]         = 'b0;
+                dp_addr1[2]         = 'b0;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end      
 
             5'b01100 : begin
-                dp_wen0_samp[2]     <= 1'b0;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b0;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b0;
-                dp_addr0_samp[2]    <= 'b0;
-                dp_addr1_samp[2]    <= 'b0;
-                dp_din0_samp[2]     <= 'b0;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b0;
-                dp_wen1[2]          <= 1'b0;
-                dp_ren0[2]          <= mul_mata_rden;
-                dp_ren1[2]          <= 1'b0;
-                dp_addr0[2]         <= mul_mata_addr;
-                dp_addr1[2]         <= 'b0;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b0;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b0;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b0;
+                dp_addr0_samp[2]    = 'b0;
+                dp_addr1_samp[2]    = 'b0;
+                dp_din0_samp[2]     = 'b0;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b0;
+                dp_wen1[2]          = 1'b0;
+                dp_ren0[2]          = mul_mata_rden;
+                dp_ren1[2]          = 1'b0;
+                dp_addr0[2]         = mul_mata_addr;
+                dp_addr1[2]         = 'b0;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end  
 
             5'b10100 : begin
-                dp_wen0_samp[2]     <= 1'b0;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= c0_k_rden;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b1;
-                dp_addr0_samp[2]    <= c0_k_addr;
-                dp_addr1_samp[2]    <= 'b0;
-                dp_din0_samp[2]     <= 'b0;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b0;
-                dp_wen1[2]          <= 1'b0;
-                dp_ren0[2]          <= 1'b0;
-                dp_ren1[2]          <= 1'b0;
-                dp_addr0[2]         <= 'b0;
-                dp_addr1[2]         <= 'b0;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b0;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = c0_k_rden;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b1;
+                dp_addr0_samp[2]    = c0_k_addr;
+                dp_addr1_samp[2]    = 'b0;
+                dp_din0_samp[2]     = 'b0;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b0;
+                dp_wen1[2]          = 1'b0;
+                dp_ren0[2]          = 1'b0;
+                dp_ren1[2]          = 1'b0;
+                dp_addr0[2]         = 'b0;
+                dp_addr1[2]         = 'b0;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end 
 
             5'b00111 : begin
-                dp_wen0_samp[2]     <= 1'b0;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b0;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b0;
-                dp_addr0_samp[2]    <= 'b0;
-                dp_addr1_samp[2]    <= 'b0;
-                dp_din0_samp[2]     <= 'b0;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b1;
-                dp_wen1[2]          <= 1'b1;
-                dp_ren0[2]          <= 1'b1;
-                dp_ren1[2]          <= 1'b1;
-                dp_addr0[2]         <= cnt_compe_out;
-                dp_addr1[2]         <= cnt_compe_out;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b0;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b0;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b0;
+                dp_addr0_samp[2]    = 'b0;
+                dp_addr1_samp[2]    = 'b0;
+                dp_din0_samp[2]     = 'b0;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b1;
+                dp_wen1[2]          = 1'b1;
+                dp_ren0[2]          = 1'b1;
+                dp_ren1[2]          = 1'b1;
+                dp_addr0[2]         = cnt_compe_out;
+                dp_addr1[2]         = cnt_compe_out;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end   
                                                                           
             default : begin
-                dp_wen0_samp[2]     <= 1'b0;
-                dp_wen1_samp[2]     <= 1'b0;
-                dp_ren0_samp[2]     <= 1'b0;
-                dp_ren1_samp[2]     <= 1'b0;
-                dp_sampling[2]      <= 1'b0;
-                dp_addr0_samp[2]    <= 'b0;
-                dp_addr1_samp[2]    <= 'b0;
-                dp_din0_samp[2]     <= 'b0;
-                dp_din1_samp[2]     <= 'b0;
-                dp_wen0[2]          <= 1'b0;
-                dp_wen1[2]          <= 1'b0;
-                dp_ren0[2]          <= 1'b0;
-                dp_ren1[2]          <= 1'b0;
-                dp_addr0[2]         <= 'b0;
-                dp_addr1[2]         <= 'b0;
-                dp_din0[2]          <= 'b0;
-                dp_din1[2]          <= 'b0;
+                dp_wen0_samp[2]     = 1'b0;
+                dp_wen1_samp[2]     = 1'b0;
+                dp_ren0_samp[2]     = 1'b0;
+                dp_ren1_samp[2]     = 1'b0;
+                dp_sampling[2]      = 1'b0;
+                dp_addr0_samp[2]    = 'b0;
+                dp_addr1_samp[2]    = 'b0;
+                dp_din0_samp[2]     = 'b0;
+                dp_din1_samp[2]     = 'b0;
+                dp_wen0[2]          = 1'b0;
+                dp_wen1[2]          = 1'b0;
+                dp_ren0[2]          = 1'b0;
+                dp_ren1[2]          = 1'b0;
+                dp_addr0[2]         = 'b0;
+                dp_addr1[2]         = 'b0;
+                dp_din0[2]          = 'b0;
+                dp_din1[2]          = 'b0;
             end
         endcase
     end    
@@ -1194,163 +1194,163 @@ module BIKE (
     always @(*) begin
         case (dp_selection[3])
             5'b01001 : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= 1'b0;
-                dp_ren1_samp[3]     <= 1'b0;
-                dp_sampling[3]      <= 1'b0;
-                dp_addr0_samp[3]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[3]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[3]     <= {32'b0};
-                dp_din1_samp[3]     <= {32'b0};
-                dp_wen0[3]          <= inv_bram_wren[5];
-                dp_wen1[3]          <= inv_bram_wren[6];
-                dp_ren0[3]          <= inv_bram_rden[5];
-                dp_ren1[3]          <= inv_bram_rden[6];
-                dp_addr0[3]         <= inv_bram_addr[5];
-                dp_addr1[3]         <= inv_bram_addr[6];
-                dp_din0[3]          <= inv_bram_dout[5];
-                dp_din1[3]          <= inv_bram_dout[6];
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = 1'b0;
+                dp_ren1_samp[3]     = 1'b0;
+                dp_sampling[3]      = 1'b0;
+                dp_addr0_samp[3]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[3]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[3]     = {32'b0};
+                dp_din1_samp[3]     = {32'b0};
+                dp_wen0[3]          = inv_bram_wren[5];
+                dp_wen1[3]          = inv_bram_wren[6];
+                dp_ren0[3]          = inv_bram_rden[5];
+                dp_ren1[3]          = inv_bram_rden[6];
+                dp_addr0[3]         = inv_bram_addr[5];
+                dp_addr1[3]         = inv_bram_addr[6];
+                dp_din0[3]          = inv_bram_dout[5];
+                dp_din1[3]          = inv_bram_dout[6];
             end
 
             5'b10001 : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= 1'b0;
-                dp_ren1_samp[3]     <= 1'b0;
-                dp_sampling[3]      <= 1'b0;
-                dp_addr0_samp[3]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[3]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[3]     <= 32'b0;
-                dp_din1_samp[3]     <= 32'b0;
-                dp_wen0[3]          <= 1'b0;
-                dp_wen1[3]          <= 1'b0;
-                dp_ren0[3]          <= mul_mata_rden;
-                dp_ren1[3]          <= 1'b0;
-                dp_addr0[3]         <= mul_mata_addr;
-                dp_addr1[3]         <= 'b0;
-                dp_din0[3]          <= 'b0;
-                dp_din1[3]          <= 'b0;
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = 1'b0;
+                dp_ren1_samp[3]     = 1'b0;
+                dp_sampling[3]      = 1'b0;
+                dp_addr0_samp[3]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[3]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[3]     = 32'b0;
+                dp_din1_samp[3]     = 32'b0;
+                dp_wen0[3]          = 1'b0;
+                dp_wen1[3]          = 1'b0;
+                dp_ren0[3]          = mul_mata_rden;
+                dp_ren1[3]          = 1'b0;
+                dp_addr0[3]         = mul_mata_addr;
+                dp_addr1[3]         = 'b0;
+                dp_din0[3]          = 'b0;
+                dp_din1[3]          = 'b0;
             end
                     
             5'b01010 : begin
-                dp_wen0_samp[3]     <= e_sample_wren0;
-                dp_wen1_samp[3]     <= e_sample_wren1;
-                dp_ren0_samp[3]     <= e_sample_rden0;
-                dp_ren1_samp[3]     <= e_sample_rden1;
-                dp_sampling[3]      <= 1'b1;
-                dp_addr0_samp[3]    <= e_sample_addr;
-                dp_addr1_samp[3]    <= e_sample_addr;
-                dp_din0_samp[3]     <= e_sample_dout;
-                dp_din1_samp[3]     <= e_sample_dout;
-                dp_wen0[3]          <= 1'b0;
-                dp_wen1[3]          <= 1'b0;
-                dp_ren0[3]          <= 1'b0;
-                dp_ren1[3]          <= 1'b0;
-                dp_addr0[3]         <= 'b0;
-                dp_addr1[3]         <= 'b0;
-                dp_din0[3]          <= 'b0;
-                dp_din1[3]          <= 'b0;
+                dp_wen0_samp[3]     = e_sample_wren0;
+                dp_wen1_samp[3]     = e_sample_wren1;
+                dp_ren0_samp[3]     = e_sample_rden0;
+                dp_ren1_samp[3]     = e_sample_rden1;
+                dp_sampling[3]      = 1'b1;
+                dp_addr0_samp[3]    = e_sample_addr;
+                dp_addr1_samp[3]    = e_sample_addr;
+                dp_din0_samp[3]     = e_sample_dout;
+                dp_din1_samp[3]     = e_sample_dout;
+                dp_wen0[3]          = 1'b0;
+                dp_wen1[3]          = 1'b0;
+                dp_ren0[3]          = 1'b0;
+                dp_ren1[3]          = 1'b0;
+                dp_addr0[3]         = 'b0;
+                dp_addr1[3]         = 'b0;
+                dp_din0[3]          = 'b0;
+                dp_din1[3]          = 'b0;
             end
 
             5'b10010 : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= e_l_rden0;
-                dp_ren1_samp[3]     <= e_l_rden1;
-                dp_sampling[3]      <= 1'b1;
-                dp_addr0_samp[3]    <= e_l_addr0;
-                dp_addr1_samp[3]    <= e_l_addr1;
-                dp_din0_samp[3]     <= 'b0;
-                dp_din1_samp[3]     <= 'b0;
-                dp_wen0[3]          <= 1'b0;
-                dp_wen1[3]          <= 1'b0;
-                dp_ren0[3]          <= 1'b0;
-                dp_ren1[3]          <= 1'b0;
-                dp_addr0[3]         <= 'b0;
-                dp_addr1[3]         <= 'b0;
-                dp_din0[3]          <= 'b0;
-                dp_din1[3]          <= 'b0;
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = e_l_rden0;
+                dp_ren1_samp[3]     = e_l_rden1;
+                dp_sampling[3]      = 1'b1;
+                dp_addr0_samp[3]    = e_l_addr0;
+                dp_addr1_samp[3]    = e_l_addr1;
+                dp_din0_samp[3]     = 'b0;
+                dp_din1_samp[3]     = 'b0;
+                dp_wen0[3]          = 1'b0;
+                dp_wen1[3]          = 1'b0;
+                dp_ren0[3]          = 1'b0;
+                dp_ren1[3]          = 1'b0;
+                dp_addr0[3]         = 'b0;
+                dp_addr1[3]         = 'b0;
+                dp_din0[3]          = 'b0;
+                dp_din1[3]          = 'b0;
             end
 
             5'b00100 : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= 1'b0;
-                dp_ren1_samp[3]     <= 1'b0;
-                dp_sampling[3]      <= 1'b0;
-                dp_addr0_samp[3]    <= 'b0;
-                dp_addr1_samp[3]    <= 'b0;
-                dp_din0_samp[3]     <= 32'b0;
-                dp_din1_samp[3]     <= 32'b0;
-                dp_wen0[3]          <= mul_resa_wren;
-                dp_wen1[3]          <= mul_resb_wren;
-                dp_ren0[3]          <= mul_resa_rden;
-                dp_ren1[3]          <= mul_resb_rden;
-                dp_addr0[3]         <= mul_resa_addr;
-                dp_addr1[3]         <= mul_resb_addr;
-                dp_din0[3]          <= mul_resa_dout;
-                dp_din1[3]          <= mul_resb_dout;
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = 1'b0;
+                dp_ren1_samp[3]     = 1'b0;
+                dp_sampling[3]      = 1'b0;
+                dp_addr0_samp[3]    = 'b0;
+                dp_addr1_samp[3]    = 'b0;
+                dp_din0_samp[3]     = 32'b0;
+                dp_din1_samp[3]     = 32'b0;
+                dp_wen0[3]          = mul_resa_wren;
+                dp_wen1[3]          = mul_resb_wren;
+                dp_ren0[3]          = mul_resa_rden;
+                dp_ren1[3]          = mul_resb_rden;
+                dp_addr0[3]         = mul_resa_addr;
+                dp_addr1[3]         = mul_resb_addr;
+                dp_din0[3]          = mul_resa_dout;
+                dp_din1[3]          = mul_resb_dout;
             end 
 
             5'b11111 : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= 1'b1;
-                dp_ren1_samp[3]     <= 1'b0;
-                dp_sampling[3]      <= 1'b1;
-                dp_addr0_samp[3]    <= cnt_out_out;
-                dp_addr1_samp[3]    <= 'b0;
-                dp_din0_samp[3]     <= 'b0;
-                dp_din1_samp[3]     <= 'b0;
-                dp_wen0[3]          <= 1'b0;
-                dp_wen1[3]          <= 1'b0;
-                dp_ren0[3]          <= 1'b0;
-                dp_ren1[3]          <= 1'b0;
-                dp_addr0[3]         <= 'b0;
-                dp_addr1[3]         <= 'b0;
-                dp_din0[3]          <= 'b0;
-                dp_din1[3]          <= 'b0;
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = 1'b1;
+                dp_ren1_samp[3]     = 1'b0;
+                dp_sampling[3]      = 1'b1;
+                dp_addr0_samp[3]    = cnt_out_out;
+                dp_addr1_samp[3]    = 'b0;
+                dp_din0_samp[3]     = 'b0;
+                dp_din1_samp[3]     = 'b0;
+                dp_wen0[3]          = 1'b0;
+                dp_wen1[3]          = 1'b0;
+                dp_ren0[3]          = 1'b0;
+                dp_ren1[3]          = 1'b0;
+                dp_addr0[3]         = 'b0;
+                dp_addr1[3]         = 'b0;
+                dp_din0[3]          = 'b0;
+                dp_din1[3]          = 'b0;
             end
 
             5'b00111 : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= 1'b0;
-                dp_ren1_samp[3]     <= 1'b0;
-                dp_sampling[3]      <= 1'b0;
-                dp_addr0_samp[3]    <= 'b0;
-                dp_addr1_samp[3]    <= 'b0;
-                dp_din0_samp[3]     <= 'b0;
-                dp_din1_samp[3]     <= 'b0;
-                dp_wen0[3]          <= 1'b1;
-                dp_wen1[3]          <= 1'b1;
-                dp_ren0[3]          <= 1'b1;
-                dp_ren1[3]          <= 1'b1;
-                dp_addr0[3]         <= cnt_compe_out;
-                dp_addr1[3]         <= cnt_compe_out;
-                dp_din0[3]          <= 'b0;
-                dp_din1[3]          <= 'b0;
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = 1'b0;
+                dp_ren1_samp[3]     = 1'b0;
+                dp_sampling[3]      = 1'b0;
+                dp_addr0_samp[3]    = 'b0;
+                dp_addr1_samp[3]    = 'b0;
+                dp_din0_samp[3]     = 'b0;
+                dp_din1_samp[3]     = 'b0;
+                dp_wen0[3]          = 1'b1;
+                dp_wen1[3]          = 1'b1;
+                dp_ren0[3]          = 1'b1;
+                dp_ren1[3]          = 1'b1;
+                dp_addr0[3]         = cnt_compe_out;
+                dp_addr1[3]         = cnt_compe_out;
+                dp_din0[3]          = 'b0;
+                dp_din1[3]          = 'b0;
             end   
                                                                                            
             default : begin
-                dp_wen0_samp[3]     <= 1'b0;
-                dp_wen1_samp[3]     <= 1'b0;
-                dp_ren0_samp[3]     <= 1'b0;
-                dp_ren1_samp[3]     <= 1'b0;
-                dp_sampling[3]      <= 1'b0;
-                dp_addr0_samp[3]    <= 'b0;
-                dp_addr1_samp[3]    <= 'b0;
-                dp_din0_samp[3]     <= 'b0;
-                dp_din1_samp[3]     <= 'b0;
-                dp_wen0[3]          <= 1'b0;
-                dp_wen1[3]          <= 1'b0;
-                dp_ren0[3]          <= 1'b0;
-                dp_ren1[3]          <= 1'b0;
-                dp_addr0[3]         <= 'b0;
-                dp_addr1[3]         <= 'b0;
-                dp_din0[3]          <= 'b0;
-                dp_din1[3]          <= 'b0;
+                dp_wen0_samp[3]     = 1'b0;
+                dp_wen1_samp[3]     = 1'b0;
+                dp_ren0_samp[3]     = 1'b0;
+                dp_ren1_samp[3]     = 1'b0;
+                dp_sampling[3]      = 1'b0;
+                dp_addr0_samp[3]    = 'b0;
+                dp_addr1_samp[3]    = 'b0;
+                dp_din0_samp[3]     = 'b0;
+                dp_din1_samp[3]     = 'b0;
+                dp_wen0[3]          = 1'b0;
+                dp_wen1[3]          = 1'b0;
+                dp_ren0[3]          = 1'b0;
+                dp_ren1[3]          = 1'b0;
+                dp_addr0[3]         = 'b0;
+                dp_addr1[3]         = 'b0;
+                dp_din0[3]          = 'b0;
+                dp_din1[3]          = 'b0;
             end
         endcase
     end    
@@ -1372,143 +1372,143 @@ module BIKE (
     always @(*) begin
         case (dp_selection[4]) 
             5'b01001 : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= inv_bram_wren[7];
-                dp_wen1[4]          <= 1'b0;
-                dp_ren0[4]          <= inv_bram_rden[7];
-                dp_ren1[4]          <= 1'b0;
-                dp_addr0[4]         <= inv_bram_addr[7];
-                dp_addr1[4]         <= 'b0;
-                dp_din0[4]          <= inv_bram_dout[7];
-                dp_din1[4]          <= 'b0;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = inv_bram_wren[7];
+                dp_wen1[4]          = 1'b0;
+                dp_ren0[4]          = inv_bram_rden[7];
+                dp_ren1[4]          = 1'b0;
+                dp_addr0[4]         = inv_bram_addr[7];
+                dp_addr1[4]         = 'b0;
+                dp_din0[4]          = inv_bram_dout[7];
+                dp_din1[4]          = 'b0;
             end
 
             5'b10001 : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= 1'b0;
-                dp_wen1[4]          <= 1'b0;
-                dp_ren0[4]          <= mul_mata_rden;
-                dp_ren1[4]          <= 1'b0;
-                dp_addr0[4]         <= mul_mata_addr;
-                dp_addr1[4]         <= 'b0;
-                dp_din0[4]          <= 'b0;
-                dp_din1[4]          <= 'b0;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = 1'b0;
+                dp_wen1[4]          = 1'b0;
+                dp_ren0[4]          = mul_mata_rden;
+                dp_ren1[4]          = 1'b0;
+                dp_addr0[4]         = mul_mata_addr;
+                dp_addr1[4]         = 'b0;
+                dp_din0[4]          = 'b0;
+                dp_din1[4]          = 'b0;
             end
             
             5'b11001 : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= 'b0;
-                dp_wen1[4]          <= h1_compact_sample_wren;
-                dp_ren0[4]          <= 'b0;
-                dp_ren1[4]          <= h1_compact_sample_rden;
-                dp_addr0[4]         <= 'b0;
-                dp_addr1[4]         <= h_compact_sample_addr;
-                dp_din0[4]          <= 'b0;
-                dp_din1[4]          <= h_compact_sample_dout;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = 'b0;
+                dp_wen1[4]          = h1_compact_sample_wren;
+                dp_ren0[4]          = 'b0;
+                dp_ren1[4]          = h1_compact_sample_rden;
+                dp_addr0[4]         = 'b0;
+                dp_addr1[4]         = h_compact_sample_addr;
+                dp_din0[4]          = 'b0;
+                dp_din1[4]          = h_compact_sample_dout;
             end
 
             5'b00100 : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= mul_valid;
-                dp_wen1[4]          <= mul_valid;
-                dp_ren0[4]          <= syndrome_copy_rden;
-                dp_ren1[4]          <= syndrome_copy_rden;
-                dp_addr0[4]         <= syndrome_copy_addr;
-                dp_addr1[4]         <= syndrome_copy_addr;
-                dp_din0[4]          <= syndrome_copy_din;
-                dp_din1[4]          <= syndrome_copy_din;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = mul_valid;
+                dp_wen1[4]          = mul_valid;
+                dp_ren0[4]          = syndrome_copy_rden;
+                dp_ren1[4]          = syndrome_copy_rden;
+                dp_addr0[4]         = syndrome_copy_addr;
+                dp_addr1[4]         = syndrome_copy_addr;
+                dp_din0[4]          = syndrome_copy_din;
+                dp_din1[4]          = syndrome_copy_din;
             end
 
             5'b01100 : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= syndrome_upc_wren;
-                dp_wen1[4]          <= syndrome_upc_wren;
-                dp_ren0[4]          <= syndrome_upc_rden;
-                dp_ren1[4]          <= syndrome_upc_rden;
-                dp_addr0[4]         <= syndrome_upc_a_addr;
-                dp_addr1[4]         <= syndrome_upc_b_addr;
-                dp_din0[4]          <= syndrome_upc_a_dout;
-                dp_din1[4]          <= syndrome_upc_b_dout;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = syndrome_upc_wren;
+                dp_wen1[4]          = syndrome_upc_wren;
+                dp_ren0[4]          = syndrome_upc_rden;
+                dp_ren1[4]          = syndrome_upc_rden;
+                dp_addr0[4]         = syndrome_upc_a_addr;
+                dp_addr1[4]         = syndrome_upc_b_addr;
+                dp_din0[4]          = syndrome_upc_a_dout;
+                dp_din1[4]          = syndrome_upc_b_dout;
             end 
 
             5'b00111 : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= 1'b1;
-                dp_wen1[4]          <= 1'b1;
-                dp_ren0[4]          <= 1'b1;
-                dp_ren1[4]          <= 1'b1;
-                dp_addr0[4]         <= cnt_compe_out;
-                dp_addr1[4]         <= cnt_compe_out;
-                dp_din0[4]          <= 'b0;
-                dp_din1[4]          <= 'b0;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = 1'b1;
+                dp_wen1[4]          = 1'b1;
+                dp_ren0[4]          = 1'b1;
+                dp_ren1[4]          = 1'b1;
+                dp_addr0[4]         = cnt_compe_out;
+                dp_addr1[4]         = cnt_compe_out;
+                dp_din0[4]          = 'b0;
+                dp_din1[4]          = 'b0;
             end 
 
             default : begin
-                dp_wen0_samp[4]     <= 1'b0;
-                dp_wen1_samp[4]     <= 1'b0;
-                dp_ren0_samp[4]     <= 1'b0;
-                dp_ren1_samp[4]     <= 1'b0;
-                dp_sampling[4]      <= 1'b0;
-                dp_addr0_samp[4]    <= 'b0;
-                dp_addr1_samp[4]    <= 'b0;
-                dp_din0_samp[4]     <= 'b0;
-                dp_din1_samp[4]     <= 'b0;
-                dp_wen0[4]          <= 1'b0;
-                dp_wen1[4]          <= 1'b0;
-                dp_ren0[4]          <= 1'b0;
-                dp_ren1[4]          <= 1'b0;
-                dp_addr0[4]         <= 'b0;
-                dp_addr1[4]         <= 'b0;
-                dp_din0[4]          <= 'b0;
-                dp_din1[4]          <= 'b0;
+                dp_wen0_samp[4]     = 1'b0;
+                dp_wen1_samp[4]     = 1'b0;
+                dp_ren0_samp[4]     = 1'b0;
+                dp_ren1_samp[4]     = 1'b0;
+                dp_sampling[4]      = 1'b0;
+                dp_addr0_samp[4]    = 'b0;
+                dp_addr1_samp[4]    = 'b0;
+                dp_din0_samp[4]     = 'b0;
+                dp_din1_samp[4]     = 'b0;
+                dp_wen0[4]          = 1'b0;
+                dp_wen1[4]          = 1'b0;
+                dp_ren0[4]          = 1'b0;
+                dp_ren1[4]          = 1'b0;
+                dp_addr0[4]         = 'b0;
+                dp_addr1[4]         = 'b0;
+                dp_din0[4]          = 'b0;
+                dp_din1[4]          = 'b0;
             end
         endcase
     end    
@@ -1530,163 +1530,163 @@ module BIKE (
     always @(*) begin
         case (dp_selection[5])    
             5'b01001 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b0;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b0;
-                dp_addr0_samp[5]    <= {LOGDWORDS{1'b0}};
-                dp_addr1_samp[5]    <= {LOGDWORDS{1'b0}};
-                dp_din0_samp[5]     <= 32'b0;
-                dp_din1_samp[5]     <= 32'b0;
-                dp_wen0[5]          <= mul_resa_wren;
-                dp_wen1[5]          <= mul_resb_wren;
-                dp_ren0[5]          <= mul_resa_rden;
-                dp_ren1[5]          <= mul_resb_rden;
-                dp_addr0[5]         <= mul_resa_addr;
-                dp_addr1[5]         <= mul_resb_addr;
-                dp_din0[5]          <= mul_resa_dout;
-                dp_din1[5]          <= mul_resb_dout;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b0;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b0;
+                dp_addr0_samp[5]    = {LOGDWORDS{1'b0}};
+                dp_addr1_samp[5]    = {LOGDWORDS{1'b0}};
+                dp_din0_samp[5]     = 32'b0;
+                dp_din1_samp[5]     = 32'b0;
+                dp_wen0[5]          = mul_resa_wren;
+                dp_wen1[5]          = mul_resb_wren;
+                dp_ren0[5]          = mul_resa_rden;
+                dp_ren1[5]          = mul_resb_rden;
+                dp_addr0[5]         = mul_resa_addr;
+                dp_addr1[5]         = mul_resb_addr;
+                dp_din0[5]          = mul_resa_dout;
+                dp_din1[5]          = mul_resb_dout;
             end
 
             5'b00100 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b0;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b0;
-                dp_addr0_samp[5]    <= 'b0;
-                dp_addr1_samp[5]    <= 'b0;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= e0_bfiter_wren;
-                dp_wen1[5]          <= e1_bfiter_wren;
-                dp_ren0[5]          <= e0_bfiter_rden;
-                dp_ren1[5]          <= e1_bfiter_rden;
-                dp_addr0[5]         <= e_bfiter_addr;
-                dp_addr1[5]         <= e_bfiter_addr;
-                dp_din0[5]          <= e_bfiter_dout;
-                dp_din1[5]          <= e_bfiter_dout;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b0;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b0;
+                dp_addr0_samp[5]    = 'b0;
+                dp_addr1_samp[5]    = 'b0;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = e0_bfiter_wren;
+                dp_wen1[5]          = e1_bfiter_wren;
+                dp_ren0[5]          = e0_bfiter_rden;
+                dp_ren1[5]          = e1_bfiter_rden;
+                dp_addr0[5]         = e_bfiter_addr;
+                dp_addr1[5]         = e_bfiter_addr;
+                dp_din0[5]          = e_bfiter_dout;
+                dp_din1[5]          = e_bfiter_dout;
             end
 
             5'b01100 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b0;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b0;
-                dp_addr0_samp[5]    <= 'b0;
-                dp_addr1_samp[5]    <= 'b0;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= 1'b0;
-                dp_wen1[5]          <= 1'b0;
-                dp_ren0[5]          <= mul_mata_rden;
-                dp_ren1[5]          <= mul_mata_rden;
-                dp_addr0[5]         <= mul_mata_addr;
-                dp_addr1[5]         <= mul_mata_addr;
-                dp_din0[5]          <= 'b0;
-                dp_din1[5]          <= 'b0;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b0;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b0;
+                dp_addr0_samp[5]    = 'b0;
+                dp_addr1_samp[5]    = 'b0;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = 1'b0;
+                dp_wen1[5]          = 1'b0;
+                dp_ren0[5]          = mul_mata_rden;
+                dp_ren1[5]          = mul_mata_rden;
+                dp_addr0[5]         = mul_mata_addr;
+                dp_addr1[5]         = mul_mata_addr;
+                dp_din0[5]          = 'b0;
+                dp_din1[5]          = 'b0;
             end
 
             5'b10100 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= e_l_rden0;
-                dp_ren1_samp[5]     <= e_l_rden1;
-                dp_sampling[5]      <= 1'b1;
-                dp_addr0_samp[5]    <= e_l_addr0;
-                dp_addr1_samp[5]    <= e_l_addr1;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= 1'b0;
-                dp_wen1[5]          <= 1'b0;
-                dp_ren0[5]          <= 1'b0;
-                dp_ren1[5]          <= 1'b0;
-                dp_addr0[5]         <= 'b0;
-                dp_addr1[5]         <= 'b0;
-                dp_din0[5]          <= 'b0;
-                dp_din1[5]          <= 'b0;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = e_l_rden0;
+                dp_ren1_samp[5]     = e_l_rden1;
+                dp_sampling[5]      = 1'b1;
+                dp_addr0_samp[5]    = e_l_addr0;
+                dp_addr1_samp[5]    = e_l_addr1;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = 1'b0;
+                dp_wen1[5]          = 1'b0;
+                dp_ren0[5]          = 1'b0;
+                dp_ren1[5]          = 1'b0;
+                dp_addr0[5]         = 'b0;
+                dp_addr1[5]         = 'b0;
+                dp_din0[5]          = 'b0;
+                dp_din1[5]          = 'b0;
             end
 
             5'b11100 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b0;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b1;
-                dp_addr0_samp[5]    <= 'b0;
-                dp_addr1_samp[5]    <= 'b0;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= 1'b0;
-                dp_wen1[5]          <= 1'b0;
-                dp_ren0[5]          <= e0_compe_rden;
-                dp_ren1[5]          <= e1_compe_rden;
-                dp_addr0[5]         <= cnt_compe_out;
-                dp_addr1[5]         <= cnt_compe_out;
-                dp_din0[5]          <= 'b0;
-                dp_din1[5]          <= 'b0;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b0;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b1;
+                dp_addr0_samp[5]    = 'b0;
+                dp_addr1_samp[5]    = 'b0;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = 1'b0;
+                dp_wen1[5]          = 1'b0;
+                dp_ren0[5]          = e0_compe_rden;
+                dp_ren1[5]          = e1_compe_rden;
+                dp_addr0[5]         = cnt_compe_out;
+                dp_addr1[5]         = cnt_compe_out;
+                dp_din0[5]          = 'b0;
+                dp_din1[5]          = 'b0;
             end
 
             5'b00111 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b0;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b0;
-                dp_addr0_samp[5]    <= 'b0;
-                dp_addr1_samp[5]    <= 'b0;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= 1'b1;
-                dp_wen1[5]          <= 1'b1;
-                dp_ren0[5]          <= 1'b1;
-                dp_ren1[5]          <= 1'b1;
-                dp_addr0[5]         <= cnt_compe_out;
-                dp_addr1[5]         <= cnt_compe_out;
-                dp_din0[5]          <= 'b0;
-                dp_din1[5]          <= 'b0;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b0;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b0;
+                dp_addr0_samp[5]    = 'b0;
+                dp_addr1_samp[5]    = 'b0;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = 1'b1;
+                dp_wen1[5]          = 1'b1;
+                dp_ren0[5]          = 1'b1;
+                dp_ren1[5]          = 1'b1;
+                dp_addr0[5]         = cnt_compe_out;
+                dp_addr1[5]         = cnt_compe_out;
+                dp_din0[5]          = 'b0;
+                dp_din1[5]          = 'b0;
             end  
 
             5'b11111 : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b1;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b1;
-                dp_addr0_samp[5]    <= cnt_out_out;
-                dp_addr1_samp[5]    <= 'b0;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= 1'b0;
-                dp_wen1[5]          <= 1'b0;
-                dp_ren0[5]          <= 1'b0;
-                dp_ren1[5]          <= 1'b0;
-                dp_addr0[5]         <= 'b0;
-                dp_addr1[5]         <= 'b0;
-                dp_din0[5]          <= 'b0;
-                dp_din1[5]          <= 'b0;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b1;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b1;
+                dp_addr0_samp[5]    = cnt_out_out;
+                dp_addr1_samp[5]    = 'b0;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = 1'b0;
+                dp_wen1[5]          = 1'b0;
+                dp_ren0[5]          = 1'b0;
+                dp_ren1[5]          = 1'b0;
+                dp_addr0[5]         = 'b0;
+                dp_addr1[5]         = 'b0;
+                dp_din0[5]          = 'b0;
+                dp_din1[5]          = 'b0;
             end 
                        
             default : begin
-                dp_wen0_samp[5]     <= 1'b0;
-                dp_wen1_samp[5]     <= 1'b0;
-                dp_ren0_samp[5]     <= 1'b0;
-                dp_ren1_samp[5]     <= 1'b0;
-                dp_sampling[5]      <= 1'b0;
-                dp_addr0_samp[5]    <= 'b0;
-                dp_addr1_samp[5]    <= 'b0;
-                dp_din0_samp[5]     <= 'b0;
-                dp_din1_samp[5]     <= 'b0;
-                dp_wen0[5]          <= 1'b0;
-                dp_wen1[5]          <= 1'b0;
-                dp_ren0[5]          <= 1'b0;
-                dp_ren1[5]          <= 1'b0;
-                dp_addr0[5]         <= 'b0;
-                dp_addr1[5]         <= 'b0;
-                dp_din0[5]          <= 'b0;
-                dp_din1[5]          <= 'b0;
+                dp_wen0_samp[5]     = 1'b0;
+                dp_wen1_samp[5]     = 1'b0;
+                dp_ren0_samp[5]     = 1'b0;
+                dp_ren1_samp[5]     = 1'b0;
+                dp_sampling[5]      = 1'b0;
+                dp_addr0_samp[5]    = 'b0;
+                dp_addr1_samp[5]    = 'b0;
+                dp_din0_samp[5]     = 'b0;
+                dp_din1_samp[5]     = 'b0;
+                dp_wen0[5]          = 1'b0;
+                dp_wen1[5]          = 1'b0;
+                dp_ren0[5]          = 1'b0;
+                dp_ren1[5]          = 1'b0;
+                dp_addr0[5]         = 'b0;
+                dp_addr1[5]         = 'b0;
+                dp_din0[5]          = 'b0;
+                dp_din1[5]          = 'b0;
             end
         endcase
     end    
@@ -1707,123 +1707,123 @@ module BIKE (
     always @(*) begin
         case (dp_selection[6])  
             5'b01001 : begin
-                dp_wen0_samp[6]     <= h0_compact_sample_wren;
-                dp_wen1_samp[6]     <= h1_compact_sample_wren;
-                dp_ren0_samp[6]     <= h0_compact_sample_rden;
-                dp_ren1_samp[6]     <= h1_compact_sample_rden;
-                dp_sampling[6]      <= 1'b1;
-                dp_addr0_samp[6]    <= h_compact_sample_addr;
-                dp_addr1_samp[6]    <= h_compact_sample_addr;
-                dp_din0_samp[6]     <= h_compact_sample_dout;
-                dp_din1_samp[6]     <= h_compact_sample_dout;
-                dp_wen0[6]          <= 1'b0;
-                dp_wen1[6]          <= 1'b0;
-                dp_ren0[6]          <= 1'b0;
-                dp_ren1[6]          <= 1'b0;
-                dp_addr0[6]         <= 'b0;
-                dp_addr1[6]         <= 'b0;
-                dp_din0[6]          <= 'b0;
-                dp_din1[6]          <= 'b0;
+                dp_wen0_samp[6]     = h0_compact_sample_wren;
+                dp_wen1_samp[6]     = h1_compact_sample_wren;
+                dp_ren0_samp[6]     = h0_compact_sample_rden;
+                dp_ren1_samp[6]     = h1_compact_sample_rden;
+                dp_sampling[6]      = 1'b1;
+                dp_addr0_samp[6]    = h_compact_sample_addr;
+                dp_addr1_samp[6]    = h_compact_sample_addr;
+                dp_din0_samp[6]     = h_compact_sample_dout;
+                dp_din1_samp[6]     = h_compact_sample_dout;
+                dp_wen0[6]          = 1'b0;
+                dp_wen1[6]          = 1'b0;
+                dp_ren0[6]          = 1'b0;
+                dp_ren1[6]          = 1'b0;
+                dp_addr0[6]         = 'b0;
+                dp_addr1[6]         = 'b0;
+                dp_din0[6]          = 'b0;
+                dp_din1[6]          = 'b0;
             end
 
             5'b10001 : begin
-                dp_wen0_samp[6]     <= 1'b0;
-                dp_wen1_samp[6]     <= 1'b0;
-                dp_ren0_samp[6]     <= 1'b0;
-                dp_ren1_samp[6]     <= mul_vec_rden;
-                dp_sampling[6]      <= 1'b1;
-                dp_addr0_samp[6]    <= 'b0;
-                dp_addr1_samp[6]    <= mul_vec_addr;
-                dp_din0_samp[6]     <= 'b0;
-                dp_din1_samp[6]     <= 'b0;
-                dp_wen0[6]          <= 1'b0;
-                dp_wen1[6]          <= 1'b0;
-                dp_ren0[6]          <= 1'b0;
-                dp_ren1[6]          <= 1'b0;
-                dp_addr0[6]         <= 'b0;
-                dp_addr1[6]         <= 'b0;
-                dp_din0[6]          <= 'b0;
-                dp_din1[6]          <= 'b0;
+                dp_wen0_samp[6]     = 1'b0;
+                dp_wen1_samp[6]     = 1'b0;
+                dp_ren0_samp[6]     = 1'b0;
+                dp_ren1_samp[6]     = mul_vec_rden;
+                dp_sampling[6]      = 1'b1;
+                dp_addr0_samp[6]    = 'b0;
+                dp_addr1_samp[6]    = mul_vec_addr;
+                dp_din0_samp[6]     = 'b0;
+                dp_din1_samp[6]     = 'b0;
+                dp_wen0[6]          = 1'b0;
+                dp_wen1[6]          = 1'b0;
+                dp_ren0[6]          = 1'b0;
+                dp_ren1[6]          = 1'b0;
+                dp_addr0[6]         = 'b0;
+                dp_addr1[6]         = 'b0;
+                dp_din0[6]          = 'b0;
+                dp_din1[6]          = 'b0;
             end
 
             5'b00100 : begin
-                dp_wen0_samp[6]     <= 1'b0;
-                dp_wen1_samp[6]     <= 1'b0;
-                dp_ren0_samp[6]     <= 1'b0;
-                dp_ren1_samp[6]     <= 1'b0;
-                dp_sampling[6]      <= 1'b0;
-                dp_addr0_samp[6]    <= 'b0;
-                dp_addr1_samp[6]    <= 'b0;
-                dp_din0_samp[6]     <= 'b0;
-                dp_din1_samp[6]     <= 'b0;
-                dp_wen0[6]          <= black0_bfiter_wren;
-                dp_wen1[6]          <= black1_bfiter_wren;
-                dp_ren0[6]          <= black0_bfiter_rden;
-                dp_ren1[6]          <= black1_bfiter_rden;
-                dp_addr0[6]         <= black_bfiter_addr;
-                dp_addr1[6]         <= black_bfiter_addr;
-                dp_din0[6]          <= black_bfiter_dout;
-                dp_din1[6]          <= black_bfiter_dout;
+                dp_wen0_samp[6]     = 1'b0;
+                dp_wen1_samp[6]     = 1'b0;
+                dp_ren0_samp[6]     = 1'b0;
+                dp_ren1_samp[6]     = 1'b0;
+                dp_sampling[6]      = 1'b0;
+                dp_addr0_samp[6]    = 'b0;
+                dp_addr1_samp[6]    = 'b0;
+                dp_din0_samp[6]     = 'b0;
+                dp_din1_samp[6]     = 'b0;
+                dp_wen0[6]          = black0_bfiter_wren;
+                dp_wen1[6]          = black1_bfiter_wren;
+                dp_ren0[6]          = black0_bfiter_rden;
+                dp_ren1[6]          = black1_bfiter_rden;
+                dp_addr0[6]         = black_bfiter_addr;
+                dp_addr1[6]         = black_bfiter_addr;
+                dp_din0[6]          = black_bfiter_dout;
+                dp_din1[6]          = black_bfiter_dout;
             end
 
             5'b00111 : begin
-                dp_wen0_samp[6]     <= 1'b0;
-                dp_wen1_samp[6]     <= 1'b0;
-                dp_ren0_samp[6]     <= 1'b0;
-                dp_ren1_samp[6]     <= 1'b0;
-                dp_sampling[6]      <= 1'b0;
-                dp_addr0_samp[6]    <= 'b0;
-                dp_addr1_samp[6]    <= 'b0;
-                dp_din0_samp[6]     <= 'b0;
-                dp_din1_samp[6]     <= 'b0;
-                dp_wen0[6]          <= 1'b1;
-                dp_wen1[6]          <= 1'b1;
-                dp_ren0[6]          <= 1'b1;
-                dp_ren1[6]          <= 1'b1;
-                dp_addr0[6]         <= cnt_compe_out;
-                dp_addr1[6]         <= cnt_compe_out;
-                dp_din0[6]          <= 'b0;
-                dp_din1[6]          <= 'b0;
+                dp_wen0_samp[6]     = 1'b0;
+                dp_wen1_samp[6]     = 1'b0;
+                dp_ren0_samp[6]     = 1'b0;
+                dp_ren1_samp[6]     = 1'b0;
+                dp_sampling[6]      = 1'b0;
+                dp_addr0_samp[6]    = 'b0;
+                dp_addr1_samp[6]    = 'b0;
+                dp_din0_samp[6]     = 'b0;
+                dp_din1_samp[6]     = 'b0;
+                dp_wen0[6]          = 1'b1;
+                dp_wen1[6]          = 1'b1;
+                dp_ren0[6]          = 1'b1;
+                dp_ren1[6]          = 1'b1;
+                dp_addr0[6]         = cnt_compe_out;
+                dp_addr1[6]         = cnt_compe_out;
+                dp_din0[6]          = 'b0;
+                dp_din1[6]          = 'b0;
             end  
 
             5'b11111 : begin
-                dp_wen0_samp[6]     <= 1'b0;
-                dp_wen1_samp[6]     <= 1'b0;
-                dp_ren0_samp[6]     <= 1'b1;
-                dp_ren1_samp[6]     <= 1'b1;
-                dp_sampling[6]      <= 1'b1;
-                dp_addr0_samp[6]    <= cnt_out_out;
-                dp_addr1_samp[6]    <= cnt_out_out;
-                dp_din0_samp[6]     <= 'b0;
-                dp_din1_samp[6]     <= 'b0;
-                dp_wen0[6]          <= 1'b0;
-                dp_wen1[6]          <= 1'b0;
-                dp_ren0[6]          <= 1'b0;
-                dp_ren1[6]          <= 1'b0;
-                dp_addr0[6]         <= 'b0;
-                dp_addr1[6]         <= 'b0;
-                dp_din0[6]          <= 'b0;
-                dp_din1[6]          <= 'b0;
+                dp_wen0_samp[6]     = 1'b0;
+                dp_wen1_samp[6]     = 1'b0;
+                dp_ren0_samp[6]     = 1'b1;
+                dp_ren1_samp[6]     = 1'b1;
+                dp_sampling[6]      = 1'b1;
+                dp_addr0_samp[6]    = cnt_out_out;
+                dp_addr1_samp[6]    = cnt_out_out;
+                dp_din0_samp[6]     = 'b0;
+                dp_din1_samp[6]     = 'b0;
+                dp_wen0[6]          = 1'b0;
+                dp_wen1[6]          = 1'b0;
+                dp_ren0[6]          = 1'b0;
+                dp_ren1[6]          = 1'b0;
+                dp_addr0[6]         = 'b0;
+                dp_addr1[6]         = 'b0;
+                dp_din0[6]          = 'b0;
+                dp_din1[6]          = 'b0;
             end 
                         
             default : begin
-                dp_wen0_samp[6]     <= 1'b0;
-                dp_wen1_samp[6]     <= 1'b0;
-                dp_ren0_samp[6]     <= 1'b0;
-                dp_ren1_samp[6]     <= 1'b0;
-                dp_sampling[6]      <= 1'b0;
-                dp_addr0_samp[6]    <= 'b0;
-                dp_addr1_samp[6]    <= 'b0;
-                dp_din0_samp[6]     <= 'b0;
-                dp_din1_samp[6]     <= 'b0;
-                dp_wen0[6]          <= 1'b0;
-                dp_wen1[6]          <= 1'b0;
-                dp_ren0[6]          <= 1'b0;
-                dp_ren1[6]          <= 1'b0;
-                dp_addr0[6]         <= 'b0;
-                dp_addr1[6]         <= 'b0;
-                dp_din0[6]          <= 'b0;
-                dp_din1[6]          <= 'b0;
+                dp_wen0_samp[6]     = 1'b0;
+                dp_wen1_samp[6]     = 1'b0;
+                dp_ren0_samp[6]     = 1'b0;
+                dp_ren1_samp[6]     = 1'b0;
+                dp_sampling[6]      = 1'b0;
+                dp_addr0_samp[6]    = 'b0;
+                dp_addr1_samp[6]    = 'b0;
+                dp_din0_samp[6]     = 'b0;
+                dp_din1_samp[6]     = 'b0;
+                dp_wen0[6]          = 1'b0;
+                dp_wen1[6]          = 1'b0;
+                dp_ren0[6]          = 1'b0;
+                dp_ren1[6]          = 1'b0;
+                dp_addr0[6]         = 'b0;
+                dp_addr1[6]         = 'b0;
+                dp_din0[6]          = 'b0;
+                dp_din1[6]          = 'b0;
             end
         endcase
     end  
@@ -1840,63 +1840,63 @@ module BIKE (
     always @(*) begin
         case (dp_selection[7])    
             5'b00100 : begin
-                dp_wen0_samp[7]     <= 1'b0;
-                dp_wen1_samp[7]     <= 1'b0;
-                dp_ren0_samp[7]     <= 1'b0;
-                dp_ren1_samp[7]     <= 1'b0;
-                dp_sampling[7]      <= 1'b0;
-                dp_addr0_samp[7]    <= 'b0;
-                dp_addr1_samp[7]    <= 'b0;
-                dp_din0_samp[7]     <= 32'b0;
-                dp_din1_samp[7]     <= 32'b0;
-                dp_wen0[7]          <= gray0_bfiter_wren;
-                dp_wen1[7]          <= gray1_bfiter_wren;
-                dp_ren0[7]          <= gray0_bfiter_rden;
-                dp_ren1[7]          <= gray1_bfiter_rden;
-                dp_addr0[7]         <= gray_bfiter_addr;
-                dp_addr1[7]         <= gray_bfiter_addr;
-                dp_din0[7]          <= gray_bfiter_dout;
-                dp_din1[7]          <= gray_bfiter_dout;
+                dp_wen0_samp[7]     = 1'b0;
+                dp_wen1_samp[7]     = 1'b0;
+                dp_ren0_samp[7]     = 1'b0;
+                dp_ren1_samp[7]     = 1'b0;
+                dp_sampling[7]      = 1'b0;
+                dp_addr0_samp[7]    = 'b0;
+                dp_addr1_samp[7]    = 'b0;
+                dp_din0_samp[7]     = 32'b0;
+                dp_din1_samp[7]     = 32'b0;
+                dp_wen0[7]          = gray0_bfiter_wren;
+                dp_wen1[7]          = gray1_bfiter_wren;
+                dp_ren0[7]          = gray0_bfiter_rden;
+                dp_ren1[7]          = gray1_bfiter_rden;
+                dp_addr0[7]         = gray_bfiter_addr;
+                dp_addr1[7]         = gray_bfiter_addr;
+                dp_din0[7]          = gray_bfiter_dout;
+                dp_din1[7]          = gray_bfiter_dout;
             end          
 
             5'b00111 : begin
-                dp_wen0_samp[7]     <= 1'b0;
-                dp_wen1_samp[7]     <= 1'b0;
-                dp_ren0_samp[7]     <= 1'b0;
-                dp_ren1_samp[7]     <= 1'b0;
-                dp_sampling[7]      <= 1'b0;
-                dp_addr0_samp[7]    <= 'b0;
-                dp_addr1_samp[7]    <= 'b0;
-                dp_din0_samp[7]     <= 'b0;
-                dp_din1_samp[7]     <= 'b0;
-                dp_wen0[7]          <= 1'b1;
-                dp_wen1[7]          <= 1'b1;
-                dp_ren0[7]          <= 1'b1;
-                dp_ren1[7]          <= 1'b1;
-                dp_addr0[7]         <= cnt_compe_out;
-                dp_addr1[7]         <= cnt_compe_out;
-                dp_din0[7]          <= 'b0;
-                dp_din1[7]          <= 'b0;
+                dp_wen0_samp[7]     = 1'b0;
+                dp_wen1_samp[7]     = 1'b0;
+                dp_ren0_samp[7]     = 1'b0;
+                dp_ren1_samp[7]     = 1'b0;
+                dp_sampling[7]      = 1'b0;
+                dp_addr0_samp[7]    = 'b0;
+                dp_addr1_samp[7]    = 'b0;
+                dp_din0_samp[7]     = 'b0;
+                dp_din1_samp[7]     = 'b0;
+                dp_wen0[7]          = 1'b1;
+                dp_wen1[7]          = 1'b1;
+                dp_ren0[7]          = 1'b1;
+                dp_ren1[7]          = 1'b1;
+                dp_addr0[7]         = cnt_compe_out;
+                dp_addr1[7]         = cnt_compe_out;
+                dp_din0[7]          = 'b0;
+                dp_din1[7]          = 'b0;
             end   
                         
             default : begin
-                dp_wen0_samp[7]     <= 1'b0;
-                dp_wen1_samp[7]     <= 1'b0;
-                dp_ren0_samp[7]     <= 1'b0;
-                dp_ren1_samp[7]     <= 1'b0;
-                dp_sampling[7]      <= 1'b0;
-                dp_addr0_samp[7]    <= 'b0;
-                dp_addr1_samp[7]    <= 'b0;
-                dp_din0_samp[7]     <= 'b0;
-                dp_din1_samp[7]     <= 'b0;
-                dp_wen0[7]          <= 1'b0;
-                dp_wen1[7]          <= 1'b0;
-                dp_ren0[7]          <= 1'b0;
-                dp_ren1[7]          <= 1'b0;
-                dp_addr0[7]         <= 'b0;
-                dp_addr1[7]         <= 'b0;
-                dp_din0[7]          <= 'b0;
-                dp_din1[7]          <= 'b0;
+                dp_wen0_samp[7]     = 1'b0;
+                dp_wen1_samp[7]     = 1'b0;
+                dp_ren0_samp[7]     = 1'b0;
+                dp_ren1_samp[7]     = 1'b0;
+                dp_sampling[7]      = 1'b0;
+                dp_addr0_samp[7]    = 'b0;
+                dp_addr1_samp[7]    = 'b0;
+                dp_din0_samp[7]     = 'b0;
+                dp_din1_samp[7]     = 'b0;
+                dp_wen0[7]          = 1'b0;
+                dp_wen1[7]          = 1'b0;
+                dp_ren0[7]          = 1'b0;
+                dp_ren1[7]          = 1'b0;
+                dp_addr0[7]         = 'b0;
+                dp_addr1[7]         = 'b0;
+                dp_din0[7]          = 'b0;
+                dp_din1[7]          = 'b0;
             end
         endcase
     end    
@@ -1912,83 +1912,83 @@ module BIKE (
     always @(*) begin
         case (dp_selection[8])          
             5'b00100 : begin
-                dp_wen0_samp[8]     <= 1'b0;
-                dp_wen1_samp[8]     <= 1'b0;
-                dp_ren0_samp[8]     <= 1'b0;
-                dp_ren1_samp[8]     <= 1'b0;
-                dp_sampling[8]      <= 1'b0;
-                dp_addr0_samp[8]    <= 'b0;
-                dp_addr1_samp[8]    <= 'b0;
-                dp_din0_samp[8]     <= 'b0;
-                dp_din1_samp[8]     <= 'b0;
-                dp_wen0[8]          <= mul_valid;
-                dp_wen1[8]          <= 1'b0;
-                dp_ren0[8]          <= mul_valid;
-                dp_ren1[8]          <= 1'b0;
-                dp_addr0[8]         <= syndrome_copy_addr;
-                dp_addr1[8]         <= 'b0;
-                dp_din0[8]          <= syndrome_copy_din;
-                dp_din1[8]          <= 'b0;
+                dp_wen0_samp[8]     = 1'b0;
+                dp_wen1_samp[8]     = 1'b0;
+                dp_ren0_samp[8]     = 1'b0;
+                dp_ren1_samp[8]     = 1'b0;
+                dp_sampling[8]      = 1'b0;
+                dp_addr0_samp[8]    = 'b0;
+                dp_addr1_samp[8]    = 'b0;
+                dp_din0_samp[8]     = 'b0;
+                dp_din1_samp[8]     = 'b0;
+                dp_wen0[8]          = mul_valid;
+                dp_wen1[8]          = 1'b0;
+                dp_ren0[8]          = mul_valid;
+                dp_ren1[8]          = 1'b0;
+                dp_addr0[8]         = syndrome_copy_addr;
+                dp_addr1[8]         = 'b0;
+                dp_din0[8]          = syndrome_copy_din;
+                dp_din1[8]          = 'b0;
             end
 
             5'b01100 : begin
-                dp_wen0_samp[8]     <= 1'b0;
-                dp_wen1_samp[8]     <= 1'b0;
-                dp_ren0_samp[8]     <= 1'b0;
-                dp_ren1_samp[8]     <= 1'b0;
-                dp_sampling[8]      <= 1'b0;
-                dp_addr0_samp[8]    <= 'b0;
-                dp_addr1_samp[8]    <= 'b0;
-                dp_din0_samp[8]     <= 'b0;
-                dp_din1_samp[8]     <= 'b0;
-                dp_wen0[8]          <= 1'b0;
-                dp_wen1[8]          <= 1'b0;
-                dp_ren0[8]          <= mul_init_add_rden;
-                dp_ren1[8]          <= 1'b0;
-                dp_addr0[8]         <= mul_init_add_addr;
-                dp_addr1[8]         <= 'b0;
-                dp_din0[8]          <= 'b0;
-                dp_din1[8]          <= 'b0;
+                dp_wen0_samp[8]     = 1'b0;
+                dp_wen1_samp[8]     = 1'b0;
+                dp_ren0_samp[8]     = 1'b0;
+                dp_ren1_samp[8]     = 1'b0;
+                dp_sampling[8]      = 1'b0;
+                dp_addr0_samp[8]    = 'b0;
+                dp_addr1_samp[8]    = 'b0;
+                dp_din0_samp[8]     = 'b0;
+                dp_din1_samp[8]     = 'b0;
+                dp_wen0[8]          = 1'b0;
+                dp_wen1[8]          = 1'b0;
+                dp_ren0[8]          = mul_init_add_rden;
+                dp_ren1[8]          = 1'b0;
+                dp_addr0[8]         = mul_init_add_addr;
+                dp_addr1[8]         = 'b0;
+                dp_din0[8]          = 'b0;
+                dp_din1[8]          = 'b0;
             end                 
 
             5'b00111 : begin
-                dp_wen0_samp[8]     <= 1'b0;
-                dp_wen1_samp[8]     <= 1'b0;
-                dp_ren0_samp[8]     <= 1'b0;
-                dp_ren1_samp[8]     <= 1'b0;
-                dp_sampling[8]      <= 1'b0;
-                dp_addr0_samp[8]    <= 'b0;
-                dp_addr1_samp[8]    <= 'b0;
-                dp_din0_samp[8]     <= 'b0;
-                dp_din1_samp[8]     <= 'b0;
-                dp_wen0[8]          <= 1'b1;
-                dp_wen1[8]          <= 1'b1;
-                dp_ren0[8]          <= 1'b1;
-                dp_ren1[8]          <= 1'b1;
-                dp_addr0[8]         <= cnt_compe_out;
-                dp_addr1[8]         <= cnt_compe_out;
-                dp_din0[8]          <= 'b0;
-                dp_din1[8]          <= 'b0;
+                dp_wen0_samp[8]     = 1'b0;
+                dp_wen1_samp[8]     = 1'b0;
+                dp_ren0_samp[8]     = 1'b0;
+                dp_ren1_samp[8]     = 1'b0;
+                dp_sampling[8]      = 1'b0;
+                dp_addr0_samp[8]    = 'b0;
+                dp_addr1_samp[8]    = 'b0;
+                dp_din0_samp[8]     = 'b0;
+                dp_din1_samp[8]     = 'b0;
+                dp_wen0[8]          = 1'b1;
+                dp_wen1[8]          = 1'b1;
+                dp_ren0[8]          = 1'b1;
+                dp_ren1[8]          = 1'b1;
+                dp_addr0[8]         = cnt_compe_out;
+                dp_addr1[8]         = cnt_compe_out;
+                dp_din0[8]          = 'b0;
+                dp_din1[8]          = 'b0;
             end   
                                       
             default : begin
-                dp_wen0_samp[8]     <= 1'b0;
-                dp_wen1_samp[8]     <= 1'b0;
-                dp_ren0_samp[8]     <= 1'b0;
-                dp_ren1_samp[8]     <= 1'b0;
-                dp_sampling[8]      <= 1'b0;
-                dp_addr0_samp[8]    <= 'b0;
-                dp_addr1_samp[8]    <= 'b0;
-                dp_din0_samp[8]     <= 'b0;
-                dp_din1_samp[8]     <= 'b0;
-                dp_wen0[8]          <= 1'b0;
-                dp_wen1[8]          <= 1'b0;
-                dp_ren0[8]          <= 1'b0;
-                dp_ren1[8]          <= 1'b0;
-                dp_addr0[8]         <= 'b0;
-                dp_addr1[8]         <= 'b0;
-                dp_din0[8]          <= 'b0;
-                dp_din1[8]          <= 'b0;
+                dp_wen0_samp[8]     = 1'b0;
+                dp_wen1_samp[8]     = 1'b0;
+                dp_ren0_samp[8]     = 1'b0;
+                dp_ren1_samp[8]     = 1'b0;
+                dp_sampling[8]      = 1'b0;
+                dp_addr0_samp[8]    = 'b0;
+                dp_addr1_samp[8]    = 'b0;
+                dp_din0_samp[8]     = 'b0;
+                dp_din1_samp[8]     = 'b0;
+                dp_wen0[8]          = 1'b0;
+                dp_wen1[8]          = 1'b0;
+                dp_ren0[8]          = 1'b0;
+                dp_ren1[8]          = 1'b0;
+                dp_addr0[8]         = 'b0;
+                dp_addr1[8]         = 'b0;
+                dp_din0[8]          = 'b0;
+                dp_din1[8]          = 'b0;
             end
         endcase
     end    
@@ -2098,31 +2098,31 @@ module BIKE (
     // KECCAK Core ///////////////////////////////////////////////////////////////
     always @ (*) begin
         case(hash_selection)
-            2'b00 : keccak_enable <= sk_keccak_enable;
-            2'b01 : keccak_enable <= h_keccak_enable;
-            2'b10 : keccak_enable <= l_keccak_enable;
-            2'b11 : keccak_enable <= k_keccak_enable;
-            default : keccak_enable <= 1'b0;
+            2'b00 : keccak_enable = sk_keccak_enable;
+            2'b01 : keccak_enable = h_keccak_enable;
+            2'b10 : keccak_enable = l_keccak_enable;
+            2'b11 : keccak_enable = k_keccak_enable;
+            default : keccak_enable = 1'b0;
         endcase
     end
 
     always @ (*) begin
         case(hash_selection)
-            2'b00 : keccak_init <= sk_keccak_init;
-            2'b01 : keccak_init <= h_keccak_init;
-            2'b10 : keccak_init <= l_keccak_init;
-            2'b11 : keccak_init <= k_keccak_init;
-            default : keccak_init <= 1'b0;
+            2'b00 : keccak_init = sk_keccak_init;
+            2'b01 : keccak_init = h_keccak_init;
+            2'b10 : keccak_init = l_keccak_init;
+            2'b11 : keccak_init = k_keccak_init;
+            default : keccak_init = 1'b0;
         endcase
     end
     
     always @ (*) begin
         case(hash_selection)
-            2'b00 : keccak_m <= sk_keccak_m;
-            2'b01 : keccak_m <= h_keccak_m;
-            2'b10 : keccak_m <= l_keccak_m;
-            2'b11 : keccak_m <= k_keccak_m;
-            default : keccak_m <= {STATE_WIDTH{1'b0}};
+            2'b00 : keccak_m = sk_keccak_m;
+            2'b01 : keccak_m = h_keccak_m;
+            2'b10 : keccak_m = l_keccak_m;
+            2'b11 : keccak_m = k_keccak_m;
+            default : keccak_m = {STATE_WIDTH{1'b0}};
         endcase
     end    
     
@@ -2337,32 +2337,32 @@ module BIKE (
     // Contol signals
     always @(*) begin
         case (mul_sel)
-            2'b00  : mul_resetn <= decaps_mul_resetn;
-            2'b01  : mul_resetn <= inv_mul_resetn;
-            2'b10  : mul_resetn <= enc_mul_resetn;
-            2'b11  : mul_resetn <= decaps_mul_resetn;
-            default: mul_resetn <= 1'b0;
+            2'b00  : mul_resetn = decaps_mul_resetn;
+            2'b01  : mul_resetn = inv_mul_resetn;
+            2'b10  : mul_resetn = enc_mul_resetn;
+            2'b11  : mul_resetn = decaps_mul_resetn;
+            default: mul_resetn = 1'b0;
         endcase
     end
 
     always @(*) begin
         case (mul_sel)
-            2'b00  : mul_enable <= decaps_mul_enable;
-            2'b01  : mul_enable <= inv_mul_enable;
-            2'b10  : mul_enable <= enc_mul_enable;
-            2'b11  : mul_enable <= decaps_mul_enable;
-            default: mul_enable <= 1'b0;
+            2'b00  : mul_enable = decaps_mul_enable;
+            2'b01  : mul_enable = inv_mul_enable;
+            2'b10  : mul_enable = enc_mul_enable;
+            2'b11  : mul_enable = decaps_mul_enable;
+            default: mul_enable = 1'b0;
         endcase
     end
 
     // Multiplication vector
     always @(*) begin
         case (mul_sel)
-            2'b00  : mul_vec_din0 <= mul_recompute_syndrome_vec_din;
-            2'b01  : mul_vec_din0 <= dp_dout1_samp[6];
-            2'b10  : mul_vec_din0 <= dp_dout0_samp[0];
-            2'b11  : mul_vec_din0 <= {16'b0, dp_dout0_samp[1][15:0]};
-            default: mul_vec_din0 <= {B_WIDTH{1'b0}};
+            2'b00  : mul_vec_din0 = mul_recompute_syndrome_vec_din;
+            2'b01  : mul_vec_din0 = dp_dout1_samp[6];
+            2'b10  : mul_vec_din0 = dp_dout0_samp[0];
+            2'b11  : mul_vec_din0 = {16'b0, dp_dout0_samp[1][15:0]};
+            default: mul_vec_din0 = {B_WIDTH{1'b0}};
         endcase
     end   
     
@@ -2370,32 +2370,32 @@ module BIKE (
     // Multiplication matrix
     always @(*) begin
         case (mul_sel)
-            2'b00  : mul_mata_din0 <= mul_recompute_syndrome_mat_din;
-            2'b01  : mul_mata_din0 <= inv_mul_matrixa_din;
-            2'b10  : mul_mata_din0 <= dp_dout0[2];
-            2'b11  : mul_mata_din0 <= dp_dout0[2];
-            default: mul_mata_din0 <= {B_WIDTH{1'b0}};
+            2'b00  : mul_mata_din0 = mul_recompute_syndrome_mat_din;
+            2'b01  : mul_mata_din0 = inv_mul_matrixa_din;
+            2'b10  : mul_mata_din0 = dp_dout0[2];
+            2'b11  : mul_mata_din0 = dp_dout0[2];
+            default: mul_mata_din0 = {B_WIDTH{1'b0}};
         endcase
     end      
     
     // Multiplication result    
     always @(*) begin
         case (mul_sel)
-            2'b00  : mul_resa_din <= dp_dout0[3];
-            2'b01  : mul_resa_din <= dp_dout0[5];
-            2'b10  : mul_resa_din <= dp_dout0[1];
-            2'b11  : mul_resa_din <= dp_dout0[3];
-            default: mul_resa_din <= {B_WIDTH{1'b0}};
+            2'b00  : mul_resa_din = dp_dout0[3];
+            2'b01  : mul_resa_din = dp_dout0[5];
+            2'b10  : mul_resa_din = dp_dout0[1];
+            2'b11  : mul_resa_din = dp_dout0[3];
+            default: mul_resa_din = {B_WIDTH{1'b0}};
         endcase
     end
 
     always @(*) begin
         case (mul_sel)
-            2'b00  : mul_resb_din <= dp_dout1[3];
-            2'b01  : mul_resb_din <= dp_dout1[5];
-            2'b10  : mul_resb_din <= dp_dout1[1];
-            2'b11  : mul_resb_din <= dp_dout1[3];
-            default: mul_resb_din <= {B_WIDTH{1'b0}};
+            2'b00  : mul_resb_din = dp_dout1[3];
+            2'b01  : mul_resb_din = dp_dout1[5];
+            2'b10  : mul_resb_din = dp_dout1[1];
+            2'b11  : mul_resb_din = dp_dout1[3];
+            default: mul_resb_din = {B_WIDTH{1'b0}};
         endcase
     end
     //////////////////////////////////////////////////////////////////////////////
@@ -2406,18 +2406,18 @@ module BIKE (
         if(W_DIV_2[0]) begin
             always @(*) begin
                 case(syndrome_sel)
-                    2'b01   : syndrome_hw_din <= mul_resa_dout;
-                    2'b11   : syndrome_hw_din <= syndrome_a_upc_dout;
-                    default : syndrome_hw_din <= {B_WIDTH{1'b0}};
+                    2'b01   : syndrome_hw_din = mul_resa_dout;
+                    2'b11   : syndrome_hw_din = syndrome_a_upc_dout;
+                    default : syndrome_hw_din = {B_WIDTH{1'b0}};
                 endcase 
             end 
         end
         else begin
             always @(*) begin
                 case(syndrome_sel)
-                    2'b01   : syndrome_hw_din <= mul_resb_dout;
-                    2'b11   : syndrome_hw_din <= syndrome_a_upc_dout;
-                    default : syndrome_hw_din <= {B_WIDTH{1'b0}};
+                    2'b01   : syndrome_hw_din = mul_resb_dout;
+                    2'b11   : syndrome_hw_din = syndrome_a_upc_dout;
+                    default : syndrome_hw_din = {B_WIDTH{1'b0}};
                 endcase 
             end 
         end
@@ -2432,10 +2432,10 @@ module BIKE (
     
     always @ (*) begin
         case(hw_sel)
-            2'b01   : hw_din <= hw_mul_din;
-            2'b10   : hw_din <= hw_bfiter_din;
-            2'b11   : hw_din <= compe_xor;
-            default : hw_din <= {32{1'b0}};
+            2'b01   : hw_din = hw_mul_din;
+            2'b10   : hw_din = hw_bfiter_din;
+            2'b11   : hw_din = compe_xor;
+            default : hw_din = {32{1'b0}};
         endcase
     end
     
@@ -2454,7 +2454,7 @@ module BIKE (
     
     // indicates if the decoder succeded - if succeded decoder_res_out = 1'b1;
     assign decoder_res_in = (hw_dout == 0) ? 1'b1 : 1'b0;
-    always @ (posedge clk or negedge decoder_res_resetn) begin
+    always @ (posedge clk) begin
         if(~decoder_res_resetn) begin
             decoder_res_out <= 1'b0;
         end
@@ -2470,7 +2470,7 @@ module BIKE (
     
     // indicates if the Hamming weight of the decoded error vector is equal to T1 - if it is equal HW_E_OUT=1
     assign hw_e_in = (hw_dout == T1) ? 1'b1 : 1'b0;
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             hw_e_out <= 1'b0;
         end
@@ -2485,7 +2485,7 @@ module BIKE (
     end
     
     //  indicates if H(m')=(e0',e1') - if equal HW_COMPARE_OUT = '1'
-    always @ (posedge clk or negedge hw_compare_rstn) begin
+    always @ (posedge clk) begin
         if(~hw_compare_rstn) begin
             hw_compare_out <= 1'b0;
         end
@@ -2526,11 +2526,11 @@ module BIKE (
     
     always @(*) begin
         case(bfiter_sel)
-            2'b00   : th_bfiter_in <= th_dout;
-            2'b01   : th_bfiter_in <= (W/2+1)/2+1;
-            2'b10   : th_bfiter_in <= (W/2+1)/2+1;
-            2'b11   : th_bfiter_in <= th_dout;
-            default : th_bfiter_in <= 'b0; 
+            2'b00   : th_bfiter_in = th_dout;
+            2'b01   : th_bfiter_in = (W/2+1)/2+1;
+            2'b10   : th_bfiter_in = (W/2+1)/2+1;
+            2'b11   : th_bfiter_in = th_dout;
+            default : th_bfiter_in = 'b0; 
         endcase
     end
 
@@ -2600,7 +2600,7 @@ module BIKE (
     BIKE_counter_inc #(.SIZE(LOGSWORDS), .MAX_VALUE(SWORDS-1))
     cnt_compe (.clk(clk), .enable(cnt_compe_enable), .resetn(cnt_compe_resetn), .cnt_out(cnt_compe_out));
     
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             cnt_copy_enable <= 1'b0;
         end
@@ -2616,7 +2616,7 @@ module BIKE (
     assign e_copy_wren = decoder_res_out & hw_e_out;
     
     // comparison
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             sel_comp_error_poly <= 1'b0;
         end
@@ -2661,14 +2661,14 @@ module BIKE (
     
     always @(*) begin
         case(request_data)
-            tx_h0       : dout <= dp_dout0_samp[6];
-            tx_h1       : dout <= dp_dout1_samp[6];
-            tx_sigma    : dout <= m_reg_dout[dout_addr_d];
-            tx_h        : dout <= h_dout;
-            tx_c0       : dout <= c0_dout;
-            tx_c1       : dout <= c1_reg_dout[dout_addr_d];  
-            tx_k        : dout <= k_reg_dout[dout_addr_d]; 
-            default     : dout <= 32'b0;
+            tx_h0       : dout = dp_dout0_samp[6];
+            tx_h1       : dout = dp_dout1_samp[6];
+            tx_sigma    : dout = m_reg_dout[dout_addr_d];
+            tx_h        : dout = h_dout;
+            tx_c0       : dout = c0_dout;
+            tx_c1       : dout = c1_reg_dout[dout_addr_d];  
+            tx_k        : dout = k_reg_dout[dout_addr_d]; 
+            default     : dout = 32'b0;
         endcase
     end
 
@@ -2720,7 +2720,7 @@ module BIKE (
     reg [5:0] state_reg, state_next;
     
     // state register
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             state_reg <= s_idle;
         end
@@ -2738,31 +2738,31 @@ module BIKE (
             // -----------------------------------
             s_idle : begin
                 if(din_load) begin                      // load data
-                    state_next      <= s_load_data;
+                    state_next      = s_load_data;
                 end
                 else if(instruction == 3'b001) begin    // start key generation
-                    state_next      <= s_keygen_sample_seed;
+                    state_next      = s_keygen_sample_seed;
                 end
                 else if(instruction == 3'b010) begin    // start encapsulation
-                    state_next      <= s_encaps_sample_m;
+                    state_next      = s_encaps_sample_m;
                 end
                 else if(instruction == 3'b100) begin    // start decaps
-                    state_next      <= s_decaps_compute_syndrome;
+                    state_next      = s_decaps_compute_syndrome;
                 end
                 else if(request_data == tx_sigma || request_data == tx_c1 || request_data == tx_k) begin
-                    state_next      <= s_return_l_data;
+                    state_next      = s_return_l_data;
                 end
                 else if(request_data == tx_h || request_data == tx_c0) begin
-                    state_next      <= s_return_poly_data;
+                    state_next      = s_return_poly_data;
                 end
                 else if(request_data == tx_h0 || request_data == tx_h1) begin
-                    state_next      <= s_return_compact_data;
+                    state_next      = s_return_compact_data;
                 end                
                 else if(request_done) begin
-                    state_next      <= s_reset_memory;
+                    state_next      = s_reset_memory;
                 end
                 else begin                              // idle
-                    state_next      <= s_idle;
+                    state_next      = s_idle;
                 end
             end
             // -----------------------------------
@@ -2770,10 +2770,10 @@ module BIKE (
             // -----------------------------------
             s_keygen_sample_seed : begin
                 if (m_sample_done) begin
-                    state_next      <= s_keygen_sample_sk;
+                    state_next      = s_keygen_sample_sk;
                 end
                 else begin
-                    state_next      <= s_keygen_sample_seed;
+                    state_next      = s_keygen_sample_seed;
                 end
             end
             // -----------------------------------
@@ -2781,10 +2781,10 @@ module BIKE (
             // -----------------------------------
             s_keygen_sample_sk : begin
                 if (sk_sample_done) begin
-                    state_next      <= s_keygen_sample_sigma;
+                    state_next      = s_keygen_sample_sigma;
                 end
                 else begin
-                    state_next      <= s_keygen_sample_sk;
+                    state_next      = s_keygen_sample_sk;
                 end
             end
             // -----------------------------------
@@ -2792,10 +2792,10 @@ module BIKE (
             // -----------------------------------
             s_keygen_sample_sigma : begin
                 if (m_sample_done) begin
-                    state_next      <= s_keygen_inversion;
+                    state_next      = s_keygen_inversion;
                 end
                 else begin
-                    state_next      <= s_keygen_sample_sigma;
+                    state_next      = s_keygen_sample_sigma;
                 end
             end
             // -----------------------------------
@@ -2803,10 +2803,10 @@ module BIKE (
             // -----------------------------------
             s_keygen_inversion : begin
                 if (inv_done) begin
-                    state_next      <= s_keygen_multiplication;
+                    state_next      = s_keygen_multiplication;
                 end
                 else begin
-                    state_next      <= s_keygen_inversion;
+                    state_next      = s_keygen_inversion;
                 end
             end
             // -----------------------------------
@@ -2814,10 +2814,10 @@ module BIKE (
             // -----------------------------------
             s_keygen_multiplication : begin
                 if (mul_done) begin
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
                 else begin
-                    state_next      <= s_keygen_multiplication;
+                    state_next      = s_keygen_multiplication;
                 end
             end
             // -----------------------------------
@@ -2825,10 +2825,10 @@ module BIKE (
             // -----------------------------------
             s_encaps_sample_m : begin
                 if (m_sample_done == 1'b1) begin
-                    state_next      <= s_encaps_sample_e;
+                    state_next      = s_encaps_sample_e;
                 end
                 else begin
-                    state_next      <= s_encaps_sample_m;
+                    state_next      = s_encaps_sample_m;
                 end
             end
             // -----------------------------------
@@ -2836,27 +2836,27 @@ module BIKE (
             // -----------------------------------
             s_encaps_sample_e : begin
                 if(e_sample_done == 1'b1) begin
-                    state_next      <= s_encaps_reset_keccak;
+                    state_next      = s_encaps_reset_keccak;
                 end
                 else begin
-                    state_next      <= s_encaps_sample_e;
+                    state_next      = s_encaps_sample_e;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_encaps_reset_keccak : begin
-                state_next          <= s_encaps_hash_encode;
+                state_next          = s_encaps_hash_encode;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_encaps_hash_encode : begin
                 if(l_done == 1'b1) begin
-                    state_next      <= s_encaps_mul;
+                    state_next      = s_encaps_mul;
                 end
                 else begin
-                    state_next      <= s_encaps_hash_encode;
+                    state_next      = s_encaps_hash_encode;
                 end
             end
             // -----------------------------------
@@ -2864,10 +2864,10 @@ module BIKE (
             // -----------------------------------
             s_encaps_mul : begin
                 if(mul_done) begin
-                    state_next      <= s_encaps_hash_mc;
+                    state_next      = s_encaps_hash_mc;
                 end
                 else begin
-                    state_next      <= s_encaps_mul;
+                    state_next      = s_encaps_mul;
                 end
             end
             // -----------------------------------
@@ -2875,10 +2875,10 @@ module BIKE (
             // -----------------------------------
             s_encaps_hash_mc : begin
                 if(k_done) begin
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
                 else begin
-                    state_next      <= s_encaps_hash_mc;
+                    state_next      = s_encaps_hash_mc;
                 end
             end
             // -----------------------------------
@@ -2886,10 +2886,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_compute_syndrome : begin
                 if(mul_done) begin
-                    state_next      <= s_decaps_hw_th;
+                    state_next      = s_decaps_hw_th;
                 end
                 else begin
-                    state_next      <= s_decaps_compute_syndrome;
+                    state_next      = s_decaps_compute_syndrome;
                 end
             end
             // -----------------------------------
@@ -2897,10 +2897,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_hw_th : begin
                 if(cnt_hwth_done) begin
-                    state_next      <= s_decaps_check_progress;
+                    state_next      = s_decaps_check_progress;
                 end
                 else begin
-                    state_next      <= s_decaps_hw_th;
+                    state_next      = s_decaps_hw_th;
                 end
             end
             // -----------------------------------
@@ -2908,19 +2908,19 @@ module BIKE (
             // -----------------------------------
             s_decaps_check_progress : begin
                 if(cnt_nbiter_done) begin
-                    state_next      <= s_decaps_hash_l;
+                    state_next      = s_decaps_hash_l;
                 end
                 else if(cnt_nbiter_out == 0) begin
-                    state_next      <= s_decaps_bfiter_bg;
+                    state_next      = s_decaps_bfiter_bg;
                 end
                 else if(cnt_nbiter_out == 1) begin
-                    state_next      <= s_decaps_bfiter_black;
+                    state_next      = s_decaps_bfiter_black;
                 end
                 else if(cnt_nbiter_out == 2) begin
-                    state_next      <= s_decaps_bfiter_gray;
+                    state_next      = s_decaps_bfiter_gray;
                 end
                 else begin
-                    state_next      <= s_decaps_bfiter;
+                    state_next      = s_decaps_bfiter;
                 end
             end
             // -----------------------------------
@@ -2928,10 +2928,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_bfiter_bg : begin
                 if(bfiter_done) begin
-                    state_next      <= s_decaps_recompute_syndrome_h0;
+                    state_next      = s_decaps_recompute_syndrome_h0;
                 end
                 else begin
-                    state_next      <= s_decaps_bfiter_bg;
+                    state_next      = s_decaps_bfiter_bg;
                 end
             end
             // -----------------------------------
@@ -2939,10 +2939,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_bfiter_black : begin
                 if(bfiter_done) begin
-                    state_next      <= s_decaps_recompute_syndrome_h0;
+                    state_next      = s_decaps_recompute_syndrome_h0;
                 end
                 else begin
-                    state_next      <= s_decaps_bfiter_black;
+                    state_next      = s_decaps_bfiter_black;
                 end
             end
             // -----------------------------------
@@ -2950,10 +2950,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_bfiter_gray : begin
                 if(bfiter_done) begin
-                    state_next      <= s_decaps_recompute_syndrome_h0;
+                    state_next      = s_decaps_recompute_syndrome_h0;
                 end
                 else begin
-                    state_next      <= s_decaps_bfiter_gray;
+                    state_next      = s_decaps_bfiter_gray;
                 end
             end
             // -----------------------------------
@@ -2961,10 +2961,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_bfiter : begin
                 if(bfiter_done) begin
-                    state_next      <= s_decaps_hamming_weight;
+                    state_next      = s_decaps_hamming_weight;
                 end
                 else begin
-                    state_next      <= s_decaps_bfiter;
+                    state_next      = s_decaps_bfiter;
                 end
             end
             // -----------------------------------
@@ -2972,78 +2972,78 @@ module BIKE (
             // -----------------------------------
             s_decaps_recompute_syndrome_h0 : begin
                 if(mul_done) begin
-                    state_next      <= s_decaps_recompute_syndrome_rst;
+                    state_next      = s_decaps_recompute_syndrome_rst;
                 end
                 else begin
-                    state_next      <= s_decaps_recompute_syndrome_h0;
+                    state_next      = s_decaps_recompute_syndrome_h0;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_recompute_syndrome_rst : begin
-                state_next          <= s_decaps_recompute_syndrome_h1;
+                state_next          = s_decaps_recompute_syndrome_h1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_recompute_syndrome_h1 : begin
                 if(mul_done) begin
-                    state_next      <= s_decaps_inc_nbiter_cnt;
+                    state_next      = s_decaps_inc_nbiter_cnt;
                 end
                 else begin
-                    state_next      <= s_decaps_recompute_syndrome_h1;
+                    state_next      = s_decaps_recompute_syndrome_h1;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_inc_nbiter_cnt : begin
-                state_next          <= s_decaps_hw_th;
+                state_next          = s_decaps_hw_th;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_decaps_hamming_weight : begin
                 if(cnt_hwth_done) begin
-                    state_next      <= s_decaps_hamming_weight_rst;
+                    state_next      = s_decaps_hamming_weight_rst;
                 end
                 else begin
-                    state_next      <= s_decaps_hamming_weight;
+                    state_next      = s_decaps_hamming_weight;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_hamming_weight_rst : begin
-                state_next      <= s_decaps_recompute_syndrome_h0;
+                state_next      = s_decaps_recompute_syndrome_h0;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_hash_l : begin
                 if(l_done) begin
-                    state_next  <= s_decaps_reset_keccak;
+                    state_next  = s_decaps_reset_keccak;
                 end 
                 else begin
-                    state_next  <= s_decaps_hash_l;
+                    state_next  = s_decaps_hash_l;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_reset_keccak : begin
-                state_next      <= s_decaps_h_function;
+                state_next      = s_decaps_h_function;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_decaps_h_function : begin
                 if(e_sample_done) begin
-                    state_next  <= s_decaps_compe0;
+                    state_next  = s_decaps_compe0;
                 end 
                 else begin
-                    state_next  <= s_decaps_h_function;
+                    state_next  = s_decaps_h_function;
                 end
             end
             // -----------------------------------
@@ -3051,10 +3051,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_compe0 : begin
                 if(cnt_compe_done) begin
-                    state_next  <= s_decaps_compe1;
+                    state_next  = s_decaps_compe1;
                 end 
                 else begin
-                    state_next  <= s_decaps_compe0;
+                    state_next  = s_decaps_compe0;
                 end
             end
             // -----------------------------------
@@ -3062,10 +3062,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_compe1 : begin
                 if(cnt_compe_done) begin
-                    state_next  <= s_decaps_comp_hw;
+                    state_next  = s_decaps_comp_hw;
                 end 
                 else begin
-                    state_next  <= s_decaps_compe1;
+                    state_next  = s_decaps_compe1;
                 end
             end
             // -----------------------------------
@@ -3073,10 +3073,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_comp_hw : begin
                 if(cnt_hwth_done) begin
-                    state_next  <= s_decaps_k_function;
+                    state_next  = s_decaps_k_function;
                 end 
                 else begin
-                    state_next  <= s_decaps_comp_hw;
+                    state_next  = s_decaps_comp_hw;
                 end
             end
             // -----------------------------------
@@ -3084,10 +3084,10 @@ module BIKE (
             // -----------------------------------
             s_decaps_k_function : begin
                 if(k_done) begin
-                    state_next  <= s_done;
+                    state_next  = s_done;
                 end 
                 else begin
-                    state_next  <= s_decaps_k_function;
+                    state_next  = s_decaps_k_function;
                 end
             end
             // -----------------------------------
@@ -3095,7 +3095,7 @@ module BIKE (
             // -----------------------------------
             s_load_data : begin
                 if(din_done) begin
-                    state_next      <= s_idle;
+                    state_next      = s_idle;
                 end
             end
             // -----------------------------------
@@ -3103,7 +3103,7 @@ module BIKE (
             // -----------------------------------
             s_return_l_data : begin
                 if(cnt_out_l_done) begin
-                    state_next      <= s_return_delay;
+                    state_next      = s_return_delay;
                 end
             end
             // -----------------------------------
@@ -3111,7 +3111,7 @@ module BIKE (
             // -----------------------------------
             s_return_poly_data : begin
                 if(cnt_out_poly_done) begin
-                    state_next      <= s_return_delay;
+                    state_next      = s_return_delay;
                 end
             end
             // -----------------------------------
@@ -3119,7 +3119,7 @@ module BIKE (
             // -----------------------------------
             s_return_compact_data : begin
                 if(cnt_out_out == W/2-1) begin
-                    state_next      <= s_return_delay;
+                    state_next      = s_return_delay;
                 end
             end
             // -----------------------------------
@@ -3127,23 +3127,23 @@ module BIKE (
             // -----------------------------------
             s_reset_memory : begin
                 if(cnt_compe_done) begin
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
                 else begin
-                    state_next      <= s_reset_memory;
+                    state_next      = s_reset_memory;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_return_delay : begin
-                state_next          <= s_done;
+                state_next          = s_done;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_done : begin
-                state_next          <= s_idle;
+                state_next          = s_idle;
             end
             // -----------------------------------
             
@@ -3154,710 +3154,708 @@ module BIKE (
     always @(state_reg) begin
         // default outputs
         // Global control
-        busy                        <= 1'b0;
-        done                        <= 1'b0;
+        busy                        = 1'b0;
+        done                        = 1'b0;
         
         // Data-In
-        din_ready                   <= 1'b0;
-        data_load_en                <= 1'b0;
+        din_ready                   = 1'b0;
+        data_load_en                = 1'b0;
         
         // BRAM
-        dp_selection_fsm[0]         <= 'b0;
-        dp_selection_fsm[1]         <= 'b0;
-        dp_selection_fsm[2]         <= 'b0;
-        dp_selection_fsm[3]         <= 'b0;
-        dp_selection_fsm[4]         <= 'b0;
-        dp_selection_fsm[5]         <= 'b0;
-        dp_selection_fsm[6]         <= 'b0;
-        dp_selection_fsm[7]         <= 'b0;
-        dp_selection_fsm[8]         <= 'b0;
+        dp_selection_fsm[0]         = 'b0;
+        dp_selection_fsm[1]         = 'b0;
+        dp_selection_fsm[2]         = 'b0;
+        dp_selection_fsm[3]         = 'b0;
+        dp_selection_fsm[4]         = 'b0;
+        dp_selection_fsm[5]         = 'b0;
+        dp_selection_fsm[6]         = 'b0;
+        dp_selection_fsm[7]         = 'b0;
+        dp_selection_fsm[8]         = 'b0;
         
         // Sample secret key
-        sk_sample_enable            <= 1'b0;
-        sk_sample_resetn            <= 1'b0;
-        sample_seed                 <= 1'b0;
+        sk_sample_enable            = 1'b0;
+        sk_sample_resetn            = 1'b0;
+        sample_seed                 = 1'b0;
         
         // KECCAK
-        hash_selection              <= 2'b00;
-        keccak_resetn               <= 1'b0;
+        hash_selection              = 2'b00;
+        keccak_resetn               = 1'b0;
         
         // Sample message 
-        m_sample_resetn             <= 1'b0;
-        m_sample_enable             <= 1'b0;
+        m_sample_resetn             = 1'b0;
+        m_sample_enable             = 1'b0;
         
         // H-Function (Sample error)
-        sel_h                       <= 1'b0;
-        e_sample_resetn             <= 1'b0;
-        e_sample_enable             <= 1'b0;
+        sel_h                       = 1'b0;
+        e_sample_resetn             = 1'b0;
+        e_sample_enable             = 1'b0;
         
         // L-Function
-        sel_l                       <= 1'b0;
-        l_enable                    <= 1'b0;
-        l_resetn                    <= 1'b0;
-
+        sel_l                       = 1'b0;
+        l_enable                    = 1'b0;
+        l_resetn                    = 1'b0;
         // K-Function
-        sel_k                       <= 1'b0;    
-        k_enable                    <= 1'b0;
-        k_resetn                    <= 1'b0;
+        sel_k                       = 1'b0;    
+        k_enable                    = 1'b0;
+        k_resetn                    = 1'b0;
         
         // Inversion 
-        inv_resetn                  <= 1'b0;
-        inv_enable                  <= 1'b0;
-        inv_mul_done                <= 1'b0;
+        inv_resetn                  = 1'b0;
+        inv_enable                  = 1'b0;
+        inv_mul_done                = 1'b0;
                 
         // Multiplier
-        mul_sel                     <= 2'b00;
-        sel_hw_sparse               <= 1'b0;
-        mul_omit_init_add           <= 1'b0;
-        mul_init_add                <= 1'b0;
-        mul_recompute_syndrome_h1   <= 1'b0;
-        enc_mul_resetn              <= 1'b0;
-        enc_mul_enable              <= 1'b0;
-        inv_mul_enable              <= 1'b0;
-        inv_mul_resetn              <= 1'b0;
-        decaps_mul_resetn           <= 1'b0;
-        decaps_mul_enable           <= 1'b0;
+        mul_sel                     = 2'b00;
+        sel_hw_sparse               = 1'b0;
+        mul_omit_init_add           = 1'b0;
+        mul_init_add                = 1'b0;
+        mul_recompute_syndrome_h1   = 1'b0;
+        enc_mul_resetn              = 1'b0;
+        enc_mul_enable              = 1'b0;
+        inv_mul_enable              = 1'b0;
+        inv_mul_resetn              = 1'b0;
+        decaps_mul_resetn           = 1'b0;
+        decaps_mul_enable           = 1'b0;
         
         // Copy Memory
-        mem_copy_resetn             <= 1'b0;
-        mem_copy_enable             <= 1'b0;
-
+        mem_copy_resetn             = 1'b0;
+        mem_copy_enable             = 1'b0;
         // Hamming Weight
-        cnt_hw_enable               <= 1'b0;
-        cnt_hw_resetn               <= 1'b0;
-        hw_enable                   <= 1'b0;
-        hw_resetn                   <= 1'b0;
-        hw_sel                      <= 2'b00;
-        syndrome_sel                <= 2'b00;
+        cnt_hw_enable               = 1'b0;
+        cnt_hw_resetn               = 1'b0;
+        hw_enable                   = 1'b0;
+        hw_resetn                   = 1'b0;
+        hw_sel                      = 2'b00;
+        syndrome_sel                = 2'b00;
         
-        decoder_res_resetn          <= 1'b0;
-        decoder_res_enable          <= 1'b0;
+        decoder_res_resetn          = 1'b0;
+        decoder_res_enable          = 1'b0;
         
-        hw_check_e                  <= 1'b0;
+        hw_check_e                  = 1'b0;
         
         // Threshold
-        th_enable                   <= 1'b0;
+        th_enable                   = 1'b0;
         
-        cnt_hwth_rstn               <= 1'b0;
-        cnt_hwth_en                 <= 1'b0;     
+        cnt_hwth_rstn               = 1'b0;
+        cnt_hwth_en                 = 1'b0;     
         
         // BFIter
-        cnt_nbiter_en               <= 1'b0;
-        cnt_nbiter_rstn             <= 1'b0;
+        cnt_nbiter_en               = 1'b0;
+        cnt_nbiter_rstn             = 1'b0;
         
-        bfiter_resetn               <= 1'b0;
-        bfiter_enable               <= 1'b0;
-        bfiter_sel                  <= 2'b00;
+        bfiter_resetn               = 1'b0;
+        bfiter_enable               = 1'b0;
+        bfiter_sel                  = 2'b00;
         
-        cnt_copyh01_resetn          <= 1'b0;
-        cnt_copyh01_enable          <= 1'b0;
+        cnt_copyh01_resetn          = 1'b0;
+        cnt_copyh01_enable          = 1'b0;
         
         // compare error vector
-        cnt_compe_resetn            <= 1'b0;
-        cnt_compe_enable            <= 1'b0;
-        e0_compe_rden               <= 1'b0;
-        e1_compe_rden               <= 1'b0;
-        hw_compare_rstn             <= 1'b0;
-        hw_compare_en               <= 1'b0;
+        cnt_compe_resetn            = 1'b0;
+        cnt_compe_enable            = 1'b0;
+        e0_compe_rden               = 1'b0;
+        e1_compe_rden               = 1'b0;
+        hw_compare_rstn             = 1'b0;
+        hw_compare_en               = 1'b0;
         
         // Copy error vector
-        cnt_copy_resetn             <= 1'b0;
+        cnt_copy_resetn             = 1'b0;
         
         // Output
-        sel_out                     <= 1'b0;
-        dout_valid_intern           <= 1'b0;
-        cnt_out_enable              <= 1'b0;
-        cnt_out_resetn              <= 1'b0;
+        sel_out                     = 1'b0;
+        dout_valid_intern           = 1'b0;
+        cnt_out_enable              = 1'b0;
+        cnt_out_resetn              = 1'b0;
         
         case (state_reg)
             // -----------------------------------
             s_idle : begin
-                din_ready           <= 1'b1;
+                din_ready           = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_load_data : begin
-                busy                <= 1'b1;
-                data_load_en        <= 1'b1;
+                busy                = 1'b1;
+                data_load_en        = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_keygen_sample_seed : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                sample_seed         <= 1'b1;
-                m_sample_resetn     <= 1'b1;
-                m_sample_enable     <= 1'b1;
+                sample_seed         = 1'b1;
+                m_sample_resetn     = 1'b1;
+                m_sample_enable     = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_keygen_sample_sk : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                dp_selection_fsm[0] <= 5'b00001;
-                dp_selection_fsm[6] <= 5'b01001;
+                dp_selection_fsm[0] = 5'b00001;
+                dp_selection_fsm[6] = 5'b01001;
                 
-                keccak_resetn       <= 1'b1;
+                keccak_resetn       = 1'b1;
                 
-                sk_sample_resetn    <= 1'b1;
-                sk_sample_enable    <= 1'b1;
+                sk_sample_resetn    = 1'b1;
+                sk_sample_enable    = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_keygen_sample_sigma : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                m_sample_resetn     <= 1'b1;
-                m_sample_enable     <= 1'b1;
+                m_sample_resetn     = 1'b1;
+                m_sample_enable     = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_keygen_inversion : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                dp_selection_fsm[0] <= 5'b01001;
-                dp_selection_fsm[1] <= 5'b01001;
-                dp_selection_fsm[2] <= 5'b01001;
-                dp_selection_fsm[3] <= 5'b01001;
-                dp_selection_fsm[4] <= 5'b01001;
+                dp_selection_fsm[0] = 5'b01001;
+                dp_selection_fsm[1] = 5'b01001;
+                dp_selection_fsm[2] = 5'b01001;
+                dp_selection_fsm[3] = 5'b01001;
+                dp_selection_fsm[4] = 5'b01001;
                 
-                inv_enable          <= 1'b1;
-                inv_resetn          <= 1'b1;
+                inv_enable          = 1'b1;
+                inv_resetn          = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_keygen_multiplication : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                dp_selection_fsm[3] <= 5'b10001;
-                dp_selection_fsm[4] <= 5'b10001;
-                dp_selection_fsm[5] <= 5'b01001;
-                dp_selection_fsm[6] <= 5'b10001;
+                dp_selection_fsm[3] = 5'b10001;
+                dp_selection_fsm[4] = 5'b10001;
+                dp_selection_fsm[5] = 5'b01001;
+                dp_selection_fsm[6] = 5'b10001;
                 
-                mul_sel             <= 2'b01;
-                inv_mul_enable      <= 1'b1;
-                inv_mul_resetn      <= 1'b1;
-                sel_hw_sparse       <= 1'b1;                
+                mul_sel             = 2'b01;
+                inv_mul_enable      = 1'b1;
+                inv_mul_resetn      = 1'b1;
+                sel_hw_sparse       = 1'b1;                
             end
             // -----------------------------------
                                                                                     
             // -----------------------------------
             s_encaps_sample_m : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                                 
-                m_sample_resetn     <= 1'b1;
-                m_sample_enable     <= 1'b1;
+                m_sample_resetn     = 1'b1;
+                m_sample_enable     = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_encaps_sample_e : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                dp_selection_fsm[0] <= 5'b01010;
-                dp_selection_fsm[3] <= 5'b01010;
+                dp_selection_fsm[0] = 5'b01010;
+                dp_selection_fsm[3] = 5'b01010;
                 
-                hash_selection      <= 2'b01;
-                keccak_resetn       <= 1'b1;
+                hash_selection      = 2'b01;
+                keccak_resetn       = 1'b1;
                 
-                e_sample_resetn     <= 1'b1;
-                e_sample_enable     <= 1'b1;
+                e_sample_resetn     = 1'b1;
+                e_sample_enable     = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_encaps_reset_keccak : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
             end
             // -----------------------------------            
             
             // -----------------------------------
             s_encaps_hash_encode : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
                 // L-Function
-                dp_selection_fsm[3] <= 5'b10010;
+                dp_selection_fsm[3] = 5'b10010;
                 
-                hash_selection      <= 2'b10;
-                keccak_resetn       <= 1'b1;
+                hash_selection      = 2'b10;
+                keccak_resetn       = 1'b1;
                 
-                l_resetn            <= 1'b1;
-                l_enable            <= 1'b1;
+                l_resetn            = 1'b1;
+                l_enable            = 1'b1;
                 
                 // Multiplicaton
-                dp_selection_fsm[0] <= 5'b10010;
-                dp_selection_fsm[1] <= 5'b01010;
-                dp_selection_fsm[2] <= 5'b01010;
+                dp_selection_fsm[0] = 5'b10010;
+                dp_selection_fsm[1] = 5'b01010;
+                dp_selection_fsm[2] = 5'b01010;
                 
-                mul_sel             <= 2'b10;
-                enc_mul_resetn      <= 1'b1;
-                enc_mul_enable      <= 1'b1;
+                mul_sel             = 2'b10;
+                enc_mul_resetn      = 1'b1;
+                enc_mul_enable      = 1'b1;
             end
             // -----------------------------------            
             
             // -----------------------------------
             s_encaps_mul : begin
-                busy                <= 1'b1;
+                busy                = 1'b1;
                 
-                dp_selection_fsm[0] <= 5'b10010;
-                dp_selection_fsm[1] <= 5'b01010;
-                dp_selection_fsm[2] <= 5'b01010;
+                dp_selection_fsm[0] = 5'b10010;
+                dp_selection_fsm[1] = 5'b01010;
+                dp_selection_fsm[2] = 5'b01010;
                 
-                mul_sel             <= 2'b10;
-                enc_mul_resetn      <= 1'b1;
-                enc_mul_enable      <= 1'b1;
+                mul_sel             = 2'b10;
+                enc_mul_resetn      = 1'b1;
+                enc_mul_enable      = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_encaps_hash_mc : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[0]     <= 5'b11010;
-                dp_selection_fsm[1]     <= 5'b10010;
+                dp_selection_fsm[0]     = 5'b11010;
+                dp_selection_fsm[1]     = 5'b10010;
                 
-                hash_selection          <= 2'b11;
-                keccak_resetn           <= 1'b1;
+                hash_selection          = 2'b11;
+                keccak_resetn           = 1'b1;
                 
-                k_resetn                <= 1'b1;
-                k_enable                <= 1'b1;
+                k_resetn                = 1'b1;
+                k_enable                = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_compute_syndrome : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b10100;
-                dp_selection_fsm[2]     <= 5'b01100;
-                dp_selection_fsm[3]     <= 5'b00100;
-                dp_selection_fsm[4]     <= 5'b00100;
-                dp_selection_fsm[8]     <= 5'b00100;
+                dp_selection_fsm[1]     = 5'b10100;
+                dp_selection_fsm[2]     = 5'b01100;
+                dp_selection_fsm[3]     = 5'b00100;
+                dp_selection_fsm[4]     = 5'b00100;
+                dp_selection_fsm[8]     = 5'b00100;
                 
-                mul_sel                 <= 2'b11;
-                sel_hw_sparse           <= 1'b1;
-                decaps_mul_resetn       <= 1'b1;
-                decaps_mul_enable       <= 1'b1;
+                mul_sel                 = 2'b11;
+                sel_hw_sparse           = 1'b1;
+                decaps_mul_resetn       = 1'b1;
+                decaps_mul_enable       = 1'b1;
                 
-                syndrome_sel            <= 2'b01;
-                hw_sel                  <= 2'b01;
+                syndrome_sel            = 2'b01;
+                hw_sel                  = 2'b01;
                 
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_recompute_syndrome_h0 : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b10100;
-                dp_selection_fsm[3]     <= 5'b00100;
-                dp_selection_fsm[4]     <= 5'b00100;
-                dp_selection_fsm[5]     <= 5'b01100;
-                dp_selection_fsm[8]     <= 5'b01100;
+                dp_selection_fsm[1]     = 5'b10100;
+                dp_selection_fsm[3]     = 5'b00100;
+                dp_selection_fsm[4]     = 5'b00100;
+                dp_selection_fsm[5]     = 5'b01100;
+                dp_selection_fsm[8]     = 5'b01100;
                 
-                mul_sel                 <= 2'b00;
-                mul_init_add            <= 1'b1;    
-                decaps_mul_resetn       <= 1'b1;
-                decaps_mul_enable       <= 1'b1;               
-                sel_hw_sparse           <= 1'b1;
+                mul_sel                 = 2'b00;
+                mul_init_add            = 1'b1;    
+                decaps_mul_resetn       = 1'b1;
+                decaps_mul_enable       = 1'b1;               
+                sel_hw_sparse           = 1'b1;
                 
-                // syndrome_sel            <= 2'b01;
-                // hw_sel                  <= 2'b01;
+                // syndrome_sel            = 2'b01;
+                // hw_sel                  = 2'b01;
                 
-                // hw_resetn               <= 1'b1;
-                // hw_enable               <= 1'b1;
+                // hw_resetn               = 1'b1;
+                // hw_enable               = 1'b1;
                 
-                cnt_nbiter_rstn         <= 1'b1;
+                cnt_nbiter_rstn         = 1'b1;
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_recompute_syndrome_rst : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                                 
-                cnt_nbiter_rstn         <= 1'b1;
+                cnt_nbiter_rstn         = 1'b1;
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_recompute_syndrome_h1 : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b10100;
-                dp_selection_fsm[3]     <= 5'b00100;
-                dp_selection_fsm[4]     <= 5'b00100;
-                dp_selection_fsm[5]     <= 5'b01100;
+                dp_selection_fsm[1]     = 5'b10100;
+                dp_selection_fsm[3]     = 5'b00100;
+                dp_selection_fsm[4]     = 5'b00100;
+                dp_selection_fsm[5]     = 5'b01100;
                 
-                mul_sel                 <= 2'b00;
-                mul_init_add            <= 1'b1;    
-                decaps_mul_resetn       <= 1'b1;
-                decaps_mul_enable       <= 1'b1;
-                mul_recompute_syndrome_h1 <= 1'b1;
-                sel_hw_sparse           <= 1'b1;
+                mul_sel                 = 2'b00;
+                mul_init_add            = 1'b1;    
+                decaps_mul_resetn       = 1'b1;
+                decaps_mul_enable       = 1'b1;
+                mul_recompute_syndrome_h1 = 1'b1;
+                sel_hw_sparse           = 1'b1;
                 
-                syndrome_sel            <= 2'b01;
-                hw_sel                  <= 2'b01;
+                syndrome_sel            = 2'b01;
+                hw_sel                  = 2'b01;
                 
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
-                cnt_nbiter_rstn         <= 1'b1;
+                cnt_nbiter_rstn         = 1'b1;
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_inc_nbiter_cnt : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
-                th_enable               <= 1'b1;
+                th_enable               = 1'b1;
                 
-                cnt_hwth_rstn           <= 1'b1;
-                cnt_hwth_en             <= 1'b1;      
+                cnt_hwth_rstn           = 1'b1;
+                cnt_hwth_en             = 1'b1;      
                 
-                cnt_nbiter_rstn         <= 1'b1;
-                cnt_nbiter_en           <= 1'b1;           
+                cnt_nbiter_rstn         = 1'b1;
+                cnt_nbiter_en           = 1'b1;           
             end
             // ----------------------------------- 
                         
             // -----------------------------------
             s_decaps_hw_th : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
-                th_enable               <= 1'b1;
+                th_enable               = 1'b1;
                 
-                cnt_hwth_rstn           <= 1'b1;
-                cnt_hwth_en             <= 1'b1;      
+                cnt_hwth_rstn           = 1'b1;
+                cnt_hwth_en             = 1'b1;      
                 
-                cnt_nbiter_rstn         <= 1'b1;     
+                cnt_nbiter_rstn         = 1'b1;     
                 
-                decoder_res_resetn      <= 1'b1;      
+                decoder_res_resetn      = 1'b1;      
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_check_progress : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                decoder_res_resetn      <= 1'b1;
-                decoder_res_enable      <= 1'b1;     
+                decoder_res_resetn      = 1'b1;
+                decoder_res_enable      = 1'b1;     
                  
-                cnt_nbiter_rstn         <= 1'b1;
+                cnt_nbiter_rstn         = 1'b1;
             end
             // ----------------------------------- 
             
             // -----------------------------------
             s_decaps_bfiter_bg : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b11100;
-                dp_selection_fsm[4]     <= 5'b01100;
-                dp_selection_fsm[5]     <= 5'b00100;
-                dp_selection_fsm[6]     <= 5'b00100;
-                dp_selection_fsm[7]     <= 5'b00100;
+                dp_selection_fsm[1]     = 5'b11100;
+                dp_selection_fsm[4]     = 5'b01100;
+                dp_selection_fsm[5]     = 5'b00100;
+                dp_selection_fsm[6]     = 5'b00100;
+                dp_selection_fsm[7]     = 5'b00100;
                 
-                syndrome_sel            <= 2'b11;
+                syndrome_sel            = 2'b11;
                 
                 // Bfiter
-                bfiter_resetn           <= 1'b1;
-                bfiter_enable           <= 1'b1;
-                bfiter_sel              <= 2'b00;
+                bfiter_resetn           = 1'b1;
+                bfiter_enable           = 1'b1;
+                bfiter_sel              = 2'b00;
                 
                 // Counter
-                cnt_nbiter_rstn         <= 1'b1;             
+                cnt_nbiter_rstn         = 1'b1;             
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_bfiter_black : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b11100;
-                dp_selection_fsm[4]     <= 5'b01100;
-                dp_selection_fsm[5]     <= 5'b00100;
-                dp_selection_fsm[6]     <= 5'b00100;
-                dp_selection_fsm[7]     <= 5'b00100;
+                dp_selection_fsm[1]     = 5'b11100;
+                dp_selection_fsm[4]     = 5'b01100;
+                dp_selection_fsm[5]     = 5'b00100;
+                dp_selection_fsm[6]     = 5'b00100;
+                dp_selection_fsm[7]     = 5'b00100;
                 
-                syndrome_sel            <= 2'b11;
+                syndrome_sel            = 2'b11;
                 
                 // Bfiter
-                bfiter_resetn           <= 1'b1;
-                bfiter_enable           <= 1'b1;
-                bfiter_sel              <= 2'b01;
+                bfiter_resetn           = 1'b1;
+                bfiter_enable           = 1'b1;
+                bfiter_sel              = 2'b01;
                 
                 // Counter
-                cnt_nbiter_rstn         <= 1'b1;             
+                cnt_nbiter_rstn         = 1'b1;             
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_bfiter_gray : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b11100;
-                dp_selection_fsm[4]     <= 5'b01100;
-                dp_selection_fsm[5]     <= 5'b00100;
-                dp_selection_fsm[6]     <= 5'b00100;
-                dp_selection_fsm[7]     <= 5'b00100;
+                dp_selection_fsm[1]     = 5'b11100;
+                dp_selection_fsm[4]     = 5'b01100;
+                dp_selection_fsm[5]     = 5'b00100;
+                dp_selection_fsm[6]     = 5'b00100;
+                dp_selection_fsm[7]     = 5'b00100;
                 
-                syndrome_sel            <= 2'b11;
+                syndrome_sel            = 2'b11;
                 
                 // Bfiter
-                bfiter_resetn           <= 1'b1;
-                bfiter_enable           <= 1'b1;
-                bfiter_sel              <= 2'b10;
+                bfiter_resetn           = 1'b1;
+                bfiter_enable           = 1'b1;
+                bfiter_sel              = 2'b10;
                 
                 // Counter
-                cnt_nbiter_rstn         <= 1'b1;             
+                cnt_nbiter_rstn         = 1'b1;             
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_bfiter : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[1]     <= 5'b11100;
-                dp_selection_fsm[4]     <= 5'b01100;
-                dp_selection_fsm[5]     <= 5'b00100;
-                dp_selection_fsm[6]     <= 5'b00100;
-                dp_selection_fsm[7]     <= 5'b00100;
+                dp_selection_fsm[1]     = 5'b11100;
+                dp_selection_fsm[4]     = 5'b01100;
+                dp_selection_fsm[5]     = 5'b00100;
+                dp_selection_fsm[6]     = 5'b00100;
+                dp_selection_fsm[7]     = 5'b00100;
                 
-                syndrome_sel            <= 2'b11;
-                hw_sel                  <= 2'b10;
+                syndrome_sel            = 2'b11;
+                hw_sel                  = 2'b10;
                 
                 // Bfiter
-                bfiter_resetn           <= 1'b1;
-                bfiter_enable           <= 1'b1;
-                bfiter_sel              <= 2'b11;
+                bfiter_resetn           = 1'b1;
+                bfiter_enable           = 1'b1;
+                bfiter_sel              = 2'b11;
                 
                 // Counter
-                cnt_nbiter_rstn         <= 1'b1;           
+                cnt_nbiter_rstn         = 1'b1;           
                 
                 // Hamming weight
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
-                decoder_res_resetn      <= 1'b1;   
+                decoder_res_resetn      = 1'b1;   
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_hamming_weight : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                hw_sel                  <= 2'b10;
+                hw_sel                  = 2'b10;
 
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
-                hw_check_e              <= 1'b1;
+                hw_check_e              = 1'b1;
                 
-                cnt_hwth_rstn           <= 1'b1;
-                cnt_hwth_en             <= 1'b1;   
+                cnt_hwth_rstn           = 1'b1;
+                cnt_hwth_en             = 1'b1;   
                                 
                 // Counter
-                cnt_nbiter_rstn         <= 1'b1;               
+                cnt_nbiter_rstn         = 1'b1;               
             end
             // -----------------------------------   
 
             // -----------------------------------
             s_decaps_hamming_weight_rst : begin
-                busy                    <= 1'b1;  
+                busy                    = 1'b1;  
                 
                 // Counter
-                cnt_nbiter_rstn         <= 1'b1;          
+                cnt_nbiter_rstn         = 1'b1;          
             end
             // -----------------------------------   
 
             // -----------------------------------
             s_decaps_hash_l : begin
-                busy                    <= 1'b1;  
+                busy                    = 1'b1;  
                 
                 // L-Function
-                sel_l                   <= 1'b1;
-                dp_selection_fsm[5]     <= 5'b10100;
+                sel_l                   = 1'b1;
+                dp_selection_fsm[5]     = 5'b10100;
                 
-                hash_selection          <= 2'b10;
-                keccak_resetn           <= 1'b1;
+                hash_selection          = 2'b10;
+                keccak_resetn           = 1'b1;
                 
-                l_resetn                <= 1'b1;
-                l_enable                <= 1'b1;
+                l_resetn                = 1'b1;
+                l_enable                = 1'b1;
                   
                 // Check
-                decoder_res_resetn      <= 1'b1;        
+                decoder_res_resetn      = 1'b1;        
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_decaps_reset_keccak : begin
-                busy                    <= 1'b1;      
+                busy                    = 1'b1;      
             end
             // ----------------------------------- 
                         
             // -----------------------------------
             s_decaps_h_function : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[0]     <= 5'b00100;
+                dp_selection_fsm[0]     = 5'b00100;
                 
-                hash_selection          <= 2'b01;
-                keccak_resetn           <= 1'b1;
+                hash_selection          = 2'b01;
+                keccak_resetn           = 1'b1;
                 
                 // H-Function
-                sel_h                   <= 1'b1;
-                e_sample_resetn         <= 1'b1;
-                e_sample_enable         <= 1'b1;
+                sel_h                   = 1'b1;
+                e_sample_resetn         = 1'b1;
+                e_sample_enable         = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_compe0 : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[0]     <= 5'b11100;
-                dp_selection_fsm[5]     <= 5'b11100;
+                dp_selection_fsm[0]     = 5'b11100;
+                dp_selection_fsm[5]     = 5'b11100;
                 
                 // Hamming Weight
-                hw_sel                  <= 2'b11;
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_sel                  = 2'b11;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
                 // Counter
-                cnt_compe_resetn        <= 1'b1;
-                cnt_compe_enable        <= 1'b1;
+                cnt_compe_resetn        = 1'b1;
+                cnt_compe_enable        = 1'b1;
                 
                 // Comparison
-                e0_compe_rden           <= 1'b1;
+                e0_compe_rden           = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_compe1 : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[0]     <= 5'b11100;
-                dp_selection_fsm[5]     <= 5'b11100;
+                dp_selection_fsm[0]     = 5'b11100;
+                dp_selection_fsm[5]     = 5'b11100;
                 
                 // Hamming Weight
-                hw_sel                  <= 2'b11;
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
+                hw_sel                  = 2'b11;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
                 
                 // Counter
-                cnt_compe_resetn        <= 1'b1;
-                cnt_compe_enable        <= 1'b1;
+                cnt_compe_resetn        = 1'b1;
+                cnt_compe_enable        = 1'b1;
                 
                 // Comparison
-                e1_compe_rden           <= 1'b1;
+                e1_compe_rden           = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_comp_hw : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
                 // Hamming Weight
-                hw_resetn               <= 1'b1;
-                hw_enable               <= 1'b1;
-                hw_compare_rstn         <= 1'b1;
-                hw_compare_en           <= 1'b1;
+                hw_resetn               = 1'b1;
+                hw_enable               = 1'b1;
+                hw_compare_rstn         = 1'b1;
+                hw_compare_en           = 1'b1;
                  
                 // Counter
-                cnt_hwth_rstn           <= 1'b1;
-                cnt_hwth_en             <= 1'b1;
+                cnt_hwth_rstn           = 1'b1;
+                cnt_hwth_en             = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_decaps_k_function : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
                 // Memory
-                dp_selection_fsm[2]     <= 5'b10100;
+                dp_selection_fsm[2]     = 5'b10100;
                 
                 // K-Function
-                sel_k                   <= 1'b1;
-                hash_selection          <= 2'b11;
-                keccak_resetn           <= 1'b1;
+                sel_k                   = 1'b1;
+                hash_selection          = 2'b11;
+                keccak_resetn           = 1'b1;
                 
-                k_resetn                <= 1'b1;
-                k_enable                <= 1'b1;
+                k_resetn                = 1'b1;
+                k_enable                = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_return_l_data : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                sel_out                 <= 1'b1;
+                sel_out                 = 1'b1;
                 
-                dout_valid_intern       <= 1'b1;
-                cnt_out_enable          <= 1'b1;
-                cnt_out_resetn          <= 1'b1;
+                dout_valid_intern       = 1'b1;
+                cnt_out_enable          = 1'b1;
+                cnt_out_resetn          = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_return_poly_data : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dout_valid_intern       <= 1'b1;
-                cnt_out_enable          <= 1'b1;
-                cnt_out_resetn          <= 1'b1;
+                dout_valid_intern       = 1'b1;
+                cnt_out_enable          = 1'b1;
+                cnt_out_resetn          = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_return_compact_data : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dout_valid_intern       <= 1'b1;
-                cnt_out_enable          <= 1'b1;
-                cnt_out_resetn          <= 1'b1;
+                dout_valid_intern       = 1'b1;
+                cnt_out_enable          = 1'b1;
+                cnt_out_resetn          = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_return_delay : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_reset_memory : begin
-                busy                    <= 1'b1;
+                busy                    = 1'b1;
                 
-                dp_selection_fsm[0]     <= 5'b00111;
-                dp_selection_fsm[1]     <= 5'b00111;
-                dp_selection_fsm[2]     <= 5'b00111;
-                dp_selection_fsm[3]     <= 5'b00111;
-                dp_selection_fsm[4]     <= 5'b00111;
-                dp_selection_fsm[5]     <= 5'b00111;
-                dp_selection_fsm[6]     <= 5'b00111;
-                dp_selection_fsm[7]     <= 5'b00111;
-                dp_selection_fsm[8]     <= 5'b00111;
+                dp_selection_fsm[0]     = 5'b00111;
+                dp_selection_fsm[1]     = 5'b00111;
+                dp_selection_fsm[2]     = 5'b00111;
+                dp_selection_fsm[3]     = 5'b00111;
+                dp_selection_fsm[4]     = 5'b00111;
+                dp_selection_fsm[5]     = 5'b00111;
+                dp_selection_fsm[6]     = 5'b00111;
+                dp_selection_fsm[7]     = 5'b00111;
+                dp_selection_fsm[8]     = 5'b00111;
 
-                cnt_compe_enable        <= 1'b1;
-                cnt_compe_resetn        <= 1'b1;
+                cnt_compe_enable        = 1'b1;
+                cnt_compe_resetn        = 1'b1;
             end
             // -----------------------------------
                                                                                                                                                                                                                                  
             // -----------------------------------
             s_done : begin
-                done                    <= 1'b1;
+                done                    = 1'b1;
             end
             // -----------------------------------
         endcase

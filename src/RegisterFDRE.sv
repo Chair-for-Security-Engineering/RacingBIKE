@@ -34,7 +34,7 @@ module RegisterFDRE
     );
 
     // Register description //////////////////////////////////////////////////////
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             q <= {SIZE{1'b0}};
         end

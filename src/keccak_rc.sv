@@ -41,79 +41,79 @@ reg [63:0] const_signal;  // BEHAVIORAL ----------------------------------------
     always @(round) begin
         case(round)
             5'b 00000 : begin
-              const_signal <= 64'h 0000000000000001;
+              const_signal = 64'h 0000000000000001;
             end
             5'b 00001 : begin
-              const_signal <= 64'h 0000000000008082;
+              const_signal = 64'h 0000000000008082;
             end
             5'b 00010 : begin
-              const_signal <= 64'h 800000000000808A;
+              const_signal = 64'h 800000000000808A;
             end
             5'b 00011 : begin
-              const_signal <= 64'h 8000000080008000;
+              const_signal = 64'h 8000000080008000;
             end
             5'b 00100 : begin
-              const_signal <= 64'h 000000000000808B;
+              const_signal = 64'h 000000000000808B;
             end
             5'b 00101 : begin
-              const_signal <= 64'h 0000000080000001;
+              const_signal = 64'h 0000000080000001;
             end
             5'b 00110 : begin
-              const_signal <= 64'h 8000000080008081;
+              const_signal = 64'h 8000000080008081;
             end
             5'b 00111 : begin
-              const_signal <= 64'h 8000000000008009;
+              const_signal = 64'h 8000000000008009;
             end
             5'b 01000 : begin
-              const_signal <= 64'h 000000000000008A;
+              const_signal = 64'h 000000000000008A;
             end
             5'b 01001 : begin
-              const_signal <= 64'h 0000000000000088;
+              const_signal = 64'h 0000000000000088;
             end
             5'b 01010 : begin
-              const_signal <= 64'h 0000000080008009;
+              const_signal = 64'h 0000000080008009;
             end
             5'b 01011 : begin
-              const_signal <= 64'h 000000008000000A;
+              const_signal = 64'h 000000008000000A;
             end
             5'b 01100 : begin
-              const_signal <= 64'h 000000008000808B;
+              const_signal = 64'h 000000008000808B;
             end
             5'b 01101 : begin
-              const_signal <= 64'h 800000000000008B;
+              const_signal = 64'h 800000000000008B;
             end
             5'b 01110 : begin
-              const_signal <= 64'h 8000000000008089;
+              const_signal = 64'h 8000000000008089;
             end
             5'b 01111 : begin
-              const_signal <= 64'h 8000000000008003;
+              const_signal = 64'h 8000000000008003;
             end
             5'b 10000 : begin
-              const_signal <= 64'h 8000000000008002;
+              const_signal = 64'h 8000000000008002;
             end
             5'b 10001 : begin
-              const_signal <= 64'h 8000000000000080;
+              const_signal = 64'h 8000000000000080;
             end
             5'b 10010 : begin
-              const_signal <= 64'h 000000000000800A;
+              const_signal = 64'h 000000000000800A;
             end
             5'b 10011 : begin
-              const_signal <= 64'h 800000008000000A;
+              const_signal = 64'h 800000008000000A;
             end
             5'b 10100 : begin
-              const_signal <= 64'h 8000000080008081;
+              const_signal = 64'h 8000000080008081;
             end
             5'b 10101 : begin
-              const_signal <= 64'h 8000000000008080;
+              const_signal = 64'h 8000000000008080;
             end
             5'b 10110 : begin
-              const_signal <= 64'h 0000000080000001;
+              const_signal = 64'h 0000000080000001;
             end
             5'b 10111 : begin
-              const_signal <= 64'h 8000000080008008;
+              const_signal = 64'h 8000000080008008;
             end
             default : begin
-              const_signal <= {64{1'b0}};
+              const_signal = {64{1'b0}};
             end
         endcase
     end

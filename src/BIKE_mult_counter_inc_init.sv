@@ -40,7 +40,7 @@ module BIKE_mult_counter_inc_init #(
     // counter process
     assign count_in = (count < MAX_VALUE) ? count+1 : 0;
     
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             count <= INIT[SIZE-1:0];
         end

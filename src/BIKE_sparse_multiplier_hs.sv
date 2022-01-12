@@ -191,10 +191,10 @@ module BIKE_sparse_multiplier_hs #(
     
     always @(*) begin
         case(mat_reg_in_sel)
-            2'b00 : mat_reg_in <= 'b0;
-            2'b01 : mat_reg_in <= {{OVERHANG{1'b0}}, mat_din[B_WIDTH-1:OVERHANG+1], {B_WIDTH{1'b0}}};
-            2'b10 : mat_reg_in <= {mat_din[OVERHANG-1:0], mat_reg[2*B_WIDTH-OVERHANG-2:B_WIDTH], {B_WIDTH{1'b0}}};
-            2'b11 : mat_reg_in <= {mat_din, mat_reg[B_WIDTH+B_WIDTH-2:B_WIDTH]};
+            2'b00 : mat_reg_in = 'b0;
+            2'b01 : mat_reg_in = {{OVERHANG{1'b0}}, mat_din[B_WIDTH-1:OVERHANG+1], {B_WIDTH{1'b0}}};
+            2'b10 : mat_reg_in = {mat_din[OVERHANG-1:0], mat_reg[2*B_WIDTH-OVERHANG-2:B_WIDTH], {B_WIDTH{1'b0}}};
+            2'b11 : mat_reg_in = {mat_din, mat_reg[B_WIDTH+B_WIDTH-2:B_WIDTH]};
         endcase
     end
     
@@ -266,7 +266,7 @@ module BIKE_sparse_multiplier_hs #(
     reg [3:0] state_reg, state_next;
     
     // state register
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             state_reg <= s_idle;
         end
@@ -277,66 +277,66 @@ module BIKE_sparse_multiplier_hs #(
     
     // Next state logic
     always @(*) begin
-        state_next <= state_reg;
+        state_next = state_reg;
         
         case(state_reg)
         
             // -----------------------------------
             s_idle : begin
                 if(enable) begin    
-                    state_next      <= s_init;
+                    state_next      = s_init;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_init : begin 
-                state_next          <= s_init0;
+                state_next          = s_init0;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_init0 : begin 
-                state_next          <= s_init1;
+                state_next          = s_init1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_init1 : begin 
-                state_next          <= s_init2;
+                state_next          = s_init2;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_init2 : begin 
-                state_next          <= s_regular;
+                state_next          = s_regular;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_regular : begin 
                 if(cnt_mat_out == SWORDS-1) begin
-                    state_next      <= s_final;
+                    state_next      = s_final;
                 end
                 else begin
-                    state_next      <= s_regular;
+                    state_next      = s_regular;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_final : begin 
-                state_next          <= s_final0;
+                state_next          = s_final0;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_final0 : begin 
                 if(cnt_sparse_done) begin
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
                 else begin
-                    state_next      <= s_init;
+                    state_next      = s_init;
                 end
             end
             // -----------------------------------
@@ -344,10 +344,10 @@ module BIKE_sparse_multiplier_hs #(
             // -----------------------------------
             s_done : begin
                 if(~resetn) begin   
-                    state_next      <= s_idle;
+                    state_next      = s_idle;
                 end 
                 else begin 
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
             end
             // -----------------------------------                                  
@@ -358,34 +358,34 @@ module BIKE_sparse_multiplier_hs #(
     always @(state_reg) begin
         // default outputs
         // Global control
-        done                        <= 1'b0;
+        done                        = 1'b0;
         
         // counter
-        cnt_sparse_resetn           <= 1'b0;
-        cnt_sparse_enable           <= 1'b0;
+        cnt_sparse_resetn           = 1'b0;
+        cnt_sparse_enable           = 1'b0;
 
-        cnt_mat_resetn              <= 1'b0;
-        cnt_mat_enable              <= 1'b0;
+        cnt_mat_resetn              = 1'b0;
+        cnt_mat_enable              = 1'b0;
                 
         // Memory interface
-        vec_rden                    <= 1'b0;
+        vec_rden                    = 1'b0;
         
-        mat_rden                    <= 1'b0;
+        mat_rden                    = 1'b0;
         
-        resa_rden                   <= 1'b0;
-        resb_rden                   <= 1'b0;
-        res_wren                    <= 1'b0;
+        resa_rden                   = 1'b0;
+        resb_rden                   = 1'b0;
+        res_wren                    = 1'b0;
         
-        res_addr_cnt_resetn         <= 1'b0;
-        sample_res_addr             <= 1'b0;
+        res_addr_cnt_resetn         = 1'b0;
+        sample_res_addr             = 1'b0;
         
-        mat_reg_resetn              <= 1'b0;
-        mat_reg_in_sel              <= 2'b00;
+        mat_reg_resetn              = 1'b0;
+        mat_reg_in_sel              = 2'b00;
         
-        wrapper_resetn              <= 1'b0;
-        wrapper_fsm_enable          <= 1'b0;
+        wrapper_resetn              = 1'b0;
+        wrapper_fsm_enable          = 1'b0;
         
-        shift_sel_resetn            <= 1'b0;
+        shift_sel_resetn            = 1'b0;
         
         
         case (state_reg)
@@ -397,154 +397,154 @@ module BIKE_sparse_multiplier_hs #(
 
             // -----------------------------------
             s_init : begin                
-                cnt_mat_resetn      <= 1'b1;
-                cnt_mat_enable      <= 1'b1;
+                cnt_mat_resetn      = 1'b1;
+                cnt_mat_enable      = 1'b1;
                 
-                cnt_sparse_resetn   <= 1'b1;  
+                cnt_sparse_resetn   = 1'b1;  
                 
                 // vector
-                vec_rden            <= 1'b1;
+                vec_rden            = 1'b1;
                 
                 // matrix
-                mat_rden            <= 1'b1;
+                mat_rden            = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_init0 : begin                
-                cnt_mat_resetn      <= 1'b1;
-                cnt_mat_enable      <= 1'b1;
+                cnt_mat_resetn      = 1'b1;
+                cnt_mat_enable      = 1'b1;
                 
-                cnt_sparse_resetn   <= 1'b1;  
+                cnt_sparse_resetn   = 1'b1;  
                 
                 // vector
-                vec_rden            <= 1'b1;
+                vec_rden            = 1'b1;
                 
                 // matrix
-                mat_rden            <= 1'b1;
+                mat_rden            = 1'b1;
                 
-                mat_reg_resetn      <= 1'b1;
-                mat_reg_in_sel      <= 2'b01;
+                mat_reg_resetn      = 1'b1;
+                mat_reg_in_sel      = 2'b01;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_init1 : begin
-                cnt_mat_resetn      <= 1'b1;
-                cnt_mat_enable      <= 1'b1;
+                cnt_mat_resetn      = 1'b1;
+                cnt_mat_enable      = 1'b1;
   
-                cnt_sparse_resetn   <= 1'b1;  
+                cnt_sparse_resetn   = 1'b1;  
                 
                 // matrix 
-                mat_rden            <= 1'b1;
+                mat_rden            = 1'b1;
 
-                mat_reg_resetn      <= 1'b1;
-                mat_reg_in_sel      <= 2'b10;
+                mat_reg_resetn      = 1'b1;
+                mat_reg_in_sel      = 2'b10;
                 
-                shift_sel_resetn    <= 1'b1;
+                shift_sel_resetn    = 1'b1;
                 
                 // result
-                sample_res_addr     <= 1'b1;
-                res_addr_cnt_resetn <= 1'b1;                                    
+                sample_res_addr     = 1'b1;
+                res_addr_cnt_resetn = 1'b1;                                    
             end
             // -----------------------------------
 
             // -----------------------------------
             s_init2 : begin
-                cnt_mat_resetn      <= 1'b1;
-                cnt_mat_enable      <= 1'b1;
+                cnt_mat_resetn      = 1'b1;
+                cnt_mat_enable      = 1'b1;
                                 
-                cnt_sparse_resetn   <= 1'b1;
+                cnt_sparse_resetn   = 1'b1;
                 
                 // matrix
-                mat_rden            <= 1'b1;
+                mat_rden            = 1'b1;
 
-                mat_reg_resetn      <= 1'b1;
-                mat_reg_in_sel      <= 2'b11;
+                mat_reg_resetn      = 1'b1;
+                mat_reg_in_sel      = 2'b11;
                 
-                shift_sel_resetn    <= 1'b1;
+                shift_sel_resetn    = 1'b1;
                 
                 // results
-                res_addr_cnt_resetn <= 1'b1;
-                resa_rden           <= 1'b1;
-                resb_rden           <= 1'b1;    
+                res_addr_cnt_resetn = 1'b1;
+                resa_rden           = 1'b1;
+                resb_rden           = 1'b1;    
 
             end
             // -----------------------------------
 
             // -----------------------------------
             s_regular : begin
-                cnt_mat_resetn      <= 1'b1;
-                cnt_mat_enable      <= 1'b1;
+                cnt_mat_resetn      = 1'b1;
+                cnt_mat_enable      = 1'b1;
                                 
-                cnt_sparse_resetn   <= 1'b1;
+                cnt_sparse_resetn   = 1'b1;
                 
                 // matrix
-                mat_rden            <= 1'b1;
+                mat_rden            = 1'b1;
 
-                mat_reg_resetn      <= 1'b1;
-                mat_reg_in_sel      <= 2'b11;
+                mat_reg_resetn      = 1'b1;
+                mat_reg_in_sel      = 2'b11;
                 
-                shift_sel_resetn    <= 1'b1;
+                shift_sel_resetn    = 1'b1;
                 
                 // result
-                res_addr_cnt_resetn <= 1'b1;
+                res_addr_cnt_resetn = 1'b1;
                  
-                res_wren            <= 1'b1;
-                resa_rden           <= 1'b1;
-                resb_rden           <= 1'b1;
+                res_wren            = 1'b1;
+                resa_rden           = 1'b1;
+                resb_rden           = 1'b1;
                 
-                wrapper_resetn      <= 1'b1;
-                wrapper_fsm_enable  <= 1'b1;
+                wrapper_resetn      = 1'b1;
+                wrapper_fsm_enable  = 1'b1;
             end
             // -----------------------------------        
 
             // -----------------------------------
             s_final : begin
-                cnt_mat_resetn      <= 1'b1;
-                cnt_mat_enable      <= 1'b1;
+                cnt_mat_resetn      = 1'b1;
+                cnt_mat_enable      = 1'b1;
                                 
-                cnt_sparse_resetn   <= 1'b1;
+                cnt_sparse_resetn   = 1'b1;
                 
                 // matrix
-                mat_rden            <= 1'b1;
+                mat_rden            = 1'b1;
 
-                mat_reg_resetn      <= 1'b1;
-                mat_reg_in_sel      <= 2'b11;
+                mat_reg_resetn      = 1'b1;
+                mat_reg_in_sel      = 2'b11;
                 
-                shift_sel_resetn    <= 1'b1;
+                shift_sel_resetn    = 1'b1;
                 
                 // result
-                res_addr_cnt_resetn <= 1'b1;
+                res_addr_cnt_resetn = 1'b1;
                  
-                res_wren            <= 1'b1;
-                resa_rden           <= 1'b1;
-                resb_rden           <= 1'b1;
+                res_wren            = 1'b1;
+                resa_rden           = 1'b1;
+                resb_rden           = 1'b1;
                 
-                wrapper_resetn      <= 1'b1;
-                wrapper_fsm_enable  <= 1'b1;
+                wrapper_resetn      = 1'b1;
+                wrapper_fsm_enable  = 1'b1;
             end
             // -----------------------------------  
             
             // -----------------------------------
             s_final0 : begin                                
-                cnt_sparse_resetn   <= 1'b1;
-                cnt_sparse_enable   <= 1'b1;              
+                cnt_sparse_resetn   = 1'b1;
+                cnt_sparse_enable   = 1'b1;              
                  
-                res_wren            <= 1'b1;
-                resa_rden           <= 1'b1;
-                resb_rden           <= 1'b1;
+                res_wren            = 1'b1;
+                resa_rden           = 1'b1;
+                resb_rden           = 1'b1;
                 
-                wrapper_resetn      <= 1'b1;
-                wrapper_fsm_enable  <= 1'b1;  
+                wrapper_resetn      = 1'b1;
+                wrapper_fsm_enable  = 1'b1;  
                 
-                shift_sel_resetn    <= 1'b1;              
+                shift_sel_resetn    = 1'b1;              
             end
             // -----------------------------------   
                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
             // -----------------------------------
             s_done : begin
-                done                        <= 1'b1;
+                done                        = 1'b1;
             end
             // -----------------------------------
         endcase

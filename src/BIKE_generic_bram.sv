@@ -151,7 +151,7 @@ generate
         
         assign dout_samp = bram_dout_a[lsb_samp_addr];
         
-        always @(posedge clk or negedge resetn) begin
+        always @(posedge clk) begin
             if(~resetn) begin
                 lsb_samp_addr <= 'b0;
             end

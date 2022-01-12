@@ -41,7 +41,7 @@ module BIKE_counter_dec_init #(
     // counter process
     assign count_in = (count > 0) ? count-1 : MAX_VALUE[SIZE-1:0];
     
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             count <= INIT[SIZE-1:0];
         end

@@ -80,7 +80,7 @@ wire ENABLE_ROUND;
     // STATE REGISTER -----------------------------------------------------------
     assign STATE_OUT_REG_IN = INIT == 1'b 1 ? STATE_IN_M : STATE_OUT;
   
-    always @(posedge CLK or negedge RESETN) begin
+    always @(posedge CLK) begin
         if(~RESETN) begin 
             for (int y=0; y <= 4; y = y + 1) begin 
                 for (int x=0; x <= 4; x = x + 1) begin

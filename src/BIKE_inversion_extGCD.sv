@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company:             Ruhr-Universität Bochum
+// Company:             Ruhr-Universitï¿½t Bochum
 // Engineer:            Jan Richter-Brockmann
 // 
 // Create Date:         09.04.2021 
@@ -194,185 +194,185 @@ module BIKE_inversion_extGCD #(
     
     // Memory 
     always @(*) begin
-        mem_rden[0]     <= 1'b0;
-        mem_wren[0]     <= 1'b0;
-        mem_addr[0]     <= {LOGSWORDS{1'b0}};
-        mem_dout[0]     <= {B_WIDTH{1'b0}};
+        mem_rden[0]     = 1'b0;
+        mem_wren[0]     = 1'b0;
+        mem_addr[0]     = {LOGSWORDS{1'b0}};
+        mem_dout[0]     = {B_WIDTH{1'b0}};
         
-        mem_rden[1]     <= 1'b0;
-        mem_wren[1]     <= 1'b0;
-        mem_addr[1]     <= {LOGSWORDS{1'b0}};
-        mem_dout[1]     <= {B_WIDTH{1'b0}};
+        mem_rden[1]     = 1'b0;
+        mem_wren[1]     = 1'b0;
+        mem_addr[1]     = {LOGSWORDS{1'b0}};
+        mem_dout[1]     = {B_WIDTH{1'b0}};
         
-        mem_rden[2]     <= 1'b0;
-        mem_wren[2]     <= 1'b0;
-        mem_addr[2]     <= {LOGSWORDS{1'b0}};
-        mem_dout[2]     <= {B_WIDTH{1'b0}};
+        mem_rden[2]     = 1'b0;
+        mem_wren[2]     = 1'b0;
+        mem_addr[2]     = {LOGSWORDS{1'b0}};
+        mem_dout[2]     = {B_WIDTH{1'b0}};
         
-        mem_rden[3]     <= 1'b0;
-        mem_wren[3]     <= 1'b0;
-        mem_addr[3]     <= {LOGSWORDS{1'b0}};
-        mem_dout[3]     <= {B_WIDTH{1'b0}};
+        mem_rden[3]     = 1'b0;
+        mem_wren[3]     = 1'b0;
+        mem_addr[3]     = {LOGSWORDS{1'b0}};
+        mem_dout[3]     = {B_WIDTH{1'b0}};
 
-        mem_rden[4]     <= 1'b0;
-        mem_wren[4]     <= 1'b0;
-        mem_addr[4]     <= {LOGSWORDS{1'b0}};
-        mem_dout[4]     <= {B_WIDTH{1'b0}};
+        mem_rden[4]     = 1'b0;
+        mem_wren[4]     = 1'b0;
+        mem_addr[4]     = {LOGSWORDS{1'b0}};
+        mem_dout[4]     = {B_WIDTH{1'b0}};
         
-        mem_rden[5]     <= 1'b0;
-        mem_wren[5]     <= 1'b0;
-        mem_addr[5]     <= {LOGSWORDS{1'b0}};
-        mem_dout[5]     <= {B_WIDTH{1'b0}};
+        mem_rden[5]     = 1'b0;
+        mem_wren[5]     = 1'b0;
+        mem_addr[5]     = {LOGSWORDS{1'b0}};
+        mem_dout[5]     = {B_WIDTH{1'b0}};
 
-        mem_rden[6]     <= 1'b0;
-        mem_wren[6]     <= 1'b0;
-        mem_addr[6]     <= {LOGSWORDS{1'b0}};
-        mem_dout[6]     <= {B_WIDTH{1'b0}};
+        mem_rden[6]     = 1'b0;
+        mem_wren[6]     = 1'b0;
+        mem_addr[6]     = {LOGSWORDS{1'b0}};
+        mem_dout[6]     = {B_WIDTH{1'b0}};
 
-        mem_rden[7]     <= 1'b0;
-        mem_wren[7]     <= 1'b0;
-        mem_addr[7]     <= {LOGSWORDS{1'b0}};
-        mem_dout[7]     <= {B_WIDTH{1'b0}};
+        mem_rden[7]     = 1'b0;
+        mem_wren[7]     = 1'b0;
+        mem_addr[7]     = {LOGSWORDS{1'b0}};
+        mem_dout[7]     = {B_WIDTH{1'b0}};
                         
         case (memory_selection[0])
             // bitreverse
             2'b01: begin
-                mem_rden[0]     <= 1'b1;
-                mem_wren[0]     <= 1'b0;
-                mem_addr[0]     <= cnt_dec0_out;
-                mem_dout[0]     <= {B_WIDTH{1'b0}};
+                mem_rden[0]     = 1'b1;
+                mem_wren[0]     = 1'b0;
+                mem_addr[0]     = cnt_dec0_out;
+                mem_dout[0]     = {B_WIDTH{1'b0}};
             end
             // iterations
             2'b11: begin
-                mem_rden[0]     <= iteration_rden[0];
-                mem_wren[0]     <= iteration_wren[0];
-                mem_addr[0]     <= iteration_addr[0];
-                mem_dout[0]     <= iteration_dout[0];
+                mem_rden[0]     = iteration_rden[0];
+                mem_wren[0]     = iteration_wren[0];
+                mem_addr[0]     = iteration_addr[0];
+                mem_dout[0]     = iteration_dout[0];
             end
         endcase
 
         case (memory_selection[1])
             // bitreverse
             2'b01: begin
-                mem_rden[1]     <= 1'b1;
-                mem_wren[1]     <= 1'b1;
-                mem_addr[1]     <= cnt_inc0_out;
-                mem_dout[1]     <= word_reversed;
+                mem_rden[1]     = 1'b1;
+                mem_wren[1]     = 1'b1;
+                mem_addr[1]     = cnt_inc0_out;
+                mem_dout[1]     = word_reversed;
             end
             // iterations
             2'b11: begin
-                mem_rden[1]     <= iteration_rden[1];
-                mem_wren[1]     <= iteration_wren[1];
-                mem_addr[1]     <= iteration_addr[1];
-                mem_dout[1]     <= iteration_dout[1];
+                mem_rden[1]     = iteration_rden[1];
+                mem_wren[1]     = iteration_wren[1];
+                mem_addr[1]     = iteration_addr[1];
+                mem_dout[1]     = iteration_dout[1];
             end
         endcase
                         
         case (memory_selection[2])
             // Initialization
             2'b01: begin
-                mem_rden[2]     <= 1'b1;
-                mem_wren[2]     <= 1'b1;
-                mem_addr[2]     <= {LOGSWORDS{1'b0}};
-                mem_dout[2]     <= {{B_WIDTH-1{1'b0}} , 1'b1};
+                mem_rden[2]     = 1'b1;
+                mem_wren[2]     = 1'b1;
+                mem_addr[2]     = {LOGSWORDS{1'b0}};
+                mem_dout[2]     = {{B_WIDTH-1{1'b0}} , 1'b1};
             end
             2'b10: begin
-                mem_rden[2]     <= 1'b1;
-                mem_wren[2]     <= 1'b1;
-                mem_addr[2]     <= SWORDS-1;
-                mem_dout[2]     <= {{B_WIDTH-1-OVERHANG{1'b0}}, 1'b1 , {OVERHANG{1'b0}}};
+                mem_rden[2]     = 1'b1;
+                mem_wren[2]     = 1'b1;
+                mem_addr[2]     = SWORDS-1;
+                mem_dout[2]     = {{B_WIDTH-1-OVERHANG{1'b0}}, 1'b1 , {OVERHANG{1'b0}}};
             end
             // iterations
             2'b11: begin
-                mem_rden[2]     <= iteration_rden[2];
-                mem_wren[2]     <= iteration_wren[2];
-                mem_addr[2]     <= iteration_addr[2];
-                mem_dout[2]     <= iteration_dout[2];
+                mem_rden[2]     = iteration_rden[2];
+                mem_wren[2]     = iteration_wren[2];
+                mem_addr[2]     = iteration_addr[2];
+                mem_dout[2]     = iteration_dout[2];
             end  
         endcase
 
         case (memory_selection[3])
             // iterations
             2'b11: begin
-                mem_rden[3]     <= iteration_rden[3];
-                mem_wren[3]     <= iteration_wren[3];
-                mem_addr[3]     <= iteration_addr[3];
-                mem_dout[3]     <= iteration_dout[3];
+                mem_rden[3]     = iteration_rden[3];
+                mem_wren[3]     = iteration_wren[3];
+                mem_addr[3]     = iteration_addr[3];
+                mem_dout[3]     = iteration_dout[3];
             end
         endcase
                 
         case (memory_selection[4])
             // Initialization
             2'b01: begin
-                mem_rden[4]     <= 1'b1;
-                mem_wren[4]     <= 1'b1;
-                mem_addr[4]     <= {LOGSWORDS{1'b0}};
-                mem_dout[4]     <= {{B_WIDTH-1{1'b0}} , 1'b1};
+                mem_rden[4]     = 1'b1;
+                mem_wren[4]     = 1'b1;
+                mem_addr[4]     = {LOGSWORDS{1'b0}};
+                mem_dout[4]     = {{B_WIDTH-1{1'b0}} , 1'b1};
             end  
             // iterations
             2'b11: begin
-                mem_rden[4]     <= iteration_rden[4];
-                mem_wren[4]     <= iteration_wren[4];
-                mem_addr[4]     <= iteration_addr[4];
-                mem_dout[4]     <= iteration_dout[4];
+                mem_rden[4]     = iteration_rden[4];
+                mem_wren[4]     = iteration_wren[4];
+                mem_addr[4]     = iteration_addr[4];
+                mem_dout[4]     = iteration_dout[4];
             end        
         endcase
 
         case (memory_selection[5])
             // bitreverse
             2'b01: begin
-                mem_rden[5]     <= 1'b1;
-                mem_wren[5]     <= final_reverse_wren[0];
-                mem_addr[5]     <= final_reverse_addr[0];
-                mem_dout[5]     <= final_reverse_din[0];
+                mem_rden[5]     = 1'b1;
+                mem_wren[5]     = final_reverse_wren[0];
+                mem_addr[5]     = final_reverse_addr[0];
+                mem_dout[5]     = final_reverse_din[0];
             end
             // final shift
             2'b10: begin
-                mem_rden[5]     <= 1'b1;
-                mem_wren[5]     <= final_shift_wren[0];
-                mem_addr[5]     <= final_shift_addr[0];
-                mem_dout[5]     <= final_shift_din[0];
+                mem_rden[5]     = 1'b1;
+                mem_wren[5]     = final_shift_wren[0];
+                mem_addr[5]     = final_shift_addr[0];
+                mem_dout[5]     = final_shift_din[0];
             end        
             // iterations
             2'b11: begin
-                mem_rden[5]     <= iteration_rden[5];
-                mem_wren[5]     <= iteration_wren[5];
-                mem_addr[5]     <= iteration_addr[5];
-                mem_dout[5]     <= iteration_dout[5];
+                mem_rden[5]     = iteration_rden[5];
+                mem_wren[5]     = iteration_wren[5];
+                mem_addr[5]     = iteration_addr[5];
+                mem_dout[5]     = iteration_dout[5];
             end        
         endcase  
 
         case (memory_selection[6])    
             // iterations
             2'b11: begin
-                mem_rden[6]     <= iteration_rden[6];
-                mem_wren[6]     <= iteration_wren[6];
-                mem_addr[6]     <= iteration_addr[6];
-                mem_dout[6]     <= iteration_dout[6];
+                mem_rden[6]     = iteration_rden[6];
+                mem_wren[6]     = iteration_wren[6];
+                mem_addr[6]     = iteration_addr[6];
+                mem_dout[6]     = iteration_dout[6];
             end        
         endcase      
         
         case (memory_selection[7])
             // bitreverse
             2'b01: begin
-                mem_rden[7]     <= 1'b1;
-                mem_wren[7]     <= final_reverse_wren[1];
-                mem_addr[7]     <= final_reverse_addr[1];
-                mem_dout[7]     <= final_reverse_din[1];
+                mem_rden[7]     = 1'b1;
+                mem_wren[7]     = final_reverse_wren[1];
+                mem_addr[7]     = final_reverse_addr[1];
+                mem_dout[7]     = final_reverse_din[1];
             end
             // final shift
             2'b10: begin
-                mem_rden[7]     <= 1'b1;
-                mem_wren[7]     <= final_shift_wren[1];
-                mem_addr[7]     <= final_shift_addr[1];
-                mem_dout[7]     <= final_shift_din[1];
+                mem_rden[7]     = 1'b1;
+                mem_wren[7]     = final_shift_wren[1];
+                mem_addr[7]     = final_shift_addr[1];
+                mem_dout[7]     = final_shift_din[1];
             end   
             // iterations
             2'b11: begin
-                mem_rden[7]     <= iteration_rden[7];
-                mem_wren[7]     <= iteration_wren[7];
-                mem_addr[7]     <= iteration_addr[7];
-                mem_dout[7]     <= iteration_dout[7];
+                mem_rden[7]     = iteration_rden[7];
+                mem_wren[7]     = iteration_wren[7];
+                mem_addr[7]     = iteration_addr[7];
+                mem_dout[7]     = iteration_dout[7];
             end        
         endcase              
     end
@@ -421,7 +421,7 @@ module BIKE_inversion_extGCD #(
     endgenerate
     
     assign reg_shift_right_in = (ITERATIONS[0] == 1'b1) ? mem_din[5][0] : mem_din[7][0];
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge clk) begin
         if(~resetn) begin
             reg_shift_right <= 'b0;
         end
@@ -532,7 +532,7 @@ module BIKE_inversion_extGCD #(
         end
     endgenerate
     
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge clk) begin
         if(~resetn) begin
             control_bits <= {2*STEPS{1'b0}};
         end
@@ -547,17 +547,17 @@ module BIKE_inversion_extGCD #(
     end
     
     always @(*) begin
-        f0 <= {STEPS{1'b0}};
-        g0 <= {STEPS{1'b0}};
+        f0 = {STEPS{1'b0}};
+        g0 = {STEPS{1'b0}};
         
         case(track_poly)
-            1'b0: f0 <= mem_din[2][STEPS-1:0];
-            1'b1: f0 <= mem_din[3][STEPS-1:0];
+            1'b0: f0 = mem_din[2][STEPS-1:0];
+            1'b1: f0 = mem_din[3][STEPS-1:0];
         endcase
         
         case(track_poly)
-            1'b0: g0 <= mem_din[1][STEPS-1:0];
-            1'b1: g0 <= mem_din[0][STEPS-1:0];
+            1'b0: g0 = mem_din[1][STEPS-1:0];
+            1'b1: g0 = mem_din[0][STEPS-1:0];
         endcase
     end
     
@@ -583,7 +583,7 @@ module BIKE_inversion_extGCD #(
     endgenerate 
 
     // f0 and g0 iter register    
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge clk) begin
         if(~resetn) begin
             g0_iter_reg <= 'b0;
             f0_iter_reg <= 'b0;
@@ -610,7 +610,7 @@ module BIKE_inversion_extGCD #(
         end
     endgenerate
     
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge clk) begin
         if(~resetn) begin
             delta <= 1;
         end
@@ -635,28 +635,28 @@ module BIKE_inversion_extGCD #(
         poly_v = 'b0;
         
         case(track_poly)
-            1'b0: poly_g <= mem_din[1];
-            1'b1: poly_g <= mem_din[0];
+            1'b0: poly_g = mem_din[1];
+            1'b1: poly_g = mem_din[0];
         endcase
 
         case(track_poly)
-            1'b0: poly_f <= mem_din[2];
-            1'b1: poly_f <= mem_din[3];
+            1'b0: poly_f = mem_din[2];
+            1'b1: poly_f = mem_din[3];
         endcase    
         
         case(track_poly)
-            1'b0: poly_r <= mem_din[4];
-            1'b1: poly_r <= mem_din[6];
+            1'b0: poly_r = mem_din[4];
+            1'b1: poly_r = mem_din[6];
         endcase  
         
         case(track_poly)
-            1'b0: poly_v <= mem_din[5];
-            1'b1: poly_v <= mem_din[7];
+            1'b0: poly_v = mem_din[5];
+            1'b1: poly_v = mem_din[7];
         endcase     
     end
     
     // Buffer f, g, r, and v
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge clk) begin
         if(~resetn) begin
             poly_f_reg <= {B_WIDTH{1'b0}};
             poly_g_reg <= {B_WIDTH{1'b0}};
@@ -748,7 +748,7 @@ module BIKE_inversion_extGCD #(
     // tracking polynomials
     assign track_poly_in = track_poly ^ 1'b1; 
         
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge clk) begin
         if(~resetn) begin
             track_poly <= 1'b0;
         end
@@ -817,7 +817,7 @@ module BIKE_inversion_extGCD #(
     reg [4:0] state_reg, state_next;
     
     // state register
-    always @ (posedge clk or negedge resetn) begin
+    always @ (posedge clk) begin
         if(~resetn) begin
             state_reg <= s_idle;
         end
@@ -835,49 +835,49 @@ module BIKE_inversion_extGCD #(
             // -----------------------------------
             s_idle : begin
                 if(enable) begin    
-                    state_next      <= s_init0;
+                    state_next      = s_init0;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_init0 : begin
-                state_next          <= s_init1;
+                state_next          = s_init1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_init1 : begin
-                state_next          <= s_bitreverse_init0;
+                state_next          = s_bitreverse_init0;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_bitreverse_init0 : begin
-                state_next          <= s_bitreverse_init1;
+                state_next          = s_bitreverse_init1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_bitreverse_init1 : begin
-                state_next          <= s_bitreverse;
+                state_next          = s_bitreverse;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_bitreverse : begin
                 if(cnt_inc0_done) begin
-                    state_next      <= s_swap_init;
+                    state_next      = s_swap_init;
                 end
                 else begin                
-                    state_next      <= s_bitreverse;
+                    state_next      = s_bitreverse;
                 end                
             end
             // -----------------------------------
 
             // -----------------------------------
             s_swap_init : begin
-                state_next          <= s_swap;
+                state_next          = s_swap;
             end
             // -----------------------------------
 
@@ -885,14 +885,14 @@ module BIKE_inversion_extGCD #(
             s_swap : begin
                 if(cnt_inc0_out == ITERATIONS_DELTA-1) begin
                     if(cnt_inc2_done) begin
-                        state_next  <= s_add_shift_remainder_init;
+                        state_next  = s_add_shift_remainder_init;
                     end
                     else begin
-                        state_next  <= s_add_shift_init;
+                        state_next  = s_add_shift_init;
                     end
                 end
                 else begin
-                    state_next      <= s_swap;
+                    state_next      = s_swap;
                 end
             end
             // -----------------------------------
@@ -900,10 +900,10 @@ module BIKE_inversion_extGCD #(
             // -----------------------------------
             s_add_shift_init : begin
                 if(cnt_inc1_out == PIPELINE_STAGES_FG_RV) begin
-                    state_next      <= s_add_shift;
+                    state_next      = s_add_shift;
                 end
                 else begin
-                    state_next      <= s_add_shift_init;
+                    state_next      = s_add_shift_init;
                 end
             end
             // -----------------------------------
@@ -911,10 +911,10 @@ module BIKE_inversion_extGCD #(
             // -----------------------------------
             s_add_shift : begin
                 if(cnt_inc0_done) begin
-                    state_next      <= s_update_tracking;
+                    state_next      = s_update_tracking;
                 end
                 else begin
-                    state_next      <= s_add_shift;
+                    state_next      = s_add_shift;
                 end
             end
             // -----------------------------------
@@ -922,10 +922,10 @@ module BIKE_inversion_extGCD #(
             // -----------------------------------
             s_add_shift_remainder_init : begin
                 if(cnt_inc1_out == PIPELINE_STAGES_REMAINDER) begin
-                    state_next      <= s_add_shift_remainder;
+                    state_next      = s_add_shift_remainder;
                 end
                 else begin
-                    state_next      <= s_add_shift_remainder_init;
+                    state_next      = s_add_shift_remainder_init;
                 end
             end
             // -----------------------------------
@@ -933,68 +933,68 @@ module BIKE_inversion_extGCD #(
             // -----------------------------------
             s_add_shift_remainder : begin
                 if(cnt_inc0_done) begin
-                    state_next      <= s_final_shift_init0;
+                    state_next      = s_final_shift_init0;
                 end
                 else begin
-                    state_next      <= s_add_shift_remainder;
+                    state_next      = s_add_shift_remainder;
                 end
             end
             // -----------------------------------
             
             // -----------------------------------
             s_update_tracking : begin
-                state_next      <= s_swap_init;
+                state_next      = s_swap_init;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_final_shift_init0 : begin
-                state_next          <= s_final_shift_init1;
+                state_next          = s_final_shift_init1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_final_shift_init1 : begin
-                state_next          <= s_final_shift;
+                state_next          = s_final_shift;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_final_shift : begin
                 if(cnt_inc0_done) begin
-                    state_next      <= s_reset_counter;
+                    state_next      = s_reset_counter;
                 end
                 else begin
-                    state_next      <= s_final_shift;
+                    state_next      = s_final_shift;
                 end
             end
             // -----------------------------------
 
             // -----------------------------------
             s_reset_counter : begin
-                state_next          <= s_final_bitreverse_init0;
+                state_next          = s_final_bitreverse_init0;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_final_bitreverse_init0 : begin
-                state_next          <= s_final_bitreverse_init1;
+                state_next          = s_final_bitreverse_init1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_final_bitreverse_init1 : begin
-                state_next          <= s_final_bitreverse;
+                state_next          = s_final_bitreverse;
             end
             // -----------------------------------
  
              // -----------------------------------
             s_final_bitreverse : begin
                 if(cnt_inc0_done) begin
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
                 else begin
-                    state_next      <= s_final_bitreverse;
+                    state_next      = s_final_bitreverse;
                 end
             end
             // -----------------------------------
@@ -1002,10 +1002,10 @@ module BIKE_inversion_extGCD #(
             // -----------------------------------
             s_done : begin
                 if(~resetn) begin   
-                    state_next      <= s_idle;
+                    state_next      = s_idle;
                 end 
                 else begin 
-                    state_next      <= s_done;
+                    state_next      = s_done;
                 end
             end
             // -----------------------------------                                  
@@ -1016,52 +1016,52 @@ module BIKE_inversion_extGCD #(
     always @(state_reg) begin
         // default outputs
         // Global control
-        done                        <= 1'b0;
+        done                        = 1'b0;
         
         // Memory selection
-        memory_selection[0]         <= 2'b00;
-        memory_selection[1]         <= 2'b00;
-        memory_selection[2]         <= 2'b00;
-        memory_selection[3]         <= 2'b00;
-        memory_selection[4]         <= 2'b00;
-        memory_selection[5]         <= 2'b00;
-        memory_selection[6]         <= 2'b00;
-        memory_selection[7]         <= 2'b00;
+        memory_selection[0]         = 2'b00;
+        memory_selection[1]         = 2'b00;
+        memory_selection[2]         = 2'b00;
+        memory_selection[3]         = 2'b00;
+        memory_selection[4]         = 2'b00;
+        memory_selection[5]         = 2'b00;
+        memory_selection[6]         = 2'b00;
+        memory_selection[7]         = 2'b00;
         
         // Counter
-        cnt_dec0_enable             <= 1'b0;
-        cnt_dec0_resetn             <= 1'b0;
+        cnt_dec0_enable             = 1'b0;
+        cnt_dec0_resetn             = 1'b0;
         
-        cnt_inc0_enable             <= 1'b0;
-        cnt_inc0_resetn             <= 1'b0;
+        cnt_inc0_enable             = 1'b0;
+        cnt_inc0_resetn             = 1'b0;
 
-        cnt_inc1_enable             <= 1'b0;
-        cnt_inc1_resetn             <= 1'b0;
+        cnt_inc1_enable             = 1'b0;
+        cnt_inc1_resetn             = 1'b0;
 
-        cnt_dec1_enable             <= 1'b0;
-        cnt_dec1_resetn             <= 1'b0;
+        cnt_dec1_enable             = 1'b0;
+        cnt_dec1_resetn             = 1'b0;
                 
-        cnt_inc2_enable             <= 1'b0;
-        cnt_inc2_resetn             <= 1'b0;
+        cnt_inc2_enable             = 1'b0;
+        cnt_inc2_resetn             = 1'b0;
                 
         // Register
-        overhang_reg_enable         <= 1'b0;
-        overhang_reg_resetn         <= 1'b0;
+        overhang_reg_enable         = 1'b0;
+        overhang_reg_resetn         = 1'b0;
         
         // Swap, Delta, f0g0
-        swap_rden                   <= 1'b0;
-        swap_en                     <= 1'b0;
+        swap_rden                   = 1'b0;
+        swap_en                     = 1'b0;
         
         // Iteration
-        it_rden                     <= 1'b0;
-        it_wren                     <= 1'b0;
+        it_rden                     = 1'b0;
+        it_wren                     = 1'b0;
         
-        tracking_en                 <= 1'b0;
+        tracking_en                 = 1'b0;
         
-        remainder_enable            <= 1'b0;
+        remainder_enable            = 1'b0;
         
         // Final shift
-        final_shift                 <= 1'b0;
+        final_shift                 = 1'b0;
         
         case (state_reg)
             // -----------------------------------
@@ -1072,284 +1072,284 @@ module BIKE_inversion_extGCD #(
 
             // -----------------------------------
             s_init0 : begin
-                memory_selection[2]         <= 2'b01;
-                memory_selection[4]         <= 2'b01;
+                memory_selection[2]         = 2'b01;
+                memory_selection[4]         = 2'b01;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_init1 : begin
-                memory_selection[2]         <= 2'b10;
+                memory_selection[2]         = 2'b10;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_bitreverse_init0 : begin
-                memory_selection[0]         <= 2'b01;
+                memory_selection[0]         = 2'b01;
                 
-                cnt_dec0_enable             <= 1'b1;
-                cnt_dec0_resetn             <= 1'b1;
+                cnt_dec0_enable             = 1'b1;
+                cnt_dec0_resetn             = 1'b1;
                 
-                overhang_reg_enable         <= 1'b1;
-                overhang_reg_resetn         <= 1'b1;
+                overhang_reg_enable         = 1'b1;
+                overhang_reg_resetn         = 1'b1;
             end
             // -----------------------------------
 
             // -----------------------------------
             s_bitreverse_init1 : begin
-                memory_selection[0]         <= 2'b01;
+                memory_selection[0]         = 2'b01;
                 
-                cnt_dec0_enable             <= 1'b1;
-                cnt_dec0_resetn             <= 1'b1;
+                cnt_dec0_enable             = 1'b1;
+                cnt_dec0_resetn             = 1'b1;
                 
-                overhang_reg_enable         <= 1'b1;
-                overhang_reg_resetn         <= 1'b1;
+                overhang_reg_enable         = 1'b1;
+                overhang_reg_resetn         = 1'b1;
             end
             // -----------------------------------
             
             // -----------------------------------
             s_bitreverse : begin
-                memory_selection[0]         <= 2'b01;
-                memory_selection[1]         <= 2'b01;
+                memory_selection[0]         = 2'b01;
+                memory_selection[1]         = 2'b01;
                 
-                cnt_dec0_enable             <= 1'b1;
-                cnt_dec0_resetn             <= 1'b1;
+                cnt_dec0_enable             = 1'b1;
+                cnt_dec0_resetn             = 1'b1;
                 
-                cnt_inc0_enable             <= 1'b1;
-                cnt_inc0_resetn             <= 1'b1;       
+                cnt_inc0_enable             = 1'b1;
+                cnt_inc0_resetn             = 1'b1;       
                 
-                overhang_reg_enable         <= 1'b1;
-                overhang_reg_resetn         <= 1'b1;                         
+                overhang_reg_enable         = 1'b1;
+                overhang_reg_resetn         = 1'b1;                         
             end
             // -----------------------------------
             
             // -----------------------------------
             s_swap_init : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
                 
-                cnt_inc2_enable             <= 1'b1;                    
-                cnt_inc2_resetn             <= 1'b1;   
+                cnt_inc2_enable             = 1'b1;                    
+                cnt_inc2_resetn             = 1'b1;   
                 
-                swap_rden                   <= 1'b1;                 
+                swap_rden                   = 1'b1;                 
             end
             // -----------------------------------            
 
             // -----------------------------------
             s_swap : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
                                    
-                cnt_inc0_enable             <= 1'b1;                   
-                cnt_inc0_resetn             <= 1'b1;                   
+                cnt_inc0_enable             = 1'b1;                   
+                cnt_inc0_resetn             = 1'b1;                   
                                    
-                cnt_inc2_resetn             <= 1'b1;   
+                cnt_inc2_resetn             = 1'b1;   
                 
-                swap_en                     <= 1'b1;                 
+                swap_en                     = 1'b1;                 
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_add_shift_init : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
-                memory_selection[4]         <= 2'b11; 
-                memory_selection[5]         <= 2'b11; 
-                memory_selection[6]         <= 2'b11;
-                memory_selection[7]         <= 2'b11;
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
+                memory_selection[4]         = 2'b11; 
+                memory_selection[5]         = 2'b11; 
+                memory_selection[6]         = 2'b11;
+                memory_selection[7]         = 2'b11;
 
-                cnt_inc1_resetn             <= 1'b1;
-                cnt_inc1_enable             <= 1'b1;                                                             
+                cnt_inc1_resetn             = 1'b1;
+                cnt_inc1_enable             = 1'b1;                                                             
                 
-                cnt_inc2_resetn             <= 1'b1;         
+                cnt_inc2_resetn             = 1'b1;         
                 
-                it_rden                     <= 1'b1;          
+                it_rden                     = 1'b1;          
             end
             // ----------------------------------- 
             
             // -----------------------------------
             s_add_shift : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
-                memory_selection[4]         <= 2'b11; 
-                memory_selection[5]         <= 2'b11; 
-                memory_selection[6]         <= 2'b11; 
-                memory_selection[7]         <= 2'b11; 
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
+                memory_selection[4]         = 2'b11; 
+                memory_selection[5]         = 2'b11; 
+                memory_selection[6]         = 2'b11; 
+                memory_selection[7]         = 2'b11; 
 
-                cnt_inc0_resetn             <= 1'b1;
-                cnt_inc0_enable             <= 1'b1;
+                cnt_inc0_resetn             = 1'b1;
+                cnt_inc0_enable             = 1'b1;
                 
-                cnt_inc1_resetn             <= 1'b1;
-                cnt_inc1_enable             <= 1'b1;
+                cnt_inc1_resetn             = 1'b1;
+                cnt_inc1_enable             = 1'b1;
                 
-                cnt_inc2_resetn             <= 1'b1;         
+                cnt_inc2_resetn             = 1'b1;         
                 
-                it_rden                     <= 1'b1;                    
-                it_wren                     <= 1'b1;                                       
+                it_rden                     = 1'b1;                    
+                it_wren                     = 1'b1;                                       
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_add_shift_remainder_init : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
-                memory_selection[4]         <= 2'b11; 
-                memory_selection[5]         <= 2'b11; 
-                memory_selection[6]         <= 2'b11;
-                memory_selection[7]         <= 2'b11;
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
+                memory_selection[4]         = 2'b11; 
+                memory_selection[5]         = 2'b11; 
+                memory_selection[6]         = 2'b11;
+                memory_selection[7]         = 2'b11;
 
-                cnt_inc1_resetn             <= 1'b1;
-                cnt_inc1_enable             <= 1'b1;                                                             
+                cnt_inc1_resetn             = 1'b1;
+                cnt_inc1_enable             = 1'b1;                                                             
                 
-                cnt_inc2_resetn             <= 1'b1;         
+                cnt_inc2_resetn             = 1'b1;         
                 
-                it_rden                     <= 1'b1;          
+                it_rden                     = 1'b1;          
             end
             // ----------------------------------- 
             
             // -----------------------------------
             s_add_shift_remainder : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
-                memory_selection[4]         <= 2'b11; 
-                memory_selection[5]         <= 2'b11; 
-                memory_selection[6]         <= 2'b11; 
-                memory_selection[7]         <= 2'b11; 
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
+                memory_selection[4]         = 2'b11; 
+                memory_selection[5]         = 2'b11; 
+                memory_selection[6]         = 2'b11; 
+                memory_selection[7]         = 2'b11; 
 
-                cnt_inc0_resetn             <= 1'b1;
-                cnt_inc0_enable             <= 1'b1;
+                cnt_inc0_resetn             = 1'b1;
+                cnt_inc0_enable             = 1'b1;
                 
-                cnt_inc1_resetn             <= 1'b1;
-                cnt_inc1_enable             <= 1'b1;
+                cnt_inc1_resetn             = 1'b1;
+                cnt_inc1_enable             = 1'b1;
 
-                cnt_inc2_resetn             <= 1'b1;         
+                cnt_inc2_resetn             = 1'b1;         
                 
-                it_rden                     <= 1'b1;                    
-                it_wren                     <= 1'b1;    
+                it_rden                     = 1'b1;                    
+                it_wren                     = 1'b1;    
                 
-                remainder_enable            <= 1'b1;                                   
+                remainder_enable            = 1'b1;                                   
             end
             // ----------------------------------- 
             
             // -----------------------------------
             s_update_tracking : begin
-                memory_selection[0]         <= 2'b11; 
-                memory_selection[1]         <= 2'b11; 
-                memory_selection[2]         <= 2'b11; 
-                memory_selection[3]         <= 2'b11; 
-                memory_selection[4]         <= 2'b11; 
-                memory_selection[5]         <= 2'b11; 
-                memory_selection[6]         <= 2'b11; 
-                memory_selection[7]         <= 2'b11; 
+                memory_selection[0]         = 2'b11; 
+                memory_selection[1]         = 2'b11; 
+                memory_selection[2]         = 2'b11; 
+                memory_selection[3]         = 2'b11; 
+                memory_selection[4]         = 2'b11; 
+                memory_selection[5]         = 2'b11; 
+                memory_selection[6]         = 2'b11; 
+                memory_selection[7]         = 2'b11; 
                 
-                cnt_inc2_resetn             <= 1'b1;         
+                cnt_inc2_resetn             = 1'b1;         
                 
-                tracking_en                 <= 1'b1;                
+                tracking_en                 = 1'b1;                
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_final_shift_init0 : begin
-                memory_selection[5]         <= 2'b10; 
-                memory_selection[7]         <= 2'b10; 
+                memory_selection[5]         = 2'b10; 
+                memory_selection[7]         = 2'b10; 
 
-                cnt_dec1_resetn             <= 1'b1;
-                cnt_dec1_enable             <= 1'b1;
+                cnt_dec1_resetn             = 1'b1;
+                cnt_dec1_enable             = 1'b1;
                                 
-                final_shift                 <= 1'b1;               
+                final_shift                 = 1'b1;               
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_final_shift_init1 : begin
-                memory_selection[5]         <= 2'b10; 
-                memory_selection[7]         <= 2'b10; 
+                memory_selection[5]         = 2'b10; 
+                memory_selection[7]         = 2'b10; 
 
-                cnt_dec1_resetn             <= 1'b1;
-                cnt_dec1_enable             <= 1'b1;
+                cnt_dec1_resetn             = 1'b1;
+                cnt_dec1_enable             = 1'b1;
                                 
-                final_shift                 <= 1'b1;               
+                final_shift                 = 1'b1;               
             end
             // ----------------------------------- 
 
             // -----------------------------------
             s_final_shift : begin
-                memory_selection[5]         <= 2'b10; 
-                memory_selection[7]         <= 2'b10; 
+                memory_selection[5]         = 2'b10; 
+                memory_selection[7]         = 2'b10; 
                 
-                cnt_inc0_resetn             <= 1'b1;
-                cnt_inc0_enable             <= 1'b1;
+                cnt_inc0_resetn             = 1'b1;
+                cnt_inc0_enable             = 1'b1;
                 
-                cnt_dec1_resetn             <= 1'b1;
-                cnt_dec1_enable             <= 1'b1;
+                cnt_dec1_resetn             = 1'b1;
+                cnt_dec1_enable             = 1'b1;
                                 
-                final_shift                 <= 1'b1;               
+                final_shift                 = 1'b1;               
             end
             // -----------------------------------
             
             // -----------------------------------
             s_final_bitreverse_init0 : begin
-                memory_selection[5]         <= 2'b01;
-                memory_selection[7]         <= 2'b01;  
+                memory_selection[5]         = 2'b01;
+                memory_selection[7]         = 2'b01;  
                 
-                cnt_dec0_enable             <= 1'b1;
-                cnt_dec0_resetn             <= 1'b1;
+                cnt_dec0_enable             = 1'b1;
+                cnt_dec0_resetn             = 1'b1;
                 
-                overhang_reg_enable         <= 1'b1;
-                overhang_reg_resetn         <= 1'b1; 
+                overhang_reg_enable         = 1'b1;
+                overhang_reg_resetn         = 1'b1; 
                 
-                final_shift                 <= 1'b1;   
+                final_shift                 = 1'b1;   
             end
             // -----------------------------------            
 
             // -----------------------------------
             s_final_bitreverse_init1 : begin
-                memory_selection[5]         <= 2'b01; 
-                memory_selection[7]         <= 2'b01;
+                memory_selection[5]         = 2'b01; 
+                memory_selection[7]         = 2'b01;
                 
-                cnt_dec0_enable             <= 1'b1;
-                cnt_dec0_resetn             <= 1'b1;
+                cnt_dec0_enable             = 1'b1;
+                cnt_dec0_resetn             = 1'b1;
                 
-                overhang_reg_enable         <= 1'b1;
-                overhang_reg_resetn         <= 1'b1;  
+                overhang_reg_enable         = 1'b1;
+                overhang_reg_resetn         = 1'b1;  
                 
-                final_shift                 <= 1'b1;   
+                final_shift                 = 1'b1;   
             end
             // -----------------------------------   
             
             // -----------------------------------
             s_final_bitreverse : begin
-                memory_selection[5]         <= 2'b01;
-                memory_selection[7]         <= 2'b01;
+                memory_selection[5]         = 2'b01;
+                memory_selection[7]         = 2'b01;
                 
-                cnt_dec0_enable             <= 1'b1;
-                cnt_dec0_resetn             <= 1'b1;
+                cnt_dec0_enable             = 1'b1;
+                cnt_dec0_resetn             = 1'b1;
                 
-                cnt_inc0_enable             <= 1'b1;
-                cnt_inc0_resetn             <= 1'b1;       
+                cnt_inc0_enable             = 1'b1;
+                cnt_inc0_resetn             = 1'b1;       
                 
-                overhang_reg_enable         <= 1'b1;
-                overhang_reg_resetn         <= 1'b1;    
+                overhang_reg_enable         = 1'b1;
+                overhang_reg_resetn         = 1'b1;    
                 
-                final_shift                 <= 1'b1;                           
+                final_shift                 = 1'b1;                           
             end
             // -----------------------------------
                                                                                                                                                                                                                                                                                                                                                                                              
             // -----------------------------------
             s_done : begin
-                done                        <= 1'b1;
+                done                        = 1'b1;
             end
             // -----------------------------------
         endcase

@@ -176,15 +176,15 @@ end
     // L OUT -----------------------------------------------------------------------
     always @(*) begin
         case(CNT_ABSORB_OUT[2:0])
-            3'b 000 : L_OUT_PRE <= HASH_IN[255:224];
-            3'b 001 : L_OUT_PRE <= HASH_IN[223:192];
-            3'b 010 : L_OUT_PRE <= HASH_IN[191:160];
-            3'b 011 : L_OUT_PRE <= HASH_IN[159:128];
-            3'b 100 : L_OUT_PRE <= HASH_IN[127:96];
-            3'b 101 : L_OUT_PRE <= HASH_IN[95:64];
-            3'b 110 : L_OUT_PRE <= HASH_IN[63:32];
-            3'b 111 : L_OUT_PRE <= HASH_IN[31:0];
-            default : L_OUT_PRE <= {32{1'b0}};
+            3'b 000 : L_OUT_PRE = HASH_IN[255:224];
+            3'b 001 : L_OUT_PRE = HASH_IN[223:192];
+            3'b 010 : L_OUT_PRE = HASH_IN[191:160];
+            3'b 011 : L_OUT_PRE = HASH_IN[159:128];
+            3'b 100 : L_OUT_PRE = HASH_IN[127:96];
+            3'b 101 : L_OUT_PRE = HASH_IN[95:64];
+            3'b 110 : L_OUT_PRE = HASH_IN[63:32];
+            3'b 111 : L_OUT_PRE = HASH_IN[31:0];
+            default : L_OUT_PRE = {32{1'b0}};
         endcase
     end
     
